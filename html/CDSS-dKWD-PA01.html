@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- lnb가 없는 화면의 경우 .lnb-wrap 요소를 삭제해주세요 -->             
+                <!-- start lnb -->
+                <section class="lnb-wrap">
+                    <div class="lnb-toggle">
+                        <div class="inner-btn"><img src="../img/icon/lnb_toggle.svg" alt="" ></div>
+                    </div>
+                    <ul class="menus">
+                        <li class="current">
+                            <a href="#"><span class="ico"><i class="ico_stethoscope"></i></span><span class="txt">진단 분류 관리</span></a>
+                            <ul>
+                                <li class="current">
+                                    <a href="#"><span class="txt">진단 분류 키워드</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 매칭 관리</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_tag"></i></span><span class="txt">의료NER 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 태깅</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 패턴</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_keyword"></i></span><span class="txt">키워드 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">신조어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">토픽제외어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">분석불용어</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_pill"></i></span><span class="txt">의약품 조회</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_person"></i></span><span class="txt">계정 관리</span></a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //end lnb -->
+                <!-- start contents -->
+                <section class="contents">
+                    <div class="pagetitle">
+                        <h1>진단명 분류 키워드</h1>
+                        <div class="desp">진료기록에서 키워드 패턴을 탐색하여 진료기록의 진단명을 분류할 수 있도록 진단명별 키워드를 관리할 수 있습니다.</div>
+                    </div>
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row drag-wrap category-panel">
+                                <div class="subtitle">
+                                    <h2>진단(상병)카테고리</h2>
+                                </div>
+                                <div class="rela_wrap category-wrap">
+                                    <div class="tree">
+                                        <ul>
+                                            <li><p>[J00-J99] Ⅹ. 호흡계통의 질환(1)</p>
+                                                <ul>
+                                                    <li>[K00-K14] 구강, 침샘 및 턱의 질환(10)</li>
+                                                </ul>
+                                            </li>
+                                            <li><p>[K00-K93] ⅩⅠ. 소화계통의 질환(10)</p>
+                                                <ul>
+                                                    <li>[K00-K14] 구강, 침샘 및 턱의 질환(5)</li>
+                                                    <li>[K20-K31] 식도, 위 및 십이지장의 질환(8)</li>
+                                                    <li>[K35-K38] 충수의 질환(150)</li>
+                                                    <li>[K40-K46] 탈장(72)</li>
+                                                    <li>[K50-K52] 비감염성 장염 및 결장염(91)</li>
+                                                    <li>[K55-K64] 장의 기타 질환(2)</li>
+                                                    <li>[K65-K67] 복막의 질환(87)</li>
+                                                    <li>[K70-K77] 간의 질환(32)</li>
+                                                    <li>[K80-K87] 담낭, 담도 및 췌장의 장애(756)</li>
+                                                    <li>[K90-K93] 소화계통의 기타 질환(245)</li>
+                                                </ul>
+                                            </li>
+                                            <li><p>[J00-J99] Ⅹ. 호흡계통의 질환(1)</p>
+                                                <ul>
+                                                    <li>[K00-K14] 구강, 침샘 및 턱의 질환(10)</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="subtitle">
+                                    <h2>'장의 기타 질환' 진단 분류 키워드</h2>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요" value="치핵">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap">
+                                        <div class="data-table">
+                                            <table class="min-width lg">
+                                                <col width="100">
+                                                <col width="">
+                                                <col width="">
+                                                <col width="400">
+                                                <thead>
+                                                    <tr>
+                                                        <th>상병코드</th>
+                                                        <th>한글명</th>
+                                                        <th>영문명</th>
+                                                        <th>키워드패턴<a href="#;" class="btn radius2px size20px neutral_xs" data-popup="patternTip">패턴 작성 팁</a></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="center">K55</td>
+                                                        <td><mark>치핵</mark> 및 항문주위정맥혈전증<span class="n-msg"></span></td>
+                                                        <td>Vascular disorders of intestine</td>
+                                                        <td><input type="text" placeholder="키워드 입력 후 엔터를 눌러주세요"><a href="#;" class="ico-btn abs-btn"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">K55</td>
+                                                        <td><mark>치핵</mark> 탈장이 없는 마비성 장폐색증 및 장폐색<span class="n-msg"></span></td>
+                                                        <td>Haemorrhoids and perianal venous thrombosis</td>
+                                                        <td>대장, [L1] 복통 복부팽만<a href="#;" class="ico-btn abs-btn"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a></td>
+                                                    </tr>
+                                                    <!-- 이관 실패 목록인 경우 tr에 warning 클래스 부여-->
+                                                    <tr class="warning">
+                                                        <td class="center">K55</td>
+                                                        <td><mark>치핵</mark> 장의 혈관장애<span class="n-msg"></span></td>
+                                                        <td>Haemorrhoids and perianal venous thrombosis</td>
+                                                        <td>육아종성 장염
+                                                        <a href="#;" class="ico-btn abs-btn"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

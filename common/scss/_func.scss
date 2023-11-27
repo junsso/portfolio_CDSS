@@ -1,0 +1,314 @@
+@function rem($size) {
+    @return calc($size / $base-font-size * 1rem);
+}
+@function get-scale($asis,$tobe){
+    @return $tobe / $asis;
+}
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+// 드래그방지
+@mixin user-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@mixin ellipsis($clamp:1){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+    white-space: inherit;
+    word-break: break-all;
+}
+@mixin scrollbar($color: rgba(0,0,0,.1)){
+    overflow: auto;
+    &::-webkit-scrollbar{
+        width: 8px;
+        height: 8px;
+    } 
+    &::-webkit-scrollbar-track{
+        background-color: transparent; 
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $color;
+        border-radius: 10px;
+    }
+}
+@mixin aspect($width: 16, $height: 9){
+    aspect-ratio: calc($width / $height);
+    @supports not (aspect-ratio: calc($width / $height)){
+        &::before {
+            content: "";
+            float: left;
+            padding-top: calc(($height / $width) * 100%);
+            display: block;
+        }
+    }
+}
+
+/** font(weight, size, color, family, line-height, letter-spacing) */
+@mixin font(
+    $weight: map-get($font-weights,'regular'),
+    $size: $base-font-size,
+    $color: map-get($def-colors, 'font'),
+    $family: $font-family,
+    $line-height: null,
+    $letter-spacing: -0.03em
+){
+    font: {
+        weight: $weight;
+        size: $size;
+        family: $family;
+    }
+    color: $color;
+    letter-spacing: $letter-spacing;
+    @if($line-height){ line-height: $line-height; }
+}
+
+/** border-radius(radius) */
+@mixin border-radius($radius) {
+    @if($radius != ''){
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+        border-radius: $radius;
+    }
+}
+/** border-radius(width,style,color,radius) */
+@mixin border(
+    $width: 1px,
+    $style: solid,
+    $color: map-get($bg-grays, 19),
+    $radius: 0
+){
+    @if($width > 0){
+        border-width: $width;
+        border-style: $style;
+        border-color: $color;
+    }
+    @else{
+        border: 0 none;
+    }
+    @include border-radius($radius);
+}
+/** box(margin,padding,sizing,style,width,height,bg-color) */
+@mixin box(
+    $margin: 0,
+    $padding: 0,
+    $sizing: border-box,
+    $style: none,
+    $width: null,
+    $line-height: null,
+    $height: null,
+    $bg-color: null
+){
+    margin: $margin;
+    padding: $padding;
+    box-sizing: $sizing;
+    list-style: $style;
+    @if($width){ width: $width; }
+    @if($height){ height: $height; }
+    @if($line-height){ line-height: $line-height; }
+    @if($bg-color){ background-color: $bg-color; }
+}
+
+@mixin abs-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    @include scrollbar;
+}
+
+/** FLEX BOX */
+@mixin flex-option(
+    $justify-content: flex-start,
+    $align-items: stretch,
+    $gap: 0,
+    $flex-wrap: nowrap,
+){
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+    flex-wrap: $flex-wrap;
+}
+@mixin flex{
+    display: flex;
+    display: -webkit-flex;
+}
+@mixin flex-row{
+    @include flex;
+    flex-direction: row;
+}
+@mixin flex-clm{
+    @include flex;
+    flex-direction: column;
+}
+
+@mixin flex-align-center{
+    @include flex-row;
+    @include flex-option((
+        justify-content: center,
+        align-items: center,
+    )...);
+}
+
+@mixin absolute-center(
+    $width: 100%,
+    $height: 100%
+){
+    @include box((
+        width: 100%,
+        height: 100%
+    )...);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin board-gallery-box($gap :0){
+    $listCols:(3,4);
+    @each $col in $listCols{
+        &.col-#{$col}{
+            .row{
+                width: calc( (100% / #{$col}) - ((#{$gap} * (#{$col} - 1)) / #{$col}));
+            }
+        }
+    }
+    @include flex-row;
+    @include flex-option((
+        flex-wrap: wrap,
+        gap: rem($gap)
+    )...);
+}
+// 토글스위치 형식 버튼
+@mixin swich-content{
+    display: inline-block;
+    width: rem(70px);
+    height: rem(30px);
+    border-radius: rem(50px);    
+    border: 1px solid map-get($bg-grays, 45);
+    color: $white;
+    position: relative;
+    font-size: rem(13px);
+    line-height: rem(30px);
+    background: #{$white};
+    padding-left: rem(14px);
+    text-align: left;
+    transition: all .3s ease;
+    cursor: pointer;
+    &.on{
+        background: #{$primary};
+        padding-left: rem(32px);
+        border-color: #{$primary};
+        &:before{
+            content: "학습";
+            color: $white;
+        }
+        &:after{
+            right: rem(44px);
+            background: $white;
+        }
+    }
+    &:before{
+        content: "제외";
+        color: map-get($bg-grays, 7);
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        right: 5px;
+        top: 4px;
+        width: rem(20px);
+        height: rem(20px);
+        background: map-get($bg-grays, 40);
+        border-radius: rem(50px);
+        transition: all .3s ease;
+    }
+}
+
+@mixin lnb-toggle-default{
+    cursor: pointer;
+    position: absolute;
+    top: rem(15px);
+    left: #{$lnb-w};
+    z-index: 2;    
+    //transition: all .3s ease;
+    .inner-btn{
+        border-radius: 0 rem(6px) rem(6px) 0;
+        border: 1px solid map-get($bg-grays, 18);
+        border-left: 0px none;
+        background: #{$white};
+        width: rem(20px);
+        height: rem(30px);
+        @include flex-align-center;
+    }
+    &.closed{
+        img{
+            transform: rotate(180deg);
+        }
+    }
+}
+@mixin lnb-toggle-closed{
+    left: 0;
+    top: 0;
+    width: calc(#{$lnb-w-mini} + 1px);
+    height: #{$lnb-w-mini};
+    border: 0px none;
+    background: transparent;
+    border-radius: 0;
+    @include flex-align-center;
+    .inner-btn{
+        @include flex-align-center;
+        border-radius: 100%;
+        width: rem(28px);
+        height: rem(28px);
+        border: 1px solid map-get($bg-grays, 18);
+        background: #{$white};
+    }
+}
+@mixin inner-box-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;    
+    @include scrollbar;
+}
+@mixin gray-box{
+    border: 1px solid map-get($bg-grays, 18);
+    background: map-get($bg-grays, 46);
+    height: 100%;
+    border-radius: rem(4px);
+    padding: rem(10px);
+    @include flex-row;
+    @include flex-option((
+        //align-items: center,
+        gap: rem(4px)
+    )...);
+    justify-content: start;
+    flex-wrap: wrap;
+}
+@mixin keyword-item{
+    @extend .font-regular-13px-7;
+    display: inline-block;
+    height: rem(30px);
+    line-height: rem(30px);
+    background: #{$white};
+    background: #{$white};
+    border: 1px solid map-get($bg-grays, 40);
+    border-radius: rem(50px);
+    padding: 0 rem(10px);
+    cursor: pointer;
+}

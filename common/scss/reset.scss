@@ -1,0 +1,75 @@
+@charset "UTF-8";
+@import 'variables', 'func', 'extends';
+
+html, body{
+    @include font;
+    @include box;
+    -webkit-overflow-scrolling: touch;
+    min-width: $breakpoint-desktop;
+    height: 100%;
+    min-height: rem(900px);
+    background: map-get($bg-grays, 44);
+    //overflow-y: hidden;
+}
+
+div, p, span, em, h1, h2, h3, h4, h5, ul, li, ol{
+    @include box;
+}
+
+a{
+    text-decoration: none;
+}
+a, input, button, textarea, select, textarea{
+    @include font;
+    @include box;
+    @include border(0);
+}
+
+input{
+    &:disabled{
+        &+label{
+            color: map-get($bg-grays, 19);
+        }
+    }
+    &[type="number"]{
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button{
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+        }
+    }
+}
+
+button{
+    cursor: pointer;    
+    background: transparent none;
+}
+a:active, button:active, input:focus{
+    outline: none;
+}
+::placeholder{
+    @include font((
+        weight: map-get($font-weights, 'small2'), 
+        color: map-get($bg-grays, 17),
+        size: rem(15px)
+    )...);
+}
+::after, ::before{
+    box-sizing: border-box;
+}
+
+[hidden]{
+    display: none !important;
+}
+
+a:hover{
+    transition: all .3s ease;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}

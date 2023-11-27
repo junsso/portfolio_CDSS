@@ -1,0 +1,555 @@
+@charset "UTF-8";
+@import 'variables', 'func', 'extends';
+
+.wrapper{
+    height: 100%;
+}
+header{
+    background: #{$white};
+    @include flex-row;
+    @include flex-option((
+        align-items: center,
+        gap: rem(90px)
+    )...);
+    height: #{$header-h};
+    padding: 0 rem(30px);
+    border-bottom: 1px solid map-get($bg-grays, 18);
+    position: relative;
+    z-index: 10;
+    .sitename{
+        img{
+            display: block;
+        }
+    }
+    .gnb{
+        ul{
+            @include flex-row;
+            @include flex-option((
+                align-items: center
+            )...);
+            li{
+                line-height: #{$header-h};
+                &:hover{
+                    a{
+                        &:after{                            
+                            left: rem(15px);
+                            right: rem(15px);
+                        }
+                    }
+                }
+                &.active{
+                    a{
+                        color: map-get($active-colors, 1);
+                    }
+                }
+            }
+            a{
+                @extend .font-medium-16px-4;
+                @include flex-row;
+                @include flex-option((
+                    align-items: center,
+                    gap: rem(5px)
+                )...);
+                padding: 0 rem(15px);
+                height: 100%;
+                position: relative;
+                .ico{
+                    margin-top: rem(-1.5px);
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    right: 50%;
+                    bottom: rem(15px);
+                    height: 1px;
+                    background: map-get($active-colors, 1);
+                    transition: all .3s ease;
+                }
+            }
+        }
+    }
+    .util{
+        margin-left: auto;
+        & > ul{
+            @include flex-row;
+            @include flex-option((
+                align-items: center,
+                gap: rem(10px)
+            )...);
+            & > li{
+                position: relative;
+                & > a{
+                    // //@extend .buttons-box-type1;
+                    // @extend .font-regular-14px-3;
+                    // height: rem(30px);
+                    padding: 0 rem(10px);
+                    // color: map-get($bg-grays,4);
+                    // @include flex-row;
+                    // @include flex-option((
+                    //     align-items: center,
+                    //     gap: rem(5px)
+                    // )...);
+                    transition: none;
+                    // image icon
+                    .ico{
+                        //display: inline-block;
+                        width: rem(16px);
+                        height: rem(16px);
+                        //vertical-align: middle;
+                        //margin-right: rem(5px);
+                        &.book-color{
+                            background: url(#{$img-icon-url}book.png) no-repeat center center;
+                        }
+                        &.user-color{
+                            background: url(#{$img-icon-url}user.png) no-repeat center center;
+                        }
+                    }
+                }
+                &.user-menu{
+                    &:hover{
+                        a{
+                            border-radius: rem(16px) rem(16px) 0 0;
+                        }
+                        .dropdown{
+                            display: block;
+                        }
+                    }
+                }   
+            }
+        }
+        .dropdown{
+            display: none;
+            position: absolute;
+            left: 0; 
+            right: 0;
+            top: rem(29px);
+            background: #{$white};
+            @include border;
+            border-radius: 0 0 rem(16px) rem(16px);
+            padding: rem(5px) 0;
+            li{
+                a{
+                    @extend .font-regular-13px-7;
+                    display: block;
+                    padding: rem(3px) rem(10px);
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+.container{
+    height: calc(100% - #{$header-h} - 1px);
+    position: relative;
+    &.closed{
+        .lnb-wrap{
+            width: #{$lnb-w-mini};
+            .menus{
+                .txt{
+                    display: none;
+                }
+            }
+        }
+        .lnb-toggle{
+            @include lnb-toggle-closed;
+        }
+        .menus{
+            margin-top: rem(56px);
+            & > li{
+                &.has-sub{
+                    & > a{
+                        &:after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .contents{
+            left: #{$lnb-w-mini};
+            width: calc(100% - #{$lnb-w-mini});
+        }
+        &.overlay-view{
+            .lnb-wrap{
+                width: #{$lnb-w};
+                .menus{
+                    & > li{
+                        &.has-sub{
+                            & > a{
+                                &:after{
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                    .txt{
+                        display: block;
+                    }
+                }
+            }
+            .lnb-toggle{
+            }
+        }
+    }
+}
+.lnb-toggle{
+    @include lnb-toggle-default;
+}
+.lnb-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #{$white};
+    border-right: 1px solid map-get($bg-grays, 21);
+    width: #{$lnb-w};
+    //transition: all 5s ease;
+    z-index: 1;
+    .menus{
+        margin: rem(15px);
+        & > li{
+            line-height: rem(32px);
+            &+li{
+                margin-top: rem(8px);
+            }
+            &.current{
+                & > a{
+                    background: map-get($active-colors, 1);
+                    color: #{$white};
+                    border-radius: rem(6px);
+                }
+                &.has-sub{
+                    & > a{
+                        &:after{
+                            right: rem(10px);
+                            background: url(svg-factory(ico_arrow_toggle,#{$white})) no-repeat center / contain;
+                        }
+                    }
+                    ul{
+                        display: block;
+                    }
+                }
+                &.toggle{
+                    & > a{
+                        &:after{
+                            transform: translateY(-50%) rotate(180deg);
+                        }
+                    }
+                }
+            }
+            &.has-sub{
+                & > a{
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: rem(10px);
+                        background: url(svg-factory(ico_arrow_toggle,#929292)) no-repeat center / contain;
+                        width: rem(11px);
+                        height: rem(11px);
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            &.toggle{
+                & > a{
+                    &:after{
+                        transform: translateY(-50%) rotate(180deg);
+                    }
+                }
+            }
+            a{
+                @include flex-row;
+                @include flex-option((
+                    align-items: center
+                )...);
+                @extend .font-medium-14px-2;
+                position: relative;
+                &:hover{
+                    .txt{
+                        &:after{
+                            left: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+            .ico{
+                width: rem(32px);
+                height: rem(32px);
+                padding: rem(7px);
+                //margin-top: rem(-4px);
+            }
+            & > ul{
+                margin-left: rem(32px);
+                display: none;
+                li{
+                    &.current{
+                        a{
+                            color: map-get($active-colors , 1);
+                            font-weight: 800;
+                            &:before{
+                                content: "";
+                                display: inline-block;
+                                margin-right: 6px;
+                                width: 8px;
+                                height: 2px;
+                                background: map-get($active-colors , 1);
+                            }
+                        }
+                    }
+                }
+                a{
+                    @extend .font-regular-13px-7;
+                    position: relative;
+                }
+            }
+        }
+        .txt{
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                left: 50%;
+                right: 50%;
+                bottom: 0;
+                height: rem(1px);
+                background: map-get($active-colors, 1);
+                transition: all .3s ease;
+            }
+        }
+    }
+    & + .contents{
+        left: #{$lnb-w};
+        width: calc(100% - #{$lnb-w});
+    }
+}
+.result-view{
+    @include scrollbar;
+    overflow: auto;
+    &.has-height{
+        max-height: 400px;
+    }
+}
+
+/** Modal Popup 시작 */
+// modal size
+$modal-xs: 400px;
+$modal-sm: 600px;
+$modal-md: 800px;
+$modal-md2: 1000px;
+$modal-lg: 1120px;
+
+body{
+    &.active-modal{
+        overflow: hidden;
+    }
+}
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 600;
+}
+.layerpop{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 700;
+    &.show{
+        display: block;
+    }
+    .popup-content{
+        background: $white;
+        min-width: #{$modal-xs};
+        border-radius: rem(6px);
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        .popup-header{
+            padding: rem(10px) rem(20px);
+            display: flex;
+            align-items: center;
+            background-color: map-get($map: $bg-grays, $key: 46);
+            border-radius: rem(6px) rem(6px) 0 0;
+            overflow: hidden;
+            h2{
+                @extend .font-bold-18px-2;
+            }
+            .btn-box{
+                margin-left: auto;
+                .close{
+                    text-indent: -9999px;
+                    display: block;
+                }
+            }
+        }
+        .popup-body-top{
+            @include flex-align-center;
+            gap: rem(5px);
+            padding: rem(20px);
+            background-color: map-get($map: $active-colors, $key: 14);
+            border-bottom: 1px solid map-get($map: $bg-grays, $key: 19);
+            @extend .font-medium-18px-11;
+            .primary{
+                @extend .afont-medium-20px-1;
+            }
+            h3{
+                font-size: rem(20px);
+                color: map-get($map: $bg-grays, $key: 11);
+            }
+        }
+        .popup-body{
+            padding: rem(20px);
+            @include scrollbar;
+            height: auto;
+            max-height: calc(100vh - 52px - 80px - 100px );
+            max-height: calc(100svh - 52px - 80px - 100px );
+            h3{
+                @extend .font-bold-16px-2;
+            }
+            h4{
+                @extend .font-bold-14px-2;
+            }
+        }
+        .popup-footer{
+            text-align: center;
+            position: relative;
+            .btn-set{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0 0 25px 25px;  
+                padding: 15px;              
+                overflow: hidden;
+                gap: 10px;
+                // button{
+                //     border:1px solid map-get($map: $bg-grays, $key: 18);
+                //     border-radius: rem(6px);
+                //     padding: rem(7px) rem(30px);
+                //     background-color: $white;
+                //     $height: 46px;
+                //     &.positive{
+                //         background-color: map-get($map: $active-colors, $key: 1);;
+                //         color: $white;
+                //         border-color: #{$basic-trans-color};
+                //     }
+                //     &:hover{
+                //         opacity: 0.7;
+                //     }
+                // }
+            }
+        }
+        &.lg{
+            min-width: #{$modal-lg};
+            max-width: #{$modal-lg};
+        }
+        &.md2{
+            min-width: #{$modal-md2};
+            max-width: #{$modal-md2};
+        }
+        &.md{
+            min-width: #{$modal-md};
+            max-width: #{$modal-md};
+        }
+        &.sm{
+            min-width: #{$modal-sm};
+            max-width: #{$modal-sm};
+        }
+        &.xs{
+            min-width: #{$modal-xs};
+            max-width: #{$modal-xs};
+        }
+        .inner{
+            >.title {
+                position: relative;
+                font-size: 0;;
+                padding: 14px 25px 10px 25px;
+                border-bottom: 2px solid map-get($map: $active-colors, $key: 11);
+                display: flex;
+                align-items: center;
+                h2 {
+                    flex: none;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 75%;
+                    font-size: 20px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    color: map-get($map: $active-colors, $key: 15);
+                }
+                .rt-bx{
+                    margin-left: auto;
+                }
+                .btn-box {
+                    margin-left: auto;
+                    //width: 25%;
+                    text-align: right;
+                    display: flex;
+                    align-items: center;
+                    button{
+                        width: 24px;
+                        height: 24px;
+                        text-indent: -9999px;
+                        margin-left: 5px;
+                        &.close {
+                            background: url(#{$img-url}ico_close.svg) no-repeat center center;
+                        }
+                    }
+                    .inline-box{
+                        margin-right: 10px;
+                    }
+                    .toggle-class{
+                        display: flex;
+                        gap: 2px;
+                        li{
+                            line-height: 1;
+                            &.cl-tag{
+                                .tag{
+                                    border-color: map-get($map: $bg-grays, $key: 30);
+                                    background: $white;
+                                    color: map-get($map: $bg-grays, $key: 12);
+                                    line-height: 20px;
+                                    height: 20px;
+                                    letter-spacing: -0.5px;
+                                    font-size: 14px;
+                                    padding: 4px 5px 2px 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .cont-inner{
+                padding: 20px 25px 30px;
+                &.has-scroll{
+                    @include scrollbar;
+                    max-height: 600px;
+                    margin-top: 0;
+                    padding-left: 25px;
+                }
+            }
+        }
+    }
+    .alert-txt{
+        @extend .font-regular-14px-7;
+        text-align: center;
+        word-break: keep-all;
+        h2{
+            @extend .font-bold-16px-2;
+            margin-bottom: rem(10px);
+        }
+        strong{
+            color: #{$primary};
+        }
+    }
+}
+
+/** Modal Popup 종료 */

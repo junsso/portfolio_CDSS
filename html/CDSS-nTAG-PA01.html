@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- lnb가 없는 화면의 경우 .lnb-wrap 요소를 삭제해주세요 -->             
+                <!-- start lnb -->
+                <section class="lnb-wrap">
+                    <div class="lnb-toggle">
+                        <div class="inner-btn"><img src="../img/icon/lnb_toggle.svg" alt="" ></div>
+                    </div>
+                    <ul class="menus">
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_stethoscope"></i></span><span class="txt">진단 분류 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 키워드</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 매칭 관리</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="current">
+                            <a href="#"><span class="ico"><i class="ico_tag"></i></span><span class="txt">의료NER 관리</span></a>
+                            <ul>
+                                <li class="current">
+                                    <a href="#"><span class="txt">의료NER 태깅</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 패턴</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_keyword"></i></span><span class="txt">키워드 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">신조어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">토픽제외어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">분석불용어</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_pill"></i></span><span class="txt">의약품 조회</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_person"></i></span><span class="txt">계정 관리</span></a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //end lnb -->
+                <!-- start contents -->
+                <section class="contents">
+                    <div class="pagetitle">
+                        <h1>의료NER 태깅</h1>
+                        <div class="desp">진료기록에서 의료 개체명으로 검출하기 위한 키워드를 드래그하여 태깅할 수 있습니다. 진료기록별 태깅된 키워드는 의료NER 모델 생성 시 정답지 데이터로 활용됩니다.</div>
+                    </div>
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row smaller">
+                                <div class="subtitle">
+                                    <h2>태깅 목록</h2>
+                                    <div class="search">
+                                        <input type="text" class="datepicker">~
+                                        <input type="text" class="datepicker">
+                                        <select name="" id="" class="form-select">
+                                            <option value="">진료과</option>
+                                        </select>
+                                        <select name="" id="" class="form-select">
+                                            <option value="">태깅작업</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap">
+                                        <div class="data-table">
+                                            <table class="tagging min-width sm">
+                                                <col width="50">
+                                                <col width="130">
+                                                <col width="">
+                                                <col width="">
+                                                <col width="">
+                                                <col width="">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>진료기록일시</th>
+                                                        <th>진료과</th>
+                                                        <th>진료의</th>
+                                                        <th>환자명</th>
+                                                        <th>태깅 작업</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr class="selected">
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">미작업</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">내과</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">김*수</td>
+                                                        <td class="center">작업(13건)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="pagination">
+                                            <div class="page">
+                                                <a href="#;" class="first disabled"></a>
+                                                <a href="#;" class="prev disabled"></a>
+                                                <a href="#;" class="current">1</a>
+                                                <a href="#;" class="">2</a>
+                                                <a href="#;" class="">3</a>
+                                                <a href="#;" class="">4</a>
+                                                <a href="#;" class="">5</a>
+                                                <a href="#;" class="">6</a>
+                                                <a href="#;" class="">7</a>
+                                                <a href="#;" class="">8</a>
+                                                <a href="#;" class="">9</a>
+                                                <a href="#;" class="">10</a>
+                                                <a href="#;" class="next"></a>
+                                                <a href="#;" class="last"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="subtitle">
+                                    <h2>의료NER 태깅 - 2023.09.10 13:43 | 진료의 김퍼즐 | 환자명 김*수</h2>
+                                    <div class="action">
+                                        <a href="#" class="btn primary_md size36px radius4px"><span class="ico_download_wh"></span>태깅 작업 저장</a>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="flex-wrap">
+                                        <div class="row">
+                                            <div class="rela_wrap">
+                                                <div class="inner-wrap border-wrap">
+                                                    <div class="subtitle">
+                                                        <h2>진료기록 원문</h2>
+                                                        <div class="btn-set">
+                                                            <a href="#;" class="btn neutral_md size30px radius4px">의료NER 패턴 일괄 태깅<span class="ico_launch"></span></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="diag-full-content">
+                                                        <div class="line speaker-a">
+                                                            <div class="s-user">
+                                                                <strong>진료의 김퍼즐</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area">배</span>는 좀 가라앉으셨나요</div>
+                                                        </div>
+                                                        <div class="line speaker-b">
+                                                            <div class="s-user">
+                                                                <strong>환자 홍*동</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text">네 <span class="ner-tag symtom">복통</span>은 없었고요 좋습니다</div>
+                                                        </div>
+                                                        <div class="line speaker-a">
+                                                            <div class="s-user">
+                                                                <strong>진료의 김퍼즐</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text"><span class="ner-tag symtom">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 백혈구 수치가 떨어져서 <span class="ner-tag medi">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
+                                                        </div>
+                                                        <div class="line speaker-b">
+                                                            <div class="s-user">
+                                                                <strong>환자 홍*동</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text">네 네</div>
+                                                        </div>
+                                                        <div class="line speaker-a">
+                                                            <div class="s-user">
+                                                                <strong>진료의 김퍼즐</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        </div>
+                                                        <div class="line speaker-b">
+                                                            <div class="s-user">
+                                                                <strong>환자 홍*동</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date">두달</span>마다 오는게 좀 부담스러울거같아요</div>
+                                                        </div>
+                                                        <div class="line speaker-a">
+                                                            <div class="s-user">
+                                                                <strong>진료의 김퍼즐</strong>
+                                                                <span>00:00:01</span>
+                                                            </div>
+                                                            <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row smaller no-border">
+                                            <div class="tagging-box">
+                                                <h3>환부 개체명</h3>
+                                                <span>배</span>
+                                                <span class="done">장</span>
+                                            </div>
+                                            <div class="tagging-box">
+                                                <h3>증상 개체명</h3>
+                                                <span>복통</span>
+                                                <span>피고름</span>
+                                                <span>염증 반응</span>
+                                                <span>복통</span>
+                                                <span>피고름</span>
+                                                <span>염증 반응</span>
+                                            </div>
+                                            <div class="tagging-box">
+                                                <h3>진단 개체명</h3>
+                                                <span>크론병</span>
+                                                <span>염증성장질환</span>
+                                            </div>
+                                            <div class="tagging-box">
+                                                <h3>약물 개체명</h3>
+                                                <span class="done">면역억제제</span>
+                                                <span>아자치오프린 면역억제제</span>
+                                                <span>이뮤란</span>
+                                                <span>이뮤란 아자치오프린</span>
+                                            </div>
+                                            <div class="tagging-box">
+                                                <h3>검사 개체명</h3>
+                                                <span>씨알피</span>
+                                                <span>피검사</span>
+                                                <span>백혈구 검사</span>
+                                                <span>배 사진 촬영</span>
+                                            </div>
+                                            <div class="tagging-box">
+                                                <h3>처치 개체명</h3>
+                                                <span>휴미라 주사</span>
+                                            </div>
+                                            <div class="tagging-box">
+                                                <h3>날짜 개체명</h3>
+                                                <span>7월 21일</span>
+                                                <span>두 달</span>
+                                                <span>석 달</span>
+                                                <span>오늘</span>
+                                                <span>이틀 뒤</span>
+                                                <span>목요일</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

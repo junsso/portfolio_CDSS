@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- lnb가 없는 화면의 경우 .lnb-wrap 요소를 삭제해주세요 -->             
+                <!-- start lnb -->
+                <section class="lnb-wrap">
+                    <div class="lnb-toggle">
+                        <div class="inner-btn"><img src="../img/icon/lnb_toggle.svg" alt="" ></div>
+                    </div>
+                    <ul class="menus">
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_stethoscope"></i></span><span class="txt">진단 분류 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 키워드</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 매칭 관리</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_tag"></i></span><span class="txt">의료NER 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 태깅</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 패턴</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="current">
+                            <a href="#"><span class="ico"><i class="ico_keyword"></i></span><span class="txt">키워드 관리</span></a>
+                            <ul>
+                                <li class="current">
+                                    <a href="#"><span class="txt">신조어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">토픽제외어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">분석불용어</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_pill"></i></span><span class="txt">의약품 조회</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_person"></i></span><span class="txt">계정 관리</span></a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //end lnb -->
+                <!-- start contents -->
+                <section class="contents">
+                    <div class="pagetitle">
+                        <h1>신조어</h1>
+                        <div class="desp">하나의 고유 명사로 인식이 필요한 신조어를 관리할 수 있습니다. 여러개 키워드 조합을 등록하면 하나의 복합 명사로 인식할 수 있습니다.</div>
+                        <div class="btn-set">
+                            <a href="#" class="btn primary_md size36px radius6px" data-popup="test1">형태소 분석 테스트</a>
+                        </div>
+                    </div>
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row">
+                                <div class="subtitle">
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <div class="tabs">
+                                            <ul>
+                                                <li class="selected">전체</li>
+                                                <li>ㄱㄴㄷ</li>
+                                                <li>ㄹㅁㅂ</li>
+                                                <li>ㅅㅇㅈ</li>
+                                                <li>ㅊㅋㅌ</li>
+                                                <li>ㅍㅎ</li>
+                                                <li>ABC</li>
+                                                <li>DEF</li>
+                                                <li>GHI</li>
+                                                <li>JKL</li>
+                                                <li>MNO</li>
+                                                <li>PQR</li>
+                                                <li>STU</li>
+                                                <li>VWX</li>
+                                                <li>YZ</li>
+                                                <li>0~9</li>
+                                                <li>#</li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>건강 보험 심사 평가원</span>
+                                        <span>진료비 납입 확인서</span>
+                                        <span>진료 확인서</span>
+                                        <span>키워드 샘플</span>
+                                        <span>키워드 샘플 장문으로 등록 가능</span>
+                                        <span>키워드 샘플</span>
+                                        <span>키워드 샘플</span>
+                                        <span>키워드 샘플</span>
+                                        <span>건강 보험 심사 평가원</span>
+                                        <span>진료비 납입 확인서</span>
+                                        <span>진료 확인서</span>
+                                        <span>키워드 샘플</span>
+                                        <span>키워드 샘플 장문으로 등록 가능</span>
+                                        <span>키워드 샘플</span>
+                                        <span>키워드 샘플</span>
+                                        <span>키워드 샘플</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

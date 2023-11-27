@@ -1,0 +1,112 @@
+// default font style
+$base-font-size: 14px;
+$font-weights: ('small': 300, 'small2': 350, 'regular': 400, 'medium': 500,'bold': 700);
+$font-family: 'Roboto', 'Noto Sans KR';
+
+// colors
+$basic-trans-color: transparent;
+$bg-grays: (
+    1:#000000,  
+    2:#111111,  
+    3:#303030,  
+    4:#333333,  
+    5:#414141,  
+    6:#555555,  
+    7:#666666, //text basic
+    8:#777777,  
+    9:#848484, 
+    10:#929292, //border neutral
+    11:#3B3B3B, 
+    12:#72787F, 13:#AAAAAA, 14:#B5B5B5, 15:#B8B8B8, 16:#C9C9CA, 
+    17:#CCCCCC, //disabled
+    18:#D1D1D1, //input border
+    19:#D9D9D9, 20:#DDDDDD,
+    21:#E6E6E6, // disabled border
+    22:#F0F4F9, 23:#F1F1F1, 24:#F7F7F7, 25:#F8F8F8, 
+    26:#FFFFFF,
+    27:#D0D0D0, 28:#CDD3D8, 29:#DADADA, 30:#C9CDD2, 31:#888888, 32:#7C7C7C, 33:#222222, 34:#E0E0E0, 35:#EEEEEE,
+    36:#949494, 37:#F7F8F9, 38:#9EA4AA, 39:#454C53, 
+    40:#D4D4D4, //off
+    41:#808080, 42:#474747, 43:#BEBEBE, 
+    44: #f3f3f3,  // disabled bg
+    45:#eaeaea, // border-basic
+    46:#F6F7FA, // table th bg
+    47:#25B4AD,
+    48:#DE7373,
+);
+$def-colors: (
+    'bg': map-get($bg-grays, 44),
+    'font': map-get($bg-grays, 7),
+);
+$active-colors: (
+     1:#065E85,
+     2:#25B4AD, // primary
+     3:#63C579, // success
+     4:#00B0B5,
+     5:#00416C,
+     6:#4F5FD8,
+     7:#002877,
+     8:#DE7373, // error, negative
+     9:#F85E5E,
+    10:#FB5D5D,
+    11:#0F3653,
+    12:#F16060,
+    13:#4C586C,
+    14:#EDF4FA,
+    15:#1B1D1F,
+    16:#ff5c5c,
+    17:#157FCE,
+    18:#E8EBED,
+    19:#CEF1FF,
+    20:#9EE4FF,
+);
+$nertag-colors: (
+    1:#FFDE88, // 증상
+    2:#B7EF9D, // 진단
+    3:#E4B9FF, // 약물
+    4:#B8E6E9, // 검사
+    5:#B0CDF8, // 처치
+    6:#E4B94A, // 환부
+    7:#D6D6D6, // 날짜
+);
+$patterntag-colors: (
+    1:#597EFF, // 1
+    2:#60D22A, // 2
+    3:#FF7A00, // 3
+);
+$white: map-get($bg-grays,26);
+$primary: map-get($active-colors,2);
+$negative: map-get($active-colors,8);
+$bg-active: rgba(37,180,173,0.15);
+$success: map-get($active-colors,3);
+
+//$nertag-colors
+$aff-area: map-get($nertag-colors,6);
+$date: map-get($nertag-colors,7);
+$treat: map-get($nertag-colors,5);
+$test: map-get($nertag-colors,4);
+$diag: map-get($nertag-colors,2);
+$symtom: map-get($nertag-colors,1);
+$medi: map-get($nertag-colors,3);
+$nertag-opacity: 0.1;
+
+// transition
+$transition-speed: 0.4s;
+
+// layout
+$inner-container: 1280px;
+$aspect-ratio-w: calc(16/9);
+$aspect-ratio-h: calc(2/3);
+$aspect-scale:1.24;
+$header-h: rem(56px);
+$lnb-w: rem(210px);
+$lnb-w-mini: rem(60px);
+
+// Breakpoints
+$breakpoint-desktop: 1280px;
+
+// url
+$img-url: '../../img/common/';
+$img-icon-url: '../../img/icon/';
+$img-temp-url: '../../img/temp/';
+$img-guide-url: '../../img/guide/';

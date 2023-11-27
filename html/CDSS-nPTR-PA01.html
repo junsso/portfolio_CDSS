@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- lnb가 없는 화면의 경우 .lnb-wrap 요소를 삭제해주세요 -->             
+                <!-- start lnb -->
+                <section class="lnb-wrap">
+                    <div class="lnb-toggle">
+                        <div class="inner-btn"><img src="../img/icon/lnb_toggle.svg" alt="" ></div>
+                    </div>
+                    <ul class="menus">
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_stethoscope"></i></span><span class="txt">진단 분류 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 키워드</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 매칭 관리</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="current">
+                            <a href="#"><span class="ico"><i class="ico_tag"></i></span><span class="txt">의료NER 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 태깅</span></a>
+                                </li>
+                                <li class="current">
+                                    <a href="#"><span class="txt">의료NER 패턴</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_keyword"></i></span><span class="txt">키워드 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">신조어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">토픽제외어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">분석불용어</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_pill"></i></span><span class="txt">의약품 조회</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_person"></i></span><span class="txt">계정 관리</span></a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //end lnb -->
+                <!-- start contents -->
+                <section class="contents">
+                    <div class="pagetitle">
+                        <h1>의료NER 패턴</h1>
+                        <div class="desp">진료기록 녹취 시 실시간 검출하기 위한 의료NER 키워드 패턴을 관리할 수 있습니다.</div>
+                    </div>
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row">
+                                <div class="subtitle">
+                                    <h2>환부 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>배</span>
+                                        <span>복부</span>
+                                        <span>종아리</span>
+                                        <span>배</span>
+                                        <span>복부</span>
+                                        <span>종아리</span>
+                                        <span>배</span>
+                                        <span>복부</span>
+                                        <span>종아리</span>
+                                        <span>배</span>
+                                        <span>복부</span>
+                                        <span>종아리</span>
+                                        <span>배</span>
+                                        <span>복부</span>
+                                        <span>종아리</span>
+                                    </div>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>증상 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>메스꺼움</span>
+                                        <span>코막힘</span>
+                                    </div>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>진단 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>급성충수염</span>
+                                        <span>췌장염</span>
+                                        <span>크론병</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row no-border">
+                                <div class="subtitle">
+                                    <h2>약물 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>스테로이드</span>
+                                        <span>아스피린</span>
+                                    </div>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>검사 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>MRI</span>
+                                    </div>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>처치 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>급성충수염</span>
+                                        <span>췌장염</span>
+                                        <span>크론병</span>
+                                    </div>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>날짜 검출 패턴</h2>
+                                    <div class="reg-pattern">
+                                        <input type="text" placeholder="키워드 입력 후 엔터 또는 추가 버튼을 눌러주세요">
+                                        <button class="btn neutral_md size36px radius4px">추가<span class="primary">+</span></button>
+                                    </div>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap pattern-box">
+                                        <span>어제</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>
