@@ -64,6 +64,7 @@ $active-colors: (
     22:#FF7575,
     23:#EBF6FF,
     24:#FF0000,
+    25: rgba(37,180,173,0.08),
 );
 $nertag-colors: (
     1:#FFDE88, // 증상
@@ -94,6 +95,7 @@ $diag: map-get($nertag-colors,2);
 $symtom: map-get($nertag-colors,1);
 $medi: map-get($nertag-colors,3);
 $nertag-opacity: 0.1;
+
 
 // transition
 $transition-speed: 0.4s;

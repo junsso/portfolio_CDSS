@@ -880,6 +880,21 @@ button{
                 }
             }
         }
+        &.receipt{
+            tbody{
+                tr{
+                    &:hover{
+                        th,
+                        td{
+                            background-color: map-get($active-colors, 25);
+                        }
+                    }
+                }
+            }
+            td{
+                border: 0;
+            }
+        }
     }
     &+.btn-set{
         @include flex-row;

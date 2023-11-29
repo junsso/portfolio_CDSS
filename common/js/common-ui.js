@@ -97,44 +97,36 @@ $(function(){
     });
 
     //의무기록 수정
-    let dargEditbox = $('.dragndrop-box .drag-box .col .txt');
+            const selection = window.getSelection();
     $(function(){
-        $(dargEditbox).bind('mouseover mouseout',function(e){
-            if(e.type == 'mouseover'){
-                $(this).addClass('active');
-            }else if(e.type == 'mouseout'){
-               $(this).removeClass('active');
-            }
-        });
-
         $(document).on('click', '.dragndrop-box .drag-box .col .txt .ico', function(){
-
-            if($(this).hasClass('edit') === true){
+            $(this).closest('.col').addClass('active');
+            if($(this).closest('.col').hasClass('active') === true){
                 $(this).removeClass('edit');
                 $(this).addClass('save');
-                $(this).parents('.col').siblings().find('ico').removeClass('save');
-                $(this).parents('.col').addClass('current');
-                $(this).parents('.col').siblings().removeClass('current');
+                $(this).closest('.txt').focus();
+                $(this).closest('.col').siblings('.col').removeClass('active');
+                $(this).closest('.col').siblings('.col').find('.ico').removeClass('save');
+                $(this).closest('.col').siblings('.col').find('.ico').addClass('edit');
             }else{
-                $(this).addClass('edit');
                 $(this).removeClass('save');
-                $(this).parents('.col').removeClass('current');
+                $(this).addClass('edit');
             }
 
-            // let value = $(this).closest('.txt').attr('contenteditable');
-            // if (value == 'false') {
-            //     $(this).closest('.txt').attr('contenteditable','true');
-            //     $(this).parents('.col').siblings().find('.txt').attr('contenteditable','false');
-            // }
-            // else {
-            //     $(this).closest('.txt').attr('contenteditable','false');
-            // }
+            let value = $(this).closest('.txt').attr('contenteditable');
+            if (value == 'false') {
+                $(this).closest('.txt').attr('contenteditable','true');
+                $(this).closest('.col').siblings('.col').find('.txt').attr('contenteditable','false');
+            }
+            else {
+                $(this).closest('.txt').attr('contenteditable','false');
+            }
             
         });
-        // $(document).on('click', '.dragndrop-box .drag-box .col .txt .ico.save', function(){
-        //     $(this).closest('.txt').attr('contenteditable','false');
-        //     $(this).parents('.col').removeClass('current');
-        // });
+        $(document).on('click', '.dragndrop-box .drag-box .col .txt .save', function(){
+            $(this).closest('.txt').attr('contenteditable','false');
+            $(this).closest('.col').removeClass('active');
+        });
 
     });
 
