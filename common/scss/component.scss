@@ -13,7 +13,7 @@
         @extend .font-regular-14px-5;
         @include box((
             width: 100%,
-            padding: rem(4px) rem(20px)
+            padding: rem-calc(4px) rem-calc(20px)
         )...);
         display: block;
         &:hover{
@@ -52,10 +52,10 @@
 }
 .push-box{
     @include flex-row;
-    gap: rem(20px);
+    gap: rem-calc(20px);
     .group{
         @include flex-row;
-        gap: rem(10px);
+        gap: rem-calc(10px);
     }
 }
 
@@ -88,7 +88,7 @@
                 @include flex-row;
                 gap: 20px;
                 align-items: center;
-                font-size: rem(16px);
+                font-size: rem-calc(16px);
                 color: $white;
                 line-height: 44px;
                 &::before{
@@ -115,19 +115,19 @@
 
 /** 페이징 시작 */
 .pagination{
-    margin: rem(20px) 0 0 0;
+    margin: rem-calc(20px) 0 0 0;
     .page{
         @include flex-align-center;
-        gap: rem(10px);
+        gap: rem-calc(10px);
         a{
             @include flex-align-center;
             @include box((
-                width: rem(30px),
-                height: rem(29px),
+                width: rem-calc(30px),
+                height: rem-calc(29px),
             )...);
-            @include border-radius(rem(8px));
+            @include border-radius(rem-calc(8px));
             @extend .font-regular-16px-7;
-            min-width: rem(30px);
+            min-width: rem-calc(30px);
 
             $listPageBtns: (first,last,prev,next);
             @each $btn in $listPageBtns{
@@ -199,10 +199,10 @@
         z-index: 20;        
         text-align: left;
         .inn{
-            @include border-radius(rem(3px));
+            @include border-radius(rem-calc(3px));
             background-color: $white;
             box-shadow: 0 0 6px 0 rgba(0,0,0,0.15);
-            padding: rem(10px);
+            padding: rem-calc(10px);
             position: relative;
             height: 0;
             overflow: hidden;
@@ -214,17 +214,17 @@
                 background: url(#{$img-icon-url}tooltip_arrow.svg) no-repeat center center;
                 width: 13px;
                 height: 7px;
-                top: rem(-7px);
+                top: rem-calc(-7px);
                 left: 50%;
                 transform: translate(-50%,0);        
             }
             .title{
                 font-weight: 500;
-                font-size: rem(15px);
+                font-size: rem-calc(15px);
                 //color:$gnb-menu;
             }
             .desc{
-                font-size: rem(13px);
+                font-size: rem-calc(13px);
                 font-weight: 500;
                 //color: #{$gnb-menu};
                 line-height: 1.4;
@@ -235,10 +235,10 @@
             }
             .sort{
                 @include flex-clm;
-                gap: rem(10px);
+                gap: rem-calc(10px);
                 li{
                     position: relative;
-                    font-size: rem(13px);
+                    font-size: rem-calc(13px);
                     span{
                         display: block;
                         //color: map-get($map: $bg-grays, $key: 33);
@@ -311,9 +311,9 @@
             .inn{
                 height: auto;
                 overflow: initial;
-                //min-width: rem(200px);
+                //min-width: rem-calc(200px);
                 ///color:$base-text-color;
-                font-size: rem(13px);
+                font-size: rem-calc(13px);
                 line-height: 140%;
             }
         }
@@ -351,6 +351,18 @@ input{
             width: 120px !important;
             background: url(svg-factory('ico_calendar',#666)) no-repeat center right 10px #{$white};
         }
+        &.input{
+            border-width: 0 0 1px;
+            border-radius: 0;
+            height: rem-calc(20px);
+            &:focus{
+                box-shadow: inherit;
+            }
+        }
+        &.full{
+            display: block;
+            width: 100%;
+        }
     }
     // checkbox
     &[type="checkbox"]{
@@ -358,8 +370,9 @@ input{
         &+label{
             @include user-select;
             @include flex-align-center;
-            @extend .font-bold-14px-26;
-            gap: rem(9px);
+            @extend .font-regular-14px-26;
+            color: map-get($bg-grays, 7);
+            gap: rem-calc(6px);
             cursor: pointer;
             position: relative;
             width: max-content;
@@ -367,39 +380,68 @@ input{
                 content: '';
                 display: inline-block;
                 @include border((
-                    color: map-get($map: $bg-grays, $key: 30),
-                    radius: rem(5px)
+                    color: map-get($map: $bg-grays, $key: 18),
+                    radius: rem-calc(2px)
                 )...);
-                $box-size: rem(23px);
+                $box-size: rem-calc(23px);
                 @include box((
-                    width: $box-size,
-                    height: $box-size,
-                    line-height: $box-size,
+                    width: rem-calc(16px),
+                    height: rem-calc(16px),
+                    line-height: rem-calc(16px),
                     bg-color: $white
                 )...);
+                margin-top: 2px;
             }
         }
-        &:checked + label::before{
-            $checked-color : map-get($map: $active-colors, $key: 1);
-            background: url(svg-factory('ico_home',$white)) no-repeat center / contain;
-            background-size: 70%;
-            background-color: $checked-color;
-            border-color: $checked-color;
-        }
-
-        $listIconChecked: (heart, like, scrap);
-        @each $icon-name in $listIconChecked{
-            &.#{$icon-name}{
-                & + label::before{
-                    //@extend .ico_#{$icon-name};
-                    border:0 none;
-                }
-                &:checked + label::before{
-                    //@extend .ico_#{$icon-name}_active;
-                    background-color: transparent;
-                }
+        &:checked + label{
+            @extend .font-bold-14px-26;
+            color: map-get($active-colors, 2);
+            &::before{
+                background: url(svg-factory('ico_checked', map-get($bg-grays, 26))) no-repeat center / contain;
+                background-size: rem-calc(11px);
+                background-color: map-get($bg-grays, 47);
+                border: 0;
             }
         }
+        &.disabled + label{
+            color: map-get($bg-grays, 17);
+            &::before{                
+                background-color:  map-get($bg-grays, 44);
+                border: 1px solid map-get($bg-grays, 21);
+                cursor: default;
+            }
+        }
+        &:checked.disabled + label{
+            color: map-get($bg-grays, 17);
+            &::before{   
+                background: url(svg-factory('ico_checked', map-get($bg-grays, 17))) no-repeat center / contain;
+                background-size: rem-calc(11px);            
+                background-color:  map-get($bg-grays, 44);
+                border: 1px solid map-get($bg-grays, 21);
+                cursor: default;
+            }
+        }
+        // &:checked + label,
+        // &:checked.disabled + label{
+        //     &::before{   
+        //         $checked-color : map-get($map: $active-colors, $key: 1);
+        //         background-color: map-get($bg-grays, 21);
+        //         border: 0;
+        //     }
+        // }
+        // $listIconChecked: (heart, like, scrap);
+        // @each $icon-name in $listIconChecked{
+        //     &.#{$icon-name}{
+        //         & + label::before{
+        //             //@extend .ico_#{$icon-name};
+        //             border:0 none;
+        //         }
+        //         &:checked + label::before{
+        //             //@extend .ico_#{$icon-name}_active;
+        //             background-color: transparent;
+        //         }
+        //     }
+        // }
 
     }
 }
@@ -443,25 +485,25 @@ input{
         color: map-get($bg-grays,18)
     )...);
     @include flex-align-center;
-    gap: rem(5px);
+    gap: rem-calc(5px);
     transition: $transition-speed all;
     i{
         margin-top: -2px;
     }
-    $listBtnRadius:(2px, 4px, 6px, 10px, 25px);
+    $listBtnRadius:(2px, 3px, 4px, 6px, 10px, 25px, 500px);
     @each $btn-radius in $listBtnRadius{
         &.radius#{$btn-radius}{
             @include border-radius($btn-radius);
         }
     }
-    $listBtnSize:(20px,30px,36px,34px,40px,50px,56px,80px);
+    $listBtnSize:(20px,24px,30px,36px,34px,40px,50px,56px,80px);
     @each $btn-size in $listBtnSize{
         &.size#{$btn-size}{
             @include box((
                 width: max-content,
-                padding: 0 rem(15px),
-                height: rem($btn-size),
-                line-height: rem($btn-size),
+                padding: 0 rem-calc(15px),
+                height: rem-calc($btn-size),
+                line-height: rem-calc($btn-size),
             )...);
         }
     }
@@ -503,9 +545,18 @@ input{
         color: map-get($bg-grays, 17);
         cursor: default;
     }
+    .ico{
+        &.refresh{
+            display: inline-block;
+            background: url(#{$img-icon-url}ico_refresh.svg) no-repeat center / contain;
+            width: rem-calc(20px);
+            height: rem-calc(20px);
+            background-size: rem-calc(13px);
+        }
+    }
 }
 .ico-btn{
-    padding: rem(5px);
+    padding: rem-calc(5px);
 }
 .view-details{
     cursor: pointer;
@@ -513,8 +564,8 @@ input{
         &:after{
             content: "";
             background: url(svg-factory(ico_magnifying, #666)) no-repeat center center / contain;
-            width: rem(15px);
-            height: rem(15px);
+            width: rem-calc(15px);
+            height: rem-calc(15px);
         }
         .name{
             color: #{$primary};
@@ -525,8 +576,8 @@ button{
     &.mini{
         background: url(svg-factory(ico_magnifying, #111)) no-repeat center center;
         text-indent: -9999px;
-        width: rem(36px);
-        height: rem(36px);
+        width: rem-calc(36px);
+        height: rem-calc(36px);
         @include box;
     }
 }
@@ -543,7 +594,7 @@ button{
 
 /** 테이블 start */
 .board-list-header{
-    margin: rem(20px) 0;
+    margin: rem-calc(20px) 0;
     @include flex-row;
     justify-content: space-between;
     align-items: center;
@@ -551,14 +602,14 @@ button{
         @extend .font-medium-20px-11;
         @include flex-row;
         align-items: center;
-        gap: rem(11px);
+        gap: rem-calc(11px);
         .t-dsc{ //2023-08
-            font-size: rem(14px);
+            font-size: rem-calc(14px);
             font-weight: 400;
             color: map-get($map: $bg-grays, $key: 39);
             display:inline-block;
-            margin-left: rem(12px);
-            padding-left: rem(15px);
+            margin-left: rem-calc(12px);
+            padding-left: rem-calc(15px);
             position: relative;            
             letter-spacing: -0.5px;            
             &::before{
@@ -576,12 +627,12 @@ button{
     }
     .buttons-wrap{
         @include flex-row;
-        gap: rem(10px);
+        gap: rem-calc(10px);
     }
 }
 .board-list-category{
     @include flex-row;
-    margin-bottom: rem(20px);
+    margin-bottom: rem-calc(20px);
     a{
         flex: 1;
         @include user-select;
@@ -590,19 +641,19 @@ button{
             color: map-get($bg-grays,18)
         )...);
         @extend .font-medium-18px-31;
-        gap: rem(15px);
-        height: rem(56px);
+        gap: rem-calc(15px);
+        height: rem-calc(56px);
         background-color: map-get($map: $bg-grays, $key: 35);
         &:not(:first-child){
             border-left: 0 none;
         }
         &:first-child{
-            border-top-left-radius: rem(15px);
-            border-bottom-left-radius: rem(15px);
+            border-top-left-radius: rem-calc(15px);
+            border-bottom-left-radius: rem-calc(15px);
         }
         &:last-child{
-            border-top-right-radius: rem(15px);
-            border-bottom-right-radius: rem(15px);
+            border-top-right-radius: rem-calc(15px);
+            border-bottom-right-radius: rem-calc(15px);
         }
         &.current{
             background-color: $white;
@@ -618,15 +669,15 @@ button{
 .data-table{
     table{
         &.min-width{
-            min-width: rem(680px);
+            min-width: rem-calc(680px);
             &.sm{
-                min-width: rem(540px);
+                min-width: rem-calc(540px);
             }
             &.md{
-                min-width: rem(640px);
+                min-width: rem-calc(640px);
             }
             &.lg{
-                min-width: rem(860px);
+                min-width: rem-calc(860px);
             }
         }
         &.tagging{
@@ -646,18 +697,21 @@ button{
             th{
                 @extend .font-medium-14px-2;
                 text-align: center;
-                padding: rem(8px) rem(12px);
-                border-width: rem(1px) 0;
+                padding: rem-calc(8px) rem-calc(12px);
+                border-width: rem-calc(1px) 0;
                 border-style: solid;
                 border-color: map-get($map: $bg-grays, $key: 18);
                 background-color: map-get($map: $bg-grays, $key: 46);
                 position: relative;
+                position: sticky;
+                top: 0;
+                z-index: 2;
                 .btn{
                     position: absolute;
                     top: 50%;
-                    right: rem(12px);
+                    right: rem-calc(12px);
                     transform: translateY(-50%);
-                    padding: 0 rem(5px);
+                    padding: 0 rem-calc(5px);
                     @extend .font-regular-13px-4;
                 }
                 &.orderby{
@@ -665,8 +719,8 @@ button{
                     &:after{
                         content: "";
                         display: inline-block;
-                        width: rem(12px);
-                        height: rem(12px);
+                        width: rem-calc(12px);
+                        height: rem-calc(12px);
                         background: url(svg-factory(ico_orderby, #666)) no-repeat center center;
                     }
                     &.on{
@@ -680,10 +734,10 @@ button{
                     &:after{
                         content: "";
                         display: inline-block;
-                        width: rem(15px);
-                        height: rem(15px);
+                        width: rem-calc(15px);
+                        height: rem-calc(15px);
                         vertical-align: middle;
-                        margin-left: rem(5px);
+                        margin-left: rem-calc(5px);
                         background: url(svg-factory(ico_help, #999)) no-repeat center center / contain;
                     }
                 }
@@ -691,7 +745,7 @@ button{
         }
         tbody{
             td{
-                padding: rem(8px) rem(12px);
+                padding: rem-calc(8px) rem-calc(12px);
                 border-bottom: 1px solid map-get($map: $bg-grays, $key: 18);
                 position: relative;
                 a{
@@ -714,30 +768,31 @@ button{
                     &:after{
                         content: "(이관실패)";
                         color: #{$negative};
-                        margin-left: rem(5px);
+                        margin-left: rem-calc(5px);
                     }
                 }
                 .abs-btn{
                     display: none;
                     position: absolute;
                     top: 50%;
-                    right: rem(10px);
+                    right: rem-calc(10px);
                     transform: translateY(-50%);
                 }
                 .flex-ms{
                     @include flex-row;
                     @include flex-option((
-                        gap: rem(5px),
+                        gap: rem-calc(5px),
                         align-items: center
                     )...);
                     a{
+                        &:hover,
                         &.selected{
                             color: #{$primary};
                             font-weight: 600;
                         }
                     }
                     &+.flex-ms{
-                        margin-top: rem(4px);
+                        margin-top: rem-calc(4px);
                     }
                 }
                 .unit{
@@ -747,16 +802,16 @@ button{
                     margin-left: auto;
                     background: #{$primary};
                     color: #{$white};
-                    border-radius: rem(50px);
-                    padding: rem(2px) rem(8px);
+                    border-radius: rem-calc(50px);
+                    padding: rem-calc(2px) rem-calc(8px);
                 }
                 .section{
                     @extend .font-regular-12px-47;
                     border: 1px solid map-get($active-colors, 2);
-                    border-radius: rem(2px);
-                    height: rem(20px);
-                    line-height: rem(20px);
-                    width: rem(40px);
+                    border-radius: rem-calc(2px);
+                    height: rem-calc(20px);
+                    line-height: rem-calc(20px);
+                    width: rem-calc(40px);
                     text-align: center;
                 }
                 .action{
@@ -770,7 +825,7 @@ button{
                     }
                 }
                 .btn{
-                    padding: 0 rem(5px);
+                    padding: 0 rem-calc(5px);
                     display: inline-block;
                     vertical-align: -4px;
                 }
@@ -804,11 +859,11 @@ button{
             &.size40px{
                 @extend .font-medium-15px-7;
                 width: auto;
-                margin: 0 rem(10px);
+                margin: 0 rem-calc(10px);
             }
             &.size32px{
                 @extend .font-medium-13px-7;
-                width: rem(120px);
+                width: rem-calc(120px);
                 margin: 0 auto;
             }
         }
@@ -818,10 +873,10 @@ button{
                 th{
                     background-color: map-get($map: $bg-grays, $key: 24);
                     border-bottom: 1px solid map-get($map: $bg-grays, $key: 18);
-                    padding: rem(15px) rem(20px);
+                    padding: rem-calc(15px) rem-calc(20px);
                 }
                 td{
-                    padding: rem(15px) rem(20px);
+                    padding: rem-calc(15px) rem-calc(20px);
                 }
             }
         }
@@ -831,24 +886,24 @@ button{
         @include flex-option((
             justify-content: center
         )...);
-        margin-top: rem(20px);
+        margin-top: rem-calc(20px);
         text-align: center;
     }
 }
 mark{
     background: #{$bg-active};
     color: map-get($bg-grays, 1);
-    padding: rem(2px) rem(4px);
+    padding: rem-calc(2px) rem-calc(4px);
     font-weight: 500;
 }
 .speaker{
     display: inline-block;
-    width: rem(40px);
+    width: rem-calc(40px);
     text-align: center;
-    height: rem(20px);
-    border-radius: rem(2px);
+    height: rem-calc(20px);
+    border-radius: rem-calc(2px);
     color: #{$white};
-    font-size: rem(12px);
+    font-size: rem-calc(12px);
     font-weight: 300;
     &.a{
         background: map-get($bg-grays, 7)
@@ -875,14 +930,14 @@ mark{
 }
 // 패턴
 .pattern-help{
-    font-size: rem(12px);
+    font-size: rem-calc(12px);
     display: inline-block;
-    padding: rem(4px) rem(6px);
-    border-radius: rem(2px);
+    padding: rem-calc(4px) rem-calc(6px);
+    border-radius: rem-calc(2px);
     border: 1px solid transparent;
     font-weight: 400;
     line-height: 100%;
-    //margin-right: rem(10px);
+    //margin-right: rem-calc(10px);
     &.a{
         color: map-get($patterntag-colors, 1);
         border-color: map-get($patterntag-colors, 1);
@@ -902,13 +957,13 @@ mark{
         @include flex-row;
         @include flex-option((
             align-items: center,
-            //gap: rem(12px)
+            //gap: rem-calc(12px)
         )...);
         li{
             cursor: pointer;
             position: relative;
-            font-size: rem(13px);
-            padding: 0 rem(8px);
+            font-size: rem-calc(13px);
+            padding: 0 rem-calc(8px);
             &.selected{
                 color: map-get($bg-grays, 1);
                 font-weight: 600;
@@ -933,7 +988,7 @@ mark{
 }
 .empty-data{
     text-align: center;
-    padding: rem(20px) 0;
+    padding: rem-calc(20px) 0;
     color: map-get($bg-grays, 10);
     &:before{
         content: "";
@@ -948,24 +1003,25 @@ mark{
 // 의료NER 태그
 .ner-tag{
     display: inline-block;
-    margin-right: rem(4px);
+    margin-right: rem-calc(4px);
     position: relative;
-    padding: rem(4px) rem(4px) rem(2px) rem(4px);
+    padding: rem-calc(4px) rem-calc(4px) rem-calc(2px) rem-calc(4px);
     color: map-get($bg-grays, 2);
     font-weight: 500;
     line-height: 100%;
     //cursor: pointer;
     position: relative;
+    border-radius: rem-calc(2px);
     &:hover{
         &:after{
             content: "";
-            width: rem(14px);
-            height: rem(14px);
-            border-radius: rem(50px);
+            width: rem-calc(14px);
+            height: rem-calc(14px);
+            border-radius: rem-calc(50px);
             position: absolute;
-            padding: rem(5px);
-            top: rem(-6px);
-            right: rem(-7px);
+            padding: rem-calc(5px);
+            top: rem-calc(-6px);
+            right: rem-calc(-7px);
             background: url(svg-factory('ico_delete_tag',#fff)) no-repeat center center map-get($bg-grays, 40);
             cursor: pointer;
         }

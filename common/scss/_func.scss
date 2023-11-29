@@ -1,4 +1,4 @@
-@function rem($size) {
+@function rem-calc($size) {
     @return calc($size / $base-font-size * 1rem);
 }
 @function get-scale($asis,$tobe){
@@ -188,35 +188,35 @@
     @include flex-row;
     @include flex-option((
         flex-wrap: wrap,
-        gap: rem($gap)
+        gap: rem-calc($gap)
     )...);
 }
 // 토글스위치 형식 버튼
 @mixin swich-content{
     display: inline-block;
-    width: rem(70px);
-    height: rem(30px);
-    border-radius: rem(50px);    
+    width: rem-calc(70px);
+    height: rem-calc(30px);
+    border-radius: rem-calc(50px);    
     border: 1px solid map-get($bg-grays, 45);
     color: $white;
     position: relative;
-    font-size: rem(13px);
-    line-height: rem(30px);
+    font-size: rem-calc(13px);
+    line-height: rem-calc(30px);
     background: #{$white};
-    padding-left: rem(14px);
+    padding-left: rem-calc(14px);
     text-align: left;
     transition: all .3s ease;
     cursor: pointer;
     &.on{
         background: #{$primary};
-        padding-left: rem(32px);
+        padding-left: rem-calc(32px);
         border-color: #{$primary};
         &:before{
             content: "학습";
             color: $white;
         }
         &:after{
-            right: rem(44px);
+            right: rem-calc(44px);
             background: $white;
         }
     }
@@ -229,10 +229,10 @@
         position: absolute;
         right: 5px;
         top: 4px;
-        width: rem(20px);
-        height: rem(20px);
+        width: rem-calc(20px);
+        height: rem-calc(20px);
         background: map-get($bg-grays, 40);
-        border-radius: rem(50px);
+        border-radius: rem-calc(50px);
         transition: all .3s ease;
     }
 }
@@ -240,17 +240,17 @@
 @mixin lnb-toggle-default{
     cursor: pointer;
     position: absolute;
-    top: rem(15px);
+    top: rem-calc(15px);
     left: #{$lnb-w};
     z-index: 2;    
     //transition: all .3s ease;
     .inner-btn{
-        border-radius: 0 rem(6px) rem(6px) 0;
+        border-radius: 0 rem-calc(6px) rem-calc(6px) 0;
         border: 1px solid map-get($bg-grays, 18);
         border-left: 0px none;
         background: #{$white};
-        width: rem(20px);
-        height: rem(30px);
+        width: rem-calc(20px);
+        height: rem-calc(30px);
         @include flex-align-center;
     }
     &.closed{
@@ -271,8 +271,8 @@
     .inner-btn{
         @include flex-align-center;
         border-radius: 100%;
-        width: rem(28px);
-        height: rem(28px);
+        width: rem-calc(28px);
+        height: rem-calc(28px);
         border: 1px solid map-get($bg-grays, 18);
         background: #{$white};
     }
@@ -290,12 +290,12 @@
     border: 1px solid map-get($bg-grays, 18);
     background: map-get($bg-grays, 46);
     height: 100%;
-    border-radius: rem(4px);
-    padding: rem(10px);
+    border-radius: rem-calc(4px);
+    padding: rem-calc(10px);
     @include flex-row;
     @include flex-option((
         //align-items: center,
-        gap: rem(4px)
+        gap: rem-calc(4px)
     )...);
     justify-content: start;
     flex-wrap: wrap;
@@ -303,12 +303,20 @@
 @mixin keyword-item{
     @extend .font-regular-13px-7;
     display: inline-block;
-    height: rem(30px);
-    line-height: rem(30px);
+    height: rem-calc(30px);
+    line-height: rem-calc(30px);
     background: #{$white};
     background: #{$white};
     border: 1px solid map-get($bg-grays, 40);
-    border-radius: rem(50px);
-    padding: 0 rem(10px);
+    border-radius: rem-calc(50px);
+    padding: 0 rem-calc(10px);
     cursor: pointer;
+}
+@mixin keyword-drag-item{
+    @include keyword-item;
+    height: auto;
+    line-height: 1.2;
+    border-radius: rem-calc(2px);
+    padding: rem-calc(5px);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.12);
 }

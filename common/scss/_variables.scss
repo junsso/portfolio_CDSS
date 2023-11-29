@@ -33,6 +33,7 @@ $bg-grays: (
     46:#F6F7FA, // table th bg
     47:#25B4AD,
     48:#DE7373,
+    49:#F7F8FB,
 );
 $def-colors: (
     'bg': map-get($bg-grays, 44),
@@ -59,6 +60,10 @@ $active-colors: (
     18:#E8EBED,
     19:#CEF1FF,
     20:#9EE4FF,
+    21:#636B88,
+    22:#FF7575,
+    23:#EBF6FF,
+    24:#FF0000,
 );
 $nertag-colors: (
     1:#FFDE88, // 증상
@@ -98,9 +103,9 @@ $inner-container: 1280px;
 $aspect-ratio-w: calc(16/9);
 $aspect-ratio-h: calc(2/3);
 $aspect-scale:1.24;
-$header-h: rem(56px);
-$lnb-w: rem(210px);
-$lnb-w-mini: rem(60px);
+$header-h: rem-calc(56px);
+$lnb-w: rem-calc(210px);
+$lnb-w-mini: rem-calc(60px);
 
 // Breakpoints
 $breakpoint-desktop: 1280px;

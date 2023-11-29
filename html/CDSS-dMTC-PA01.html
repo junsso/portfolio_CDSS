@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- lnb가 없는 화면의 경우 .lnb-wrap 요소를 삭제해주세요 -->             
+                <!-- start lnb -->
+                <section class="lnb-wrap">
+                    <div class="lnb-toggle">
+                        <div class="inner-btn"><img src="../img/icon/lnb_toggle.svg" alt="" ></div>
+                    </div>
+                    <ul class="menus">
+                        <li class="current">
+                            <a href="#"><span class="ico"><i class="ico_stethoscope"></i></span><span class="txt">진단 분류 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 키워드</span></a>
+                                </li>
+                                <li class="current">
+                                    <a href="#"><span class="txt">진단 매칭 관리</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_tag"></i></span><span class="txt">의료NER 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 태깅</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 패턴</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_keyword"></i></span><span class="txt">키워드 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">신조어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">토픽제외어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">분석불용어</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_pill"></i></span><span class="txt">의약품 조회</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_person"></i></span><span class="txt">계정 관리</span></a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //end lnb -->
+                <!-- start contents -->
+                <section class="contents">
+                    <div class="pagetitle">
+                        <h1>진단 매칭 관리</h1>
+                        <div class="desp">AI 진단 분류 결과의 매칭률을 조회 및 관리합니다. 최종 진단 분류(주상병)은 진단 분류 모델 생성 시 정답지 데이터로 활용됩니다.</div>
+                    </div>
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row smaller">
+                                <div class="subtitle">
+                                    <h2>진단 매칭 통계</h2>
+                                    <div class="search">
+                                        <input type="text" placeholder="" class="datepicker">
+                                        ~
+                                        <input type="text" placeholder="" class="datepicker">
+                                        <select name="" id="" class="form-select">
+                                            <option value="">내과</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap">
+                                        <div class="data-table">
+                                            <table class="min-width sm">
+                                                <col width="60">
+                                                <col width="">
+                                                <col width="110">
+                                                <col width="110">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th class="orderby">최종 진단 분류(주상병) 매칭률 </th>
+                                                        <th>진료기록 건수</th>
+                                                        <th>진단 매칭 건수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td>
+                                                            <p class="flex-ms">
+                                                                <span class="unit">K02</span>
+                                                                <span class="name"><a href="#;" class="">치아우식</a></span>
+                                                                <span class="percent">70%</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="center">1,234</td>
+                                                        <td class="center">120</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td>
+                                                            <p class="flex-ms">
+                                                                <span class="unit">K02</span>
+                                                                <span class="name"><a href="#;">잇몸 및 무치성 치조융기의 기타 장애</a></span>
+                                                                <span class="percent">70%</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="center">1,234</td>
+                                                        <td class="center">120</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="subtitle">
+                                    <h2>‘내과’ 진단기록별 매칭 관리</h2>
+                                    <div class="search mini">
+                                        <select name="" id="" class="form-select">
+                                            <option value="">매칭여부</option>
+                                        </select>
+                                        <input type="text" placeholder="검색어를 입력해주세요" value="치아우식">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap">
+                                        <div class="data-table">
+                                            <table class="min-width lg">
+                                                <col width="60">
+                                                <col width="100">
+                                                <col width="">
+                                                <col width="">
+                                                <col width="240">
+                                                <col width="200">
+                                                <col width="80">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>진료기록일시</th>
+                                                        <th>진료의</th>
+                                                        <th>환자명</th>
+                                                        <th>AI 진단 분류</th>
+                                                        <th>최종 진단 분류(주상병)
+                                                            <div class="tooltip-box bottom xs">
+                                                                <button class="ico_help"></button>
+                                                                <div class="tool-tip-conts">
+                                                                    <div class="inn">
+                                                                        말풍선 가이드 내용
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <th>매칭여부</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="center">1</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">홍길동</td>
+                                                        <td>
+                                                            <p class="flex-ms">
+                                                                <span class="section">키워드</span>
+                                                                <span class="unit">K20</span>
+                                                                <span class="name">위궤양</span>
+                                                            </p>
+                                                            <p class="flex-ms">
+                                                                <span class="section">47.6%</span>
+                                                                <span class="unit">K50</span>
+                                                                <span class="name">크론병[국소성 장염]</span>
+                                                            </p>
+                                                            <p class="flex-ms">
+                                                                <span class="section">27.2%</span>
+                                                                <span class="unit">K63</span>
+                                                                <span class="name">장의 기타 질환</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="center">
+                                                            <p class="flex-ms view-details" data-popup="dgDetails">
+                                                                <span class="unit">K50</span>
+                                                                <span class="name">크론병[국소성 장염]</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="center"><span class="action yes">Y</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="center">2</td>
+                                                        <td class="center">2023-09-10 13:43</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">홍길동</td>
+                                                        <td>
+                                                            <p class="flex-ms">
+                                                                <span class="section">키워드</span>
+                                                                <span class="unit">K20</span>
+                                                                <span class="name">위궤양</span>
+                                                            </p>
+                                                            <p class="flex-ms">
+                                                                <span class="section">47.6%</span>
+                                                                <span class="unit">K50</span>
+                                                                <span class="name">크론병[국소성 장염]</span>
+                                                            </p>
+                                                            <p class="flex-ms">
+                                                                <span class="section">27.2%</span>
+                                                                <span class="unit">K63</span>
+                                                                <span class="name">장의 기타 질환</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="center">
+                                                            <p class="flex-ms view-details" data-popup="dgDetails">
+                                                                <span class="unit">K50</span>
+                                                                <span class="name">크론병[국소성 장염]</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="center"><span class="action no">N</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="btn-set">
+                                            <a href="#;" class="btn primary_md size36px radius6px">더보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

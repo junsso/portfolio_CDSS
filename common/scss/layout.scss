@@ -9,10 +9,10 @@ header{
     @include flex-row;
     @include flex-option((
         align-items: center,
-        gap: rem(90px)
+        gap: rem-calc(90px)
     )...);
     height: #{$header-h};
-    padding: 0 rem(30px);
+    padding: 0 rem-calc(30px);
     border-bottom: 1px solid map-get($bg-grays, 18);
     position: relative;
     z-index: 10;
@@ -32,8 +32,8 @@ header{
                 &:hover{
                     a{
                         &:after{                            
-                            left: rem(15px);
-                            right: rem(15px);
+                            left: rem-calc(15px);
+                            right: rem-calc(15px);
                         }
                     }
                 }
@@ -48,20 +48,20 @@ header{
                 @include flex-row;
                 @include flex-option((
                     align-items: center,
-                    gap: rem(5px)
+                    gap: rem-calc(5px)
                 )...);
-                padding: 0 rem(15px);
+                padding: 0 rem-calc(15px);
                 height: 100%;
                 position: relative;
                 .ico{
-                    margin-top: rem(-1.5px);
+                    margin-top: rem-calc(-1.5px);
                 }
                 &:after{
                     content: "";
                     position: absolute;
                     left: 50%;
                     right: 50%;
-                    bottom: rem(15px);
+                    bottom: rem-calc(15px);
                     height: 1px;
                     background: map-get($active-colors, 1);
                     transition: all .3s ease;
@@ -75,29 +75,29 @@ header{
             @include flex-row;
             @include flex-option((
                 align-items: center,
-                gap: rem(10px)
+                gap: rem-calc(10px)
             )...);
             & > li{
                 position: relative;
                 & > a{
                     // //@extend .buttons-box-type1;
                     // @extend .font-regular-14px-3;
-                    // height: rem(30px);
-                    padding: 0 rem(10px);
+                    // height: rem-calc(30px);
+                    padding: 0 rem-calc(10px);
                     // color: map-get($bg-grays,4);
                     // @include flex-row;
                     // @include flex-option((
                     //     align-items: center,
-                    //     gap: rem(5px)
+                    //     gap: rem-calc(5px)
                     // )...);
                     transition: none;
                     // image icon
                     .ico{
                         //display: inline-block;
-                        width: rem(16px);
-                        height: rem(16px);
+                        width: rem-calc(16px);
+                        height: rem-calc(16px);
                         //vertical-align: middle;
-                        //margin-right: rem(5px);
+                        //margin-right: rem-calc(5px);
                         &.book-color{
                             background: url(#{$img-icon-url}book.png) no-repeat center center;
                         }
@@ -109,7 +109,7 @@ header{
                 &.user-menu{
                     &:hover{
                         a{
-                            border-radius: rem(16px) rem(16px) 0 0;
+                            border-radius: rem-calc(16px) rem-calc(16px) 0 0;
                         }
                         .dropdown{
                             display: block;
@@ -123,16 +123,16 @@ header{
             position: absolute;
             left: 0; 
             right: 0;
-            top: rem(29px);
+            top: rem-calc(29px);
             background: #{$white};
             @include border;
-            border-radius: 0 0 rem(16px) rem(16px);
-            padding: rem(5px) 0;
+            border-radius: 0 0 rem-calc(16px) rem-calc(16px);
+            padding: rem-calc(5px) 0;
             li{
                 a{
                     @extend .font-regular-13px-7;
                     display: block;
-                    padding: rem(3px) rem(10px);
+                    padding: rem-calc(3px) rem-calc(10px);
                     &:hover{
                         text-decoration: underline;
                     }
@@ -157,7 +157,7 @@ header{
             @include lnb-toggle-closed;
         }
         .menus{
-            margin-top: rem(56px);
+            margin-top: rem-calc(56px);
             & > li{
                 &.has-sub{
                     & > a{
@@ -209,22 +209,22 @@ header{
     //transition: all 5s ease;
     z-index: 1;
     .menus{
-        margin: rem(15px);
+        margin: rem-calc(15px);
         & > li{
-            line-height: rem(32px);
+            line-height: rem-calc(32px);
             &+li{
-                margin-top: rem(8px);
+                margin-top: rem-calc(8px);
             }
             &.current{
                 & > a{
                     background: map-get($active-colors, 1);
                     color: #{$white};
-                    border-radius: rem(6px);
+                    border-radius: rem-calc(6px);
                 }
                 &.has-sub{
                     & > a{
                         &:after{
-                            right: rem(10px);
+                            right: rem-calc(10px);
                             background: url(svg-factory(ico_arrow_toggle,#{$white})) no-repeat center / contain;
                         }
                     }
@@ -246,10 +246,10 @@ header{
                         content: "";
                         position: absolute;
                         top: 50%;
-                        right: rem(10px);
+                        right: rem-calc(10px);
                         background: url(svg-factory(ico_arrow_toggle,#929292)) no-repeat center / contain;
-                        width: rem(11px);
-                        height: rem(11px);
+                        width: rem-calc(11px);
+                        height: rem-calc(11px);
                         transform: translateY(-50%);
                     }
                 }
@@ -278,13 +278,13 @@ header{
                 }
             }
             .ico{
-                width: rem(32px);
-                height: rem(32px);
-                padding: rem(7px);
-                //margin-top: rem(-4px);
+                width: rem-calc(32px);
+                height: rem-calc(32px);
+                padding: rem-calc(7px);
+                //margin-top: rem-calc(-4px);
             }
             & > ul{
-                margin-left: rem(32px);
+                margin-left: rem-calc(32px);
                 display: none;
                 li{
                     &.current{
@@ -316,7 +316,7 @@ header{
                 left: 50%;
                 right: 50%;
                 bottom: 0;
-                height: rem(1px);
+                height: rem-calc(1px);
                 background: map-get($active-colors, 1);
                 transition: all .3s ease;
             }
@@ -371,14 +371,14 @@ body{
     .popup-content{
         background: $white;
         min-width: #{$modal-xs};
-        border-radius: rem(6px);
+        border-radius: rem-calc(6px);
         box-shadow: 0 0 15px rgba(0,0,0,0.5);
         .popup-header{
-            padding: rem(10px) rem(20px);
+            padding: rem-calc(10px) rem-calc(20px);
             display: flex;
             align-items: center;
             background-color: map-get($map: $bg-grays, $key: 46);
-            border-radius: rem(6px) rem(6px) 0 0;
+            border-radius: rem-calc(6px) rem-calc(6px) 0 0;
             overflow: hidden;
             h2{
                 @extend .font-bold-18px-2;
@@ -393,8 +393,8 @@ body{
         }
         .popup-body-top{
             @include flex-align-center;
-            gap: rem(5px);
-            padding: rem(20px);
+            gap: rem-calc(5px);
+            padding: rem-calc(20px);
             background-color: map-get($map: $active-colors, $key: 14);
             border-bottom: 1px solid map-get($map: $bg-grays, $key: 19);
             @extend .font-medium-18px-11;
@@ -402,12 +402,12 @@ body{
                 @extend .afont-medium-20px-1;
             }
             h3{
-                font-size: rem(20px);
+                font-size: rem-calc(20px);
                 color: map-get($map: $bg-grays, $key: 11);
             }
         }
         .popup-body{
-            padding: rem(20px);
+            padding: rem-calc(20px);
             @include scrollbar;
             height: auto;
             max-height: calc(100vh - 52px - 80px - 100px );
@@ -432,8 +432,8 @@ body{
                 gap: 10px;
                 // button{
                 //     border:1px solid map-get($map: $bg-grays, $key: 18);
-                //     border-radius: rem(6px);
-                //     padding: rem(7px) rem(30px);
+                //     border-radius: rem-calc(6px);
+                //     padding: rem-calc(7px) rem-calc(30px);
                 //     background-color: $white;
                 //     $height: 46px;
                 //     &.positive{
@@ -544,7 +544,7 @@ body{
         word-break: keep-all;
         h2{
             @extend .font-bold-16px-2;
-            margin-bottom: rem(10px);
+            margin-bottom: rem-calc(10px);
         }
         strong{
             color: #{$primary};

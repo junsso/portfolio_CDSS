@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import 'variables', 'func';
 
-
 // fontset
 $listFontSet:(
     (small2,12px,5),
@@ -13,6 +12,7 @@ $listFontSet:(
     (regular,12px,47),
     (regular,12px,48),
     (regular,12px,13),
+    (regular,13px,2),
     (regular,13px,7),
     (regular,13px,4),
     (regular,13px,26),
@@ -21,6 +21,7 @@ $listFontSet:(
     (regular,14px,5),
     (regular,14px,7),
     (regular,14px,13),
+    (regular,14px,17),
     (regular,14px,48),
     (regular,16px,13),
     (regular,14px,31),
@@ -31,6 +32,7 @@ $listFontSet:(
     (regular,18px,2),
     (regular,18px,26),
     (regular,18px,48),
+    (medium,12px,7),
     (medium,13px,7),
     (medium,13px,10),
     (medium,13px,11),
@@ -39,6 +41,7 @@ $listFontSet:(
     (medium,14px,7),
     (medium,15px,7),
     (medium,16px,1),
+    (medium,16px,2),
     (medium,16px,4),
     (medium,16px,7),
     (medium,16px,11),
@@ -54,7 +57,9 @@ $listFontSet:(
     (bold,16px,2),
     (bold,16px,3),
     (bold,16px,4),
+    (bold,16px,7),
     (bold,18px,2),
+    (bold,18px,26),
     (bold,20px,8),
     (bold,20px,26),
     (bold,24px,2),
@@ -66,11 +71,12 @@ $listFontSet:(
     .font-#{$weight}-#{$size}-#{$color}{
         @include font((
             weight: map-get($font-weights, $weight),
-            size: rem($size), 
+            size: rem-calc($size), 
             color: map-get($bg-grays, $color)
         )...);
     }
 }
+
 $listActiveFontSet:(
     (regular,14px,1),
     (regular,24px,10),
@@ -84,7 +90,7 @@ $listActiveFontSet:(
     .afont-#{$weight}-#{$size}-#{$color}{
         @include font((
             weight: map-get($font-weights, $weight),
-            size: rem($size), 
+            size: rem-calc($size), 
             color: map-get($active-colors, $color)
         )...);
     }
@@ -114,6 +120,7 @@ $listActiveFontSet:(
         'ico_download_wh': '<svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 16.4163V15.1663H13.25V16.4163H0.75ZM6.99196 13.1791L1.7356 6.3282H4.76442V0.583008H9.22752V6.3282H12.2564L6.99196 13.1791ZM6.99196 11.1439L9.6891 7.5862H7.97756V1.83299H6.0144V7.5862H4.30283L6.99196 11.1439Z" fill="#{$fill-color}"/></svg>',
         'ico_delete_tag': '<svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.20074 6.82668L0.673828 6.29976L3.47383 3.49976L0.673828 0.699764L1.20074 0.172852L4.00074 2.97285L6.80074 0.172852L7.32765 0.699764L4.52765 3.49976L7.32765 6.29976L6.80074 6.82668L4.00074 4.02668L1.20074 6.82668Z" fill="#{$fill-color}"/></svg>',
         'ico_sdcard': '<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.3077 19.5C1.80257 19.5 1.375 19.325 1.025 18.975C0.675 18.625 0.5 18.1974 0.5 17.6923V6.21153L6.21152 0.5H13.6922C14.1974 0.5 14.625 0.675 14.975 1.025C15.325 1.375 15.5 1.80257 15.5 2.3077V17.6923C15.5 18.1974 15.325 18.625 14.975 18.975C14.625 19.325 14.1974 19.5 13.6922 19.5H2.3077ZM2.3077 18H13.6922C13.7692 18 13.8397 17.9679 13.9038 17.9038C13.9679 17.8397 14 17.7692 14 17.6923V2.3077C14 2.23077 13.9679 2.16024 13.9038 2.09613C13.8397 2.03203 13.7692 1.99998 13.6922 1.99998H6.84998L1.99997 6.84998V17.6923C1.99997 17.7692 2.03202 17.8397 2.09612 17.9038C2.16024 17.9679 2.23077 18 2.3077 18ZM7.99997 14.6153C8.24484 14.6153 8.44708 14.5323 8.6067 14.3663C8.76632 14.2003 8.84613 14.0012 8.84613 13.7692C8.84613 13.5372 8.76632 13.3381 8.6067 13.1721C8.44708 13.0061 8.24484 12.9231 7.99997 12.9231C7.75511 12.9231 7.55287 13.0061 7.39325 13.1721C7.23363 13.3381 7.15382 13.5372 7.15382 13.7692C7.15382 14.0012 7.23363 14.2003 7.39325 14.3663C7.55287 14.5323 7.75511 14.6153 7.99997 14.6153ZM7.25 11.2115H8.74995V6.38463H7.25V11.2115ZM2.3077 18H1.99997H14H2.3077Z" fill="#{$fill-color}"/></svg>',
+        'ico_checked' :'<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.28848 7.97695L0 4.68848L0.688475 4L3.28848 6.6L9.88848 0L10.577 0.688475L3.28848 7.97695Z" fill="#{$fill-color}"/></svg>',
     );
     $svg : map-get($listIcons, $iconName);
 
@@ -146,6 +153,7 @@ $listIcons:(
     ('ico_download_wh', map-get($map: $bg-grays, $key: 26), 16px, 16px),
     ('ico_delete_tag', map-get($map: $bg-grays, $key: 26), 7px, 7px),
     ('ico_sdcard', map-get($map: $bg-grays, $key: 7), 15px, 19px),
+    ('ico_checked', map-get($map: $bg-grays, $key: 17), 11px, 8px),
     // modal
     ('ico_modal_close', map-get($map: $bg-grays, $key: 7), 13px, 13px),
     ('ico_launch', map-get($map: $bg-grays, $key: 2), 6px, 10px),
@@ -153,7 +161,7 @@ $listIcons:(
 @each $svg, $color, $width, $height in $listIcons{
     .#{$svg}{
         background: url(svg-factory($svg,$color)) no-repeat center / contain;
-        margin-top: rem(1px);
+        margin-top: rem-calc(1px);
         width: $width;
         height: $height;
         display: inline-block;

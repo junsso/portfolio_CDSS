@@ -95,4 +95,55 @@ $(function(){
         //초기값을 오늘 날짜로 설정
         $('.datepicker').datepicker('setDate','today');//(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
     });
+
+    //의무기록 수정
+    let dargEditbox = $('.dragndrop-box .drag-box .col .txt');
+    $(function(){
+        $(dargEditbox).bind('mouseover mouseout',function(e){
+            if(e.type == 'mouseover'){
+                $(this).addClass('active');
+            }else if(e.type == 'mouseout'){
+               $(this).removeClass('active');
+            }
+        });
+
+        $(document).on('click', '.dragndrop-box .drag-box .col .txt .ico', function(){
+
+            if($(this).hasClass('edit') === true){
+                $(this).removeClass('edit');
+                $(this).addClass('save');
+                $(this).parents('.col').siblings().find('ico').removeClass('save');
+                $(this).parents('.col').addClass('current');
+                $(this).parents('.col').siblings().removeClass('current');
+            }else{
+                $(this).addClass('edit');
+                $(this).removeClass('save');
+                $(this).parents('.col').removeClass('current');
+            }
+
+            // let value = $(this).closest('.txt').attr('contenteditable');
+            // if (value == 'false') {
+            //     $(this).closest('.txt').attr('contenteditable','true');
+            //     $(this).parents('.col').siblings().find('.txt').attr('contenteditable','false');
+            // }
+            // else {
+            //     $(this).closest('.txt').attr('contenteditable','false');
+            // }
+            
+        });
+        // $(document).on('click', '.dragndrop-box .drag-box .col .txt .ico.save', function(){
+        //     $(this).closest('.txt').attr('contenteditable','false');
+        //     $(this).parents('.col').removeClass('current');
+        // });
+
+    });
+
+    //탭
+    $(document).on('click', '.tab-box .tab ul li', function(){
+        var tab_id = $(this).attr('data-tab');
+      
+        $(this).addClass('current').siblings().removeClass('current');
+        $("#"+tab_id).addClass('current').siblings().removeClass('current');
+        return false;
+    });
 });

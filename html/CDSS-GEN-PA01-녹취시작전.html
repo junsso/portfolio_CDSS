@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- start contents 녹취 시작전,시작후에는 contents클래스에 smaller 클래스가 붙음 -->
+                <section class="contents smaller">
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row full md">
+                                <div class="patient-box">
+                                    <div class="col info">
+                                        <ul class="summary">
+                                            <li><span>2023.07.11 09:50</span></li>
+                                            <li><span>진료의 김퍼즐</span></li>
+                                            <li><span>환자 한*희</span></li>
+                                        </ul>
+                                        <div class="search">
+                                            <a href="#;" class="btn primary_md size36px radius6px">기록 생략</a>
+                                            <select name="" id="" class="form-select">
+                                                <option value="" selected disabled hidden>기록 환자 변경</option>
+                                                <option value="① 홍*동|남|57세">① 홍*동|남|57세</option>
+                                                <option value="② 홍*동|남|57세">② 홍*동|남|57세</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="summary sm">
+                                            <li><span><em class="num">158479620</em>&nbsp;&nbsp;&nbsp;&nbsp;여 60세</span></li>
+                                            <li>
+                                                <div class="form-wrap">
+                                                    <input type="checkbox" id="check" class="disabled" >
+                                                    <label for="check">임신여부</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="record-box">
+                                    <div class="col top">
+                                        <img src="../img/temp/img_pc.svg" alt="">
+                                        <p>
+                                            ‘진료 기록하기’ 버튼을 눌러 진료 기록을 시작해 보세요.<br>
+                                            녹음은 최대 nn분까지 가능합니다.
+                                        </p>
+                                    </div>
+                                    <div class="col bottom">
+                                        <button type="button" class="btn ball"><span></span></button>
+                                        <p>진료 기록하기</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

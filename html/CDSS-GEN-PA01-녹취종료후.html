@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_chart active"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li><a href="#"><span class="ico ico_setting "></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- start contents 녹취 종류후에는 contents클래스에 smaller 클래스 삭제 -->
+                <section class="contents">
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row full md">
+                                <div class="patient-box">
+                                    <div class="col info">
+                                        <ul class="summary">
+                                            <li><span>2023.07.11 09:50</span></li>
+                                            <li><span>진료의 김퍼즐</span></li>
+                                            <li><span>환자 한*희</span></li>
+                                        </ul>
+                                        <div class="search">
+                                            <select name="" id="" class="form-select">
+                                                <option value="">진료기록 요약</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="summary sm">
+                                            <li><span><em class="num">158479620</em>&nbsp;&nbsp;&nbsp;&nbsp;여 60세</span></li>
+                                            <li>
+                                                <div class="form-wrap">
+                                                    <input type="checkbox" id="check" class="disabled" >
+                                                    <label for="check">임신여부</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex-wrap">
+                                    <div class="row sm">
+                                        <div class="rela_wrap">
+                                            <div class="inner-wrap">
+                                                <div class="subtitle full">
+                                                    <div class="search mini">
+                                                        <input type="text" placeholder="검색어를 입력해주세요" value="치핵">
+                                                        <button type="submit" class="mini">검색</button>
+                                                    </div>
+                                                </div>
+                                                <div class="diag-full-content">
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area">배</span>는 좀 가라앉으셨나요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">네 <span class="ner-tag symtom">복통</span>은 없었고요 좋습니다</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text"><span class="ner-tag symtom">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 백혈구 수치가 떨어져서 <span class="ner-tag medi">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">네 네</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date">두달</span>마다 오는게 좀 부담스러울거같아요</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="record-box after end">
+                                            <div class="col sound">
+                                                <div class="record">
+                                                    <div class="inner">
+                                                        <img src="../img/temp/img_record_bg2.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col bottom">
+                                                <div class="timer">
+                                                    <span class="start">01:43</span>
+                                                    <span class="end">04:05</span>
+                                                </div>
+                                                <div class="btn-box">
+                                                    <button type="button" class="btn play"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row xs">
+                                        <div class="rela_wrap">
+                                            <div class="inner-wrap">
+                                                <div class="subtitle">
+                                                    <h2>주요 키워드</h2>
+                                                </div>
+                                                <div class="inner-wrapper">
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag aff-area">환부</h3>
+                                                        <span class="drag-tag">배(4)</span>
+                                                        <span class="drag-tag">장</span>
+                                                    </div>
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag symtom">증상</h3>
+                                                        <span class="drag-tag">배가 안가라앉음</span>
+                                                        <span class="drag-tag">장</span>
+                                                        <span class="drag-tag">복통(2)</span>
+                                                        <span class="drag-tag">피고름</span>
+                                                        <span class="drag-tag">글자수가 영역 너비를 초과하는 경우 글자수가 영역 너비를 초과하는 경우</span>
+                                                    </div>
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag diag">진단</h3>
+                                                        <span class="drag-tag">염증반응</span>
+                                                        <span class="drag-tag">크론병</span>
+                                                        <span class="drag-tag">염증성장질환</span>
+                                                    </div>
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag medi">약물</h3>
+                                                        <span class="drag-tag">면역억제제(4)</span>
+                                                        <span class="drag-tag">아자치오프린 면역억제제</span>
+                                                        <span class="drag-tag">이뮤란</span>
+                                                    </div>
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag treat">검사</h3>
+                                                        <span class="drag-tag">씨알피(4)</span>
+                                                        <span class="drag-tag">피검사</span>
+                                                        <span class="drag-tag">백혈구 검사</span>
+                                                    </div>
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag date">날짜</h3>
+                                                        <span class="drag-tag">이틀 뒤</span>
+                                                        <span class="drag-tag">목요일(3)</span>
+                                                        <span class="drag-tag">오늘</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row full">
+                                <div class="flex-wrap">
+                                    <div class="row">
+                                        <div class="flex-wrap">
+                                            <div class="row">
+                                                <div class="subtitle line">
+                                                    <h2>의무기록</h2>
+                                                    <span class="desc">진료대화를 분석하여 의무기록을 생성합니다.</span>
+                                                    <div class="search">
+                                                        <a href="#" class="btn negative2_xs size24px radius2px">EMR 전송</a>
+                                                    </div>
+                                                </div>
+                                                <div class="rela_wrap">
+                                                    <div class="inner-wrap space">
+                                                        <div class="dragndrop-box">
+                                                            <div class="flex-wrap">
+                                                                <div class="col">
+                                                                    <div class="title">Subjective</div>
+                                                                    <div class="drag-box">
+                                                                        <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="title">Objective</div>
+                                                                    <div class="drag-box">
+                                                                        <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="title">Assessment</div>
+                                                                    <div class="drag-box">
+                                                                        <div class="drop">
+                                                                            <span class="desc">Assessment 추가하기</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="title">Plan</div>
+                                                                    <div class="drag-box">
+                                                                        <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="title">Memo</div>
+                                                                    <div class="drag-box">
+                                                                        <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="smalltitle">
+                                                    <h2>유사 진료 이력</h2>
+                                                    <div class="search">
+                                                        <a href="#" class="btn neutral_md size30px radius3px disabled"><span class="ico refresh"></span>업데이트</a>
+                                                    </div>
+                                                </div>
+                                                <div class="rela_wrap height50">
+                                                    <div class="inner-wrap space">
+                                                        <div class="flex-wrap clm">
+                                                            <div class="row">
+                                                                <div class="tab-box">
+                                                                    <div class="title">
+                                                                        <a href="#" class="btn neutral_xs size20px radius2px">주상병</a>
+                                                                        <span class="desc">대장의 클노병_상세불명</span>
+                                                                        <span class="date">2023.07.11 06:50</span>
+                                                                    </div>
+                                                                    <div class="tab">
+                                                                        <ul>
+                                                                            <li class="current" data-tab="tab1"><a href="#" >Subjective</a></li>
+                                                                            <li data-tab="tab2"><a href="#" >Objective</a></li>
+                                                                            <li data-tab="tab3"><a href="#" >Assessment</a></li>
+                                                                            <li data-tab="tab4"><a href="#">Plan</a></li>
+                                                                            <li data-tab="tab5"><a href="#">진료기록요약</a></li>
+                                                                        </ul>
+                                                                        <div class="cont-box">
+                                                                            <div class="conts current" id="tab1">
+                                                                                <p>환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab2">
+                                                                                <p>2환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab3">
+                                                                                <p>3환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab4">
+                                                                                <p>4환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab5">
+                                                                                <p>5환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-box">
+                                                                    <div class="title">
+                                                                        <a href="#" class="btn neutral_xs size20px radius2px">주상병</a>
+                                                                        <span class="desc">대장의 클노병_상세불명</span>
+                                                                        <span class="date">2023.07.11 06:50</span>
+                                                                    </div>
+                                                                    <div class="tab">
+                                                                        <ul>
+                                                                            <li class="current" data-tab="tab1_1"><a href="#" >Subjective</a></li>
+                                                                            <li data-tab="tab1_2"><a href="#" >Objective</a></li>
+                                                                            <li data-tab="tab1_3"><a href="#" >Assessment</a></li>
+                                                                            <li data-tab="tab1_4"><a href="#">Plan</a></li>
+                                                                            <li data-tab="tab1_5"><a href="#">진료기록요약</a></li>
+                                                                        </ul>
+                                                                        <div class="cont-box">
+                                                                            <div class="conts current" id="tab1_1">
+                                                                                <p>환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab1_2">
+                                                                                <p>2환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab1_3">
+                                                                                <p>3환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab1_4">
+                                                                                <p>4환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                            <div class="conts" id="tab1_5">
+                                                                                <p>5환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="flex-wrap">
+                                            <div class="row">
+                                                <div class="rela_wrap">
+                                                    <div class="inner-wrap space">
+                                                        <div class="subtitle line">
+                                                            <h2>진단</h2>
+                                                            <span class="desc">의무기록을 분석하여 상병을 추천합니다.</span>
+                                                            <div class="search">
+                                                                <a href="#" class="btn negative2_xs size24px radius2px">EMR 전송</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>
