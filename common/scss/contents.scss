@@ -285,6 +285,53 @@
     }
     //녹취종로후 화자분리
     &.edit{
+        cursor: default;
+    }
+    //진료기록 원문 요약
+    &.sum{
+        .line{
+            display: flex;
+            gap: rem-calc(10px);
+            padding: rem-calc(4px) rem-calc(20px);
+            .s-user{
+                strong{
+                    border-radius: 2px;
+                    line-height: rem-calc(20px);
+                    min-width: rem-calc(40px);
+                    text-align: center;
+                    @extend .font-regular-12px-26;
+                    color: $white;
+                }
+            }
+            &.speaker-a{
+                strong{
+                    background-color: map-get($bg-grays, 7);
+                }
+            }
+            &.speaker-b{
+                background-color: $white;
+                strong{
+                    background-color: map-get($active-colors, 2);
+                }
+            }
+        }
+    }
+}
+.scroll-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid map-get($bg-grays, 1);
+    border-radius: 20px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+    background-color: $white;
+    button{
+        display: block;
+        width: rem-calc(20px);
+        height: rem-calc(10px);
+    }
+    .up{
+        background-image: url(#{$img-icon-url}ico_arrow_drop_up.svg);
     }
 }
 .summary{
@@ -912,6 +959,7 @@
                 left: 0;
                 transform: translateY(-50%);
             } 
+            &.active,
             &:focus,
             &:hover{
                 background-color:  map-get($active-colors, 25);
@@ -1203,7 +1251,7 @@
 
 .target-play{
     position: absolute;
-    bottom: 0;
+    bottom: 3%;
     right: rem-calc(20px);
     z-index: 10;
     .btn{

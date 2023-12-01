@@ -1301,6 +1301,9 @@ mark{
         }
     }
 }
+.start-tag{
+    background-color: map-get($active-colors, 25);
+}
 .primary{
     color: #{$primary};
 }
@@ -1384,5 +1387,18 @@ mark{
         position: absolute;
         top: 0;
         right: 0;
+    }
+}
+
+
+.summary-list-box{
+    padding: rem-calc(10px);
+    ol{
+        list-style-type: decimal;
+        padding: rem-calc(10px) rem-calc(23px);
+        li{
+           display: list-item;
+           list-style-type: decimal;
+        }
     }
 }
