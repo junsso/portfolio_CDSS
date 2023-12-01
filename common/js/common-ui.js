@@ -126,6 +126,8 @@ $(function(){
         $(document).on('click', '.dragndrop-box .drag-box .col .txt .save', function(){
             $(this).closest('.txt').attr('contenteditable','false');
             $(this).closest('.col').removeClass('active');
+            $(this).removeClass('save');
+            $(this).addClass('edit');
         });
 
     });
@@ -138,4 +140,38 @@ $(function(){
         $("#"+tab_id).addClass('current').siblings().removeClass('current');
         return false;
     });
+
+    //진료기록생성 > 처방 > 약품명
+    let inputFocus = $('.data-table.receipt input');
+    $(inputFocus).on('input', function(){
+        $(this).closest('tr').addClass('selected');
+        $(this).closest('tr').siblings().removeClass('selected');
+    });
+    $(document).on('click', function(event){
+        if (!$(event.target).closest('tr').length) {
+            $('tr').removeClass('selected');
+        }
+    });
+
+    //DUR위배 현황 swiper
+    var clGradeLIst = new Swiper('.swipe-wrap .swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        breakpointsBase: 'window',
+    });
+    $('.swipe-wrap .swiper-slide').on('click',function(){
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    })
+
+    ////DUR위배 현황 상세정보 툴팁
+    $(document).on('click', '.tooltip-box .btn-more', function(){        
+        $(this).closest('.tooltip-box').toggleClass('active');
+        $(this).closest('tr').siblings().find('.tooltip-box.active').removeClass('active');
+    });
+    $(document).on('click', '.tooltip-box .close', function(){
+        $(this).closest('.tooltip-box').removeClass('active');
+    });
+
+
 });

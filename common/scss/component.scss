@@ -116,6 +116,9 @@
 /** 페이징 시작 */
 .pagination{
     margin: rem-calc(20px) 0 0 0;
+    &.mg0{
+        margin-top: 0;
+    }
     .page{
         @include flex-align-center;
         gap: rem-calc(10px);
@@ -302,6 +305,71 @@
             }
         }
     }
+    &.layer{
+        .tool-tip-conts{
+            visibility: visible;
+            overflow: initial;
+            opacity: 1;
+            height: auto;
+            width: 90%;
+            .inn{
+                width: 100%;
+                height: auto;
+                overflow: initial;
+                //min-width: rem-calc(200px);
+                ///color:$base-text-color;
+                font-size: rem-calc(13px);
+                line-height: 140%;
+                &::before{
+                    left: 5%;
+                }
+            }
+        }
+        &.bottom{
+            .tool-tip-conts{
+                top: 140%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &.left{
+            .tool-tip-conts{
+                top: 50%;
+                right: 16%;
+                transform: translateY(-50%);
+            }
+            .inn{
+                &::before{
+                    top: 50%;
+                    left: auto;
+                    right: -10px;
+                    transform: translate(0,-50%) rotate(90deg);      
+                }
+            }
+        }
+        &.popup{
+            .btn-box{
+                background-color: map-get($map: $bg-grays, $key: 46);
+                display: flex;
+                align-items: center;
+                padding: rem-calc(8px) rem-calc(10px);
+                margin: rem-calc(-10px) rem-calc(-10px) rem-calc(10px);
+                .close{
+                    text-indent: -9999px;
+                }
+            }
+            .tool-tip-conts{
+                visibility: hidden;
+                opacity: 0;
+            }
+            &.active{
+                .tool-tip-conts{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
     &:hover{
         .tool-tip-conts{
             visibility: visible;
@@ -319,6 +387,7 @@
         }
     }
 }
+
 /** input set */
 input{
     transition: all .3s ease;
@@ -421,27 +490,64 @@ input{
                 cursor: default;
             }
         }
-        // &:checked + label,
-        // &:checked.disabled + label{
-        //     &::before{   
-        //         $checked-color : map-get($map: $active-colors, $key: 1);
-        //         background-color: map-get($bg-grays, 21);
-        //         border: 0;
-        //     }
-        // }
-        // $listIconChecked: (heart, like, scrap);
-        // @each $icon-name in $listIconChecked{
-        //     &.#{$icon-name}{
-        //         & + label::before{
-        //             //@extend .ico_#{$icon-name};
-        //             border:0 none;
-        //         }
-        //         &:checked + label::before{
-        //             //@extend .ico_#{$icon-name}_active;
-        //             background-color: transparent;
-        //         }
-        //     }
-        // }
+
+    }
+    // radio
+    &[type="radio"]{
+        display: none;
+        &+label{
+            @include user-select;
+            @include flex-align-center;
+            @extend .font-regular-14px-26;
+            color: map-get($bg-grays, 7);
+            gap: rem-calc(6px);
+            cursor: pointer;
+            position: relative;
+            width: max-content;
+            &::before{
+                content: '';
+                display: inline-block;
+                @include border((
+                    color: map-get($map: $bg-grays, $key: 18),
+                    radius: rem-calc(2px)
+                )...);
+                $box-size: rem-calc(23px);
+                @include box((
+                    width: rem-calc(16px),
+                    height: rem-calc(16px),
+                    line-height: rem-calc(16px),
+                    bg-color: $white
+                )...);
+                margin-top: 1px;
+                border-radius: 100%;
+            }
+        }
+        &:checked + label{
+            @extend .font-bold-14px-26;
+            color: map-get($active-colors, 2);
+            &::before{
+                background: $white;
+                border: 5px solid map-get($active-colors, 2);
+                box-sizing: border-box;
+            }
+        }
+        &.disabled + label{
+            color: map-get($bg-grays, 17);
+            &::before{                
+                background-color:  map-get($bg-grays, 44);
+                border: 1px solid map-get($bg-grays, 21);
+                cursor: default;
+            }
+        }
+        &:checked.disabled + label{
+            color: map-get($bg-grays, 17);
+            &::before{                 
+                background: $white;
+                border: 5px solid map-get($bg-grays, 44);
+                box-sizing: border-box;
+                cursor: default;
+            }
+        }
 
     }
 }
@@ -553,6 +659,9 @@ input{
             height: rem-calc(20px);
             background-size: rem-calc(13px);
         }
+    }
+    &.padding-xs{
+        padding: 0 rem-calc(5px);
     }
 }
 .ico-btn{
@@ -670,6 +779,9 @@ button{
     table{
         &.min-width{
             min-width: rem-calc(680px);
+            &.xs{
+                min-width: rem-calc(300px);
+            }
             &.sm{
                 min-width: rem-calc(540px);
             }
@@ -881,18 +993,100 @@ button{
             }
         }
         &.receipt{
+            thead{
+                th{
+                    border: 0;
+                    background-color: $white;
+                    text-align: left;
+                    @extend .font-bold-14px-2;
+                    padding: 0 rem-calc(4px);
+                    &:not(:nth-of-type(1)){
+                        @extend .font-regular-12px-7;
+                        width: 44px;
+                        text-align: center;
+                        box-sizing: border-box;
+                    }
+                }
+            }
             tbody{
                 tr{
+                    &:focus,
                     &:hover{
                         th,
                         td{
-                            background-color: map-get($active-colors, 25);
+                            background-color: map-get($active-colors, 25);                           
+                        }
+                    }
+                    &.selected{
+                        th,
+                        td{
+                            background-color: map-get($active-colors, 25);                           
+                        }
+                    }
+                    td{
+                        .flex-wrap{
+                            align-items: center;
+                        }
+                        a{
+                            display: flex;
+                        }
+                        span{
+                            line-height: 1.2;
+                            word-break: break-all;
                         }
                     }
                 }
             }
+            th,td{
+                padding: rem-calc(6.5px) rem-calc(4px);
+            }
             td{
                 border: 0;
+                @extend .font-regular-12px-7;
+            }
+            input{
+                text-align: center;
+            }
+            .value{
+                @extend .font-regular-12px-18;
+                margin-right: rem-calc(4px);
+            }
+            .num{
+                @extend .font-bold-11px-2;
+                position: relative;
+                display: inline-block;
+                min-width: rem-calc(24px);
+                text-align: center;
+                z-index: 1;
+                margin-right: rem-calc(4px);
+                &::before{
+                    content: '';
+                    display: block;
+                    width: rem-calc(24px);
+                    height: rem-calc(24px);
+                    background: url(#{$img-icon-url}ico_DUR_check.svg) no-repeat center / contain;
+                    position: absolute;
+                    top: -7px;
+                    left: 0;
+                    z-index: -1;
+                }
+            }
+        }
+        &.smaller{
+            thead{
+                th{
+                    @extend .font-regular-13px-2;  
+                    padding: rem-calc(5px);
+                }
+            }
+            tbody{
+                td{                              
+                    @extend .font-regular-12px-7;     
+                    padding: rem-calc(5px);      
+                    a{        
+                        @extend .font-regular-12px-7;
+                    }
+                }
             }
         }
     }
@@ -980,7 +1174,7 @@ mark{
             font-size: rem-calc(13px);
             padding: 0 rem-calc(8px);
             &.selected{
-                color: map-get($bg-grays, 1);
+                color: map-get($active-colors, 2);
                 font-weight: 600;
             }
             &:not(:last-child){
@@ -1115,4 +1309,80 @@ mark{
 }
 .success{
     color: #{$success};
+}
+.form-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-set{
+    &.flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 25px 25px;  
+        padding: 15px 20px;              
+        overflow: hidden;
+        gap: 10px;
+    }
+    &.full{
+        .btn{
+            flex: 1;
+        }
+    }
+    &.bottom{
+        margin-top: auto;
+    }
+}
+
+.swipe-wrap{
+    background-color: map-get($bg-grays, 49);
+    padding: 0 rem-calc(5px);
+    border: 1px solid map-get($bg-grays, 21);
+    border-right: 0;
+    border-left: 0;
+    .swiper-container{
+        height: 100%;
+    }
+    .swiper-wrapper{
+    }
+    .swiper-slide{
+        width: auto;
+        height: rem-calc(44px);
+        display: flex;
+        align-items: center;
+        position: relative;
+        a{
+            @extend .font-regular-12px-7;
+
+        }
+        &.active{
+            &::before{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: map-get($bg-grays, 2);
+                position: absolute;
+                bottom: 0;
+            }
+            a{
+                color: map-get($bg-grays, 2);
+            }
+        }
+    }
+}
+
+.btn-more{
+    padding-right: 38px;
+    position: relative;
+    &::after{
+        content: '더보기';
+        display: inline-block;
+        @extend .font-regular-12px-7;
+        text-decoration: underline;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }

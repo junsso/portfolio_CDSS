@@ -320,3 +320,14 @@
     padding: rem-calc(5px);
     box-shadow: 0 1px 6px 0 rgba(0,0,0,0.12);
 }
+
+@mixin desktop-Lg {
+    @media (max-width: #{$breakpoint-desktop-lg}) {
+        @content;
+    }
+}
+@mixin desktop-md {
+    @media (max-width: #{$breakpoint-desktop-md}) {
+        @content;
+    }
+}
