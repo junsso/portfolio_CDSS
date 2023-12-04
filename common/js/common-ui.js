@@ -164,13 +164,41 @@ $(function(){
         $(this).siblings().removeClass('active');
     })
 
-    ////DUR위배 현황 상세정보 툴팁
+    //DUR위배 현황 상세정보 툴팁
     $(document).on('click', '.tooltip-box .btn-more', function(){        
         $(this).closest('.tooltip-box').toggleClass('active');
         $(this).closest('tr').siblings().find('.tooltip-box.active').removeClass('active');
     });
     $(document).on('click', '.tooltip-box .close', function(){
         $(this).closest('.tooltip-box').removeClass('active');
+    });
+
+    //검색창 float
+    let offsetSubTitle = $('.subtitle.scroll');
+    let offsetSearch = $('.subtitle .search input');
+
+    $('.rela_wrap .inner-wrap').scroll(function(){
+
+        let top = $('.rela_wrap .inner-wrap').scrollTop();
+
+        if(top > 0){
+            offsetSubTitle.addClass('sticky');
+            offsetSearch.attr('placeholder' , '검색');
+        }else{
+            offsetSubTitle.removeClass('sticky');
+            offsetSubTitle.removeClass('input');
+            offsetSearch.attr('placeholder' , '검색어를 입력해 주세요');
+        }
+    });
+
+    $(document).on('click', '.subtitle input', function(){
+        if($(offsetSubTitle).hasClass('scroll') === true){
+            console.log('ddd');
+            $(this).closest('.subtitle').addClass('input');
+        }else{
+            console.log('ccc');
+            $(this).closest('.subtitle').removeClass('input');
+        }
     });
 
 

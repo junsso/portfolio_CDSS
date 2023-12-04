@@ -28,18 +28,18 @@
             min-width: 900px;  
             >.flex-wrap{
                 >.row{
-                    min-width: rem-calc(450px);
+                    width: rem-calc(450px);
                    // min-width: 50.112%;
                 }
                 .row{
                     &.md{
-                        min-width: rem-calc(900px);
+                        width: rem-calc(900px);
                     }
                     &.sm{
-                        min-width: rem-calc(600px);
+                        width: rem-calc(600px);
                     }
                     &.xs{
-                       min-width: rem-calc(300px);
+                       width: rem-calc(300px);
                     }
                 }
             }
@@ -130,11 +130,18 @@
         &.full{
             gap: 0;
             padding: 0;
+            .patient-box + .flex-wrap{
+                height: calc(100% - 71px);
+            }
             .flex-wrap{
                 gap: rem-calc(15px) 0;
             }
             .subtitle{
                 padding: rem-calc(10px) rem-calc(20px);
+                .flex-wrap{
+                    gap: rem-calc(10px);
+                    align-items: center;
+                }
             } 
             .inner-wrapper{
                 .subtitle{
@@ -438,6 +445,10 @@
         @extend .font-bold-18px-2;
         @include ellipsis;
         line-height: rem-calc(36px);
+        &.tooltip-box{
+            width: auto;
+            overflow: inherit;
+        }
     }
     .reg-pattern{
         @include flex-row;
@@ -485,6 +496,24 @@
         input{
             width: 100%;
             padding-right: rem-calc(36px);
+        }
+    }
+    &.scroll{
+        &.sticky{
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            .search{
+                width: 100px;
+                margin-left: auto;
+            }
+
+        }
+        &.input{
+            .search{
+                width: 100%;
+                margin-left: 0;
+            }
         }
     }
     &.line{
@@ -763,6 +792,20 @@
         )...);
         margin-left: auto;
         position: relative;
+        &.clm{
+            flex-direction: column;
+            flex-wrap: inherit;
+            .flex-wrap{
+                gap: rem-calc(20px);
+                height: auto;
+            }
+        }
+        .close{
+            .ico{
+                width: rem-calc(20px);
+                height: rem-calc(20px);
+            }
+        }
     }
 }
 .record-box{
@@ -1111,6 +1154,23 @@
                     background: url(#{$img-icon-url}ico_add.svg) no-repeat center / contain;
                     width: rem-calc(18px);
                     height: rem-calc(18px);
+                }
+            }
+        }
+    }
+    //분석결과조회
+    &.view{
+        .drag-box{
+            .col{
+                border: 0;
+                padding: 0;
+                &::before{
+                    display: none;
+                }
+                &:hover,
+                &:focus{
+                    cursor: default;
+                    background-color: $basic-trans-color;
                 }
             }
         }

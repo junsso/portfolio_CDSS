@@ -61,9 +61,9 @@
                                         </ul>
                                         <div class="search">
                                             <select name="" id="" class="form-select">
-                                                <option value="" >진료기록 요약</option>
+                                                <option value="selected" >진료기록 요약</option>
                                                 <option value="">진료기록 원문</option>
-                                                <option value=""selected>5줄 요약</option>
+                                                <option value="">5줄 요약</option>
                                                 <option value="">요약율 70%</option>
                                                 <option value="">요약율 50%</option>
                                                 <option value="">요약율 30%</option>
@@ -86,29 +86,77 @@
                                     <div class="row sm">
                                         <div class="rela_wrap">
                                             <div class="inner-wrap">
-                                                <div class="summary-list-box">
-                                                    <ol>
-                                                        <li>환자는 크론병으로 진단받았다.</li>
-                                                        <li>환자는 면역억제제인 아자치오프린을 복용하고 있다.</li>
-                                                        <li>환자는 백혈구 수치가 떨어지고, CRP 수치가 올라갔다.</li>
-                                                        <li>의사는 환자에게 아자치오프린 용량을 줄이고, 휴미라 주사를 맞을 것을 권고했다.</li>
-                                                        <li>환자는 의사의 권고대로 아자치오프린 용량을 줄이고, 휴미라 주사를 맞기로 했다.</li>
-                                                    </ol>
+                                                <div class="subtitle full scroll">
+                                                    <div class="search mini">
+                                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                                        <button type="submit" class="mini">검색</button>
+                                                    </div>
                                                 </div>
-                                                <div class="diag-full-content edit sum">
+                                                <div class="diag-full-content">
                                                     <div class="line speaker-a">
                                                         <div class="s-user">
-                                                            <strong>진료의</strong>
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">컨디션은 어떤 것같아요 배는 좀 가라앉으셨나요</div>
+                                                        <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area">배</span>는 좀 가라앉으셨나요</div>
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
-                                                            <strong>환자</strong>
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">네 복통은 없었고요 좋습니다</div>
+                                                        <div class="text">네 <span class="ner-tag symtom">복통</span>은 없었고요 좋습니다</div>
                                                     </div>
-                                                </div> 
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text"><span class="ner-tag symtom">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 백혈구 수치가 떨어져서 <span class="ner-tag medi">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">네 네</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date">두달</span>마다 오는게 좀 부담스러울거같아요</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-a">
+                                                        <div class="s-user">
+                                                            <strong>진료의 김퍼즐</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                </div>
                                                 <!-- 스크롤 싱크 아이콘 이미지 
                                                 <img src="../img/icon/ico_btn_scroll.svg" alt="">
                                                 -->
@@ -140,7 +188,17 @@
                                         <div class="rela_wrap">
                                             <div class="inner-wrap">
                                                 <div class="subtitle">
-                                                    <h2>주요 키워드</h2>
+                                                    <div class="flex-wrap">
+                                                        <h2>주요 키워드</h2>
+                                                        <div class="tooltip-box bottom xs">
+                                                            <button class="ico_help"></button>
+                                                            <div class="tool-tip-conts">
+                                                                <div class="inn">
+                                                                    말풍선 가이드 내용
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="inner-wrapper">
                                                     <div class="keyword-box end edit">

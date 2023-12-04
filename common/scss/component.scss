@@ -1014,7 +1014,7 @@ button{
                     &:hover{
                         th,
                         td{
-                            background-color: map-get($active-colors, 25);                           
+                            background-color: map-get($active-colors, 25);   
                         }
                     }
                     &.selected{
@@ -1071,6 +1071,19 @@ button{
                     z-index: -1;
                 }
             }
+        }
+        &.view{
+            tbody{
+                tr{
+                    &:focus,
+                    &:hover{
+                        th,
+                        td{
+                            background-color: $basic-trans-color;                           
+                        }
+                    }
+                }
+            }   
         }
         &.smaller{
             thead{
@@ -1399,6 +1412,65 @@ mark{
         li{
            display: list-item;
            list-style-type: decimal;
+        }
+    }
+}
+
+//switch button
+.switch-button {
+    position: relative;
+    display: inline-block;
+    .input{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked {
+            + .onoff-switch {
+                border-color: $basic-trans-color;
+                background-color: map-get($active-colors, 2);
+                padding: 0 10px 0 34px;
+                font-weight: 700;
+                color: $white;
+                &:after {
+                    background-color: $white;
+                    right: calc(100% - 24px);
+                }
+            }
+        }
+        &:disabled,
+        &.disabled,
+        &[readonly]{
+            + .onoff-switch{
+                cursor: default;
+                background-color: map-get($bg-grays, 44);
+                color:  map-get($bg-grays, 17);
+                border-color: map-get($bg-grays, 21);
+            }
+        }
+    }
+    .onoff-switch {
+        display: flex;
+        align-items: center;
+        height: rem-calc(30px);
+        padding: 0 34px 0 10px;
+        border-radius:20px;
+        border: 1px solid map-get($bg-grays, 40);
+        background-color: $white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        position: relative;
+        cursor: pointer;
+        &::after {
+            position: absolute;
+            content: "";
+            height: rem-calc(20px);
+            width: rem-calc(20px);
+            right: 4px;
+            top: 4px;
+            background-color: map-get($bg-grays, 40);
+            -webkit-transition: .5s;
+            transition: .4s;
+            border-radius:20px;
         }
     }
 }
