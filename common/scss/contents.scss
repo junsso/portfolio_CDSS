@@ -62,6 +62,13 @@
     .btn-set{
         margin-left: auto;
     }
+    //홈
+    &.typeof{
+        gap: rem-calc(8px);
+        .flex-wrap{
+            gap: rem-calc(8px);
+        }
+    }
 }
 .box-wrap{
     @include box((
@@ -72,6 +79,9 @@
         radius: rem-calc(6px),
         color: map-get($bg-grays, 45)
     )...);
+    &.space20{
+        padding: rem-calc(12px) rem-calc(20px);
+    }
 }
 .inner-wrapper{
     @include flex-clm;
@@ -85,6 +95,10 @@
     }
     &.full{
         padding: 0;
+    }
+    &.heightxs{
+        min-height: 140px;
+        max-height: 140px;
     }
 }
 .flex-wrap{
@@ -102,7 +116,7 @@
         @include flex-option((
             gap: rem-calc(15px)
         )...);
-    }
+    } 
     .row{
         @include box((
             width: 100%,
@@ -127,6 +141,10 @@
            width: rem-calc(300px);
            min-width: rem-calc(300px);
         }
+        &.width220{
+            min-width: 220px;
+            width: 220px;
+        }
         &.full{
             gap: 0;
             padding: 0;
@@ -134,7 +152,10 @@
                 height: calc(100% - 71px);
             }
             .flex-wrap{
-                gap: rem-calc(15px) 0;
+                gap: rem-calc(15px) 0;   
+                &.gapxs{
+                    gap: rem-calc(5px);
+                }
             }
             .subtitle{
                 padding: rem-calc(10px) rem-calc(20px);
@@ -152,14 +173,51 @@
                 }
             }
         }
+        &.space0{
+            padding: 0;
+        }
+        &.space15{
+            padding: rem-calc(15px);
+        }
+        &.heightfull{
+            height: 100%;
+        }
+        &.gap0{
+            gap: 0;
+        }
+        &.gap10{
+            gap: rem-calc(10px);
+        }
     }
     &.clm{
         flex-direction: column;
+    }
+    &.gap0{
+        gap: 0;
+    }
+    &.gap10{
+        gap: rem-calc(10px);
+    }
+    &.heightfull{
+        height: 100%;
+        .col{
+            height: 100%;
+        }
+    }
+    &.full{
+        .col{
+            width: 100%;
+        }
+    }
+    &.center{
+        align-items: center;
+        justify-content: center;
     }
     .box{
         display: flex;
         flex-direction: column;
         gap: rem-calc(15px);
+        height: 100%;
         .rela_wrap{
             height: auto;
             .inner-wrap{
@@ -170,29 +228,46 @@
                 &.full{
                     padding: 0;
                 }
-            }
-            &.xs{
-                .inner-wrap{
-                    height: 118px;
+                &.heightxs{
+                    max-height: 120px;
                 }
             }
-            &.sm{
+            &.heightxs{
+                min-height: 120px;
+                max-height: 120px;
+                .inner-wrap{
+                    height: 100%;
+                }
+            }
+            //상병 툴팁에 사용
+            &.heightsm{
                 .inner-wrap{
                     height: 150px;
                 }
             }
+            //진료기록분석결과
+            &.heightmax{
+                height: 100%;
+            }
         }
         &.heightmd{
-            height: 60%;
+            height: calc(100% - 262px - 20px);
         }
         &.heightsm{
-            height: calc(40% - 20px);
+            height: 262px;
+            //height: 273px;
         }
         &.heightxs{
-            height: calc(32% - 20px);
+            height: 26.7%;
+        }
+        &.height_auto{
+            height: auto;
         }
         &.bottom{
             margin-top: auto;
+        }
+        &.gapxs{
+            gap: rem-calc(5px) 20px;
         }
         .inner-wrapper{
             &.bottom{
@@ -201,6 +276,22 @@
                     padding: 0 rem-calc(20px);
                 }
             }
+        }
+        .col{
+            &.heightxs{
+                min-height: 140px;
+            }
+        }
+    }
+    .col{
+        &.md{
+            width: calc(100% - 520px - 20px);
+        }
+        &.sm{
+            min-width: 520px;
+        }
+        &.topic{
+            min-height: 222px;
         }
     }
 }
@@ -289,6 +380,9 @@
     }
     .text{
         line-height: 180%;
+        &.play{
+            background: rgba(255, 0, 0, 0.1);
+        }
     }
     //녹취종로후 화자분리
     &.edit{
@@ -296,11 +390,15 @@
     }
     //진료기록 원문 요약
     &.sum{
-        .line{
+        padding-top: rem-calc(20px);
+        .sum-box{
             display: flex;
-            gap: rem-calc(10px);
+            gap: rem-calc(5px);
+        }
+        .line{
             padding: rem-calc(4px) rem-calc(20px);
             .s-user{
+                margin-bottom: 0;
                 strong{
                     border-radius: 2px;
                     line-height: rem-calc(20px);
@@ -322,23 +420,6 @@
                 }
             }
         }
-    }
-}
-.scroll-btn{
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 1px solid map-get($bg-grays, 1);
-    border-radius: 20px;
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
-    background-color: $white;
-    button{
-        display: block;
-        width: rem-calc(20px);
-        height: rem-calc(10px);
-    }
-    .up{
-        background-image: url(#{$img-icon-url}ico_arrow_drop_up.svg);
     }
 }
 .summary{
@@ -441,6 +522,7 @@
         flex-wrap: wrap,
         gap: rem-calc(10px)
     )...);
+    position: relative;
     h2{
         @extend .font-bold-18px-2;
         @include ellipsis;
@@ -448,6 +530,12 @@
         &.tooltip-box{
             width: auto;
             overflow: inherit;
+        }
+    }
+    &.sm{
+        h2{
+            font-size: rem-calc(16px);
+            line-height: 1.2;
         }
     }
     .reg-pattern{
@@ -519,6 +607,12 @@
     &.line{
         border-bottom: 1px solid map-get($bg-grays, 45);
     }
+    .description{
+        margin-left: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
     .action{
         margin-left: auto;
     }
@@ -558,7 +652,6 @@
         width: 350px;
         li{
             position: relative;
-            @include ellipsis;
             cursor: pointer;
             &+li{
                 margin-top: rem-calc(4px);
@@ -567,6 +660,7 @@
         & > ul > li{
             p{     
                 padding-left: rem-calc(28px);
+                @include ellipsis;
                 // &:before{
                 //     content: "";
                 //     position: absolute;
@@ -597,6 +691,7 @@
                 display: none;
                 li{
                     margin-left: rem-calc(43px);
+                    @include ellipsis;
                     &.selected{
                         background: rgba(37,180,173,0.2);
                         font-weight: 600;
@@ -623,12 +718,12 @@
             }
         }
     } 
-    &.smaller{
-        height: 300px;
-    }
-    &.xs{
-        height: 150px;
-    }
+    // &.smaller{
+    //     height: 300px;
+    // }
+    // &.xs{
+    //     height: 150px;
+    // }
     &.inherit{
         overflow: inherit;
     }
@@ -730,10 +825,11 @@
 .patient-box{
     @include flex-row;
     flex-direction: column;
-    gap: rem-calc(10px);
+    gap: rem-calc(22px);
     padding: rem-calc(20px);
     border-bottom: 1px solid  map-get($bg-grays, 18);
     .col{
+        position: relative;
         &.info{
             @include flex-row;
         }
@@ -791,7 +887,9 @@
             flex-wrap: wrap
         )...);
         margin-left: auto;
-        position: relative;
+        position: absolute;
+        right: 0;
+        z-index: 5;
         &.clm{
             flex-direction: column;
             flex-wrap: inherit;
@@ -808,48 +906,61 @@
         }
     }
 }
+.record-bg{
+    background-color: map-get($active-colors,21);
+    background-image: url(#{$img-temp-url}img_record_bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: calc(100% - 125px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: rem-calc(10px);
+    p{
+        margin-top: rem-calc(5px);
+        text-align: center;
+        @extend .font-bold-18px-26; 
+    }
+}
 .record-box{
-    .col{
-        @include flex-row;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: rem-calc(10px);
-        &.top{
-            background-color: map-get($active-colors,21);
-            background-image: url(#{$img-url}img_record_bg.svg);
-            height: rem-calc(585px);
-            p{
-                margin-top: rem-calc(5px);
-                text-align: center;
-                @extend .font-bold-18px-26; 
-            }
-        }
-        &.bottom{
-            padding: rem-calc(25px) 0;
-            margin-top: auto;
-            p{
-                @extend .font-bold-14px-2; 
-            }
-        }
-        .btn{
-            &.ball{
-                width: rem-calc(45px);
-                height: rem-calc(45px);
-                border-radius: 100%;
-                background-color: map-get($bg-grays, 23);
-                border-width: 0;
-                span{
-                    width: rem-calc(32px);
-                    height: rem-calc(32px);
-                    border-radius: 100%;
-                    background-color: map-get($active-colors,22);
-                    box-shadow: 0 0 4px 0 rgba(0,0,0,0.16);
-                    border: 3px solid map-get($bg-grays, 26);
-                }
-            }
+    padding: rem-calc(25px) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: rem-calc(8px);
+    &.bottom{
+        margin-top: auto;
+        p{
+            @extend .font-bold-14px-2; 
         }
     }
+    .btn{
+        &.ball{
+            width: rem-calc(45px);
+            height: rem-calc(45px);
+            border-radius: 100%;
+            background-color: map-get($bg-grays, 23);
+            border-width: 0;
+            span{
+                width: rem-calc(32px);
+                height: rem-calc(32px);
+                border-radius: 100%;
+                background-color: map-get($active-colors,22);
+                box-shadow: 0 0 4px 0 rgba(0,0,0,0.16);
+                border: 3px solid map-get($bg-grays, 26);
+                transition: 0.1s all;
+            }
+        }
+        &:hover{
+            span{
+                width: rem-calc(28px);
+                height: rem-calc(28px);
+            }
+        }
+    } 
     img{
         display: block;
         max-width: 100%;
@@ -890,6 +1001,8 @@
         }
     }
     &.after{
+        padding: 0;
+        gap: 0;
         .col{
             &.sound{
                 .record{
@@ -909,6 +1022,7 @@
     } 
     &.end{
         .col{
+            width: 100%;
             &.bottom{
                 position: relative;
                 padding: rem-calc(5px);
@@ -947,6 +1061,7 @@
         border-radius: 30px;
         height: rem-calc(34px);
         padding: 0 rem-calc(20px);
+        position: relative;
         z-index: 2;
         .btn{
             background-repeat: no-repeat;
@@ -1014,6 +1129,16 @@
             cursor: pointer;
         }
     }
+    &.default{
+        .drag-tag{
+            cursor: default;
+            &.active,
+            &:focus,
+            &:hover{
+                background-color: $basic-trans-color;
+            }
+        }
+    }
 }
 //의무기록
 .register{
@@ -1038,9 +1163,14 @@
 }
 //드래그앤드롭박스
 .dragndrop-box{
+    height: 100%;
     >.flex-wrap{        
         @include flex-clm;
         gap: 0 !important;
+        height: 100%;
+        >.col{
+            height: 100%;
+        }
         .col{
             display: flex;
             flex-direction: row;
@@ -1104,6 +1234,8 @@
                 position: relative;
                 padding-right: 20px;
                 word-break: break-all;
+                @extend .font-regular-12px-7; 
+                width: 100%;
                 // &.hover{
                 //     .edit{
                 //         display: block;
@@ -1172,6 +1304,9 @@
                     cursor: default;
                     background-color: $basic-trans-color;
                 }
+                .ico{
+                    display: none;
+                }
             }
         }
     }
@@ -1196,7 +1331,7 @@
         }
     }
     .tab{
-        ul{
+        >ul{
             display: flex;
             align-items: end;
             gap: rem-calc(4px);
@@ -1210,10 +1345,10 @@
                 position: absolute;
                 bottom: -1px;
             }
-            li{
+            >li{
                 flex: 1;
                 &.current{
-                    a{
+                    >a{
                         background-color: map-get($bg-grays, 26);
                         border-color: map-get($bg-grays, 18);
                         position: relative;
@@ -1228,7 +1363,7 @@
                         }
                     }
                 }
-                a{
+                >a{
                     display: block;
                     text-align: center;
                     @extend .font-regular-12px-7; 
@@ -1253,8 +1388,48 @@
                 &.current{
                     display: block;
                 }
-                .desc{
-                    @extend .font-regular-13px-7; 
+                p{
+                    @extend .font-regular-12px-7; 
+                }
+            }
+        }
+    }
+    //홈
+    &.typeof{
+        border: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        .tab{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            ul{
+                li{
+                    a{
+                        font-size: 14px;
+                        border: 0;
+                        background-color: $white;
+                        height: rem-calc(40px);
+                        line-height: rem-calc(40px);
+                    }
+                    &.current{
+                        a{
+                            @extend .font-bold-14px-2; 
+                            &::before{
+                                background-color:  map-get($bg-grays, 2);
+                            }
+                        }
+                    }
+                }
+            }
+            .cont-box{
+                border: 0;
+                .conts{
+                    padding: rem-calc(10px) rem-calc(15px);
                 }
             }
         }
@@ -1282,6 +1457,583 @@
     }
 }
 
+.target-play{
+    position: absolute;
+    bottom: 3%;
+    right: rem-calc(20px);
+    z-index: 10;
+    .btn{
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+        .ico{
+            margin-top: -1px;
+        }
+    }
+}
+
+//home
+.dash-board{
+    padding: rem-calc(20px);
+    height: calc(100vh - 57px);
+    box-sizing: border-box;
+    >.flex-wrap{
+        gap: rem-calc(30px);
+        >.col{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            &:first-of-type{
+                width: auto;
+            }
+            & + .col{
+                width: calc(100% - 310px - 30px);
+            }
+        }
+    }
+    &.active{
+        >.flex-wrap{
+            >.col{
+                & + .col{
+                    width: calc(100% - 80px - 30px);
+                }
+            }
+        }
+    }
+}
+.diagnosis-list{
+    width: 310px;
+    height: 100%;
+    background: $white;
+    border: 1px solid map-get($bg-grays, 18);
+    border-radius: rem-calc(8px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .block{
+        display: none;
+    }
+    .hide{
+        display: block;
+    }
+    .info{
+        height: 100%;
+    }
+    .toggle{
+        @include lnb-toggle-default;
+        top: 20px;
+        left: auto;
+        right: -21px;
+        .ico{
+            margin-top: -1px;
+        }
+        &:hover{
+            .inner-btn{
+                background-color: rgba(37, 180, 173, 0.08);
+            }
+        }
+    }
+    .data{
+        text-align: center;
+        h2{
+           @extend .font-bold-16px-7;
+        }
+    }
+    .list-sum{
+        background-color: map-get($bg-grays, 49);
+        border-radius: rem-calc(4px);
+        ul{
+            display: flex;
+            align-items: stretch;
+            gap: rem-calc(20px);
+            padding: rem-calc(10px);
+            li{
+                width: 33.33%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: rem-calc(4px);
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 1px;
+                    height: 70%;
+                    background-color: map-get($bg-grays, 18);
+                    position: absolute;
+                    top: 50%;
+                    right: -10px;
+                    transform: translateY(-50%);
+                }
+                &:first-child{
+                    h3{
+                        justify-content: flex-start;
+                    }
+                }
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+                .register{
+                    background: $basic-trans-color;
+                }
+                p{
+                    @extend .font-regular-13px-2; 
+                }
+                h3{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    gap: rem-calc(2px);
+                    span{
+                        @extend .font-bold-16px-2; 
+                        @include ellipsis;
+                        &.name{
+                            text-align: left;
+                            margin-top: auto;
+                        }
+                        &.num{
+                            font-size: 16px;
+                            color: map-get($active-colors, 2);
+                        }
+                        &.desc{
+                            font-size: 14px;
+                        }
+                    }
+                    em{
+                        @extend .font-regular-14px-7;
+                        font-style: normal;
+                    }
+                }
+            }
+        }        
+        .btn-set{
+            &.full{
+                .btn{
+                    padding: 0 rem-calc(10px);
+                    &.hide{
+                        display: flex;
+                    }
+                }
+            }
+        }
+        &.produce{
+            background-color: $white;
+            border: 1px solid map-get($bg-grays, 45);
+            ul{
+                padding-bottom: 0;
+                li{
+                    &:not(:nth-of-type(1)){
+                        width: calc(100% - 33.33%);
+                    }
+                    h3{
+                        margin-top: auto;
+                    }
+                }
+            }
+            .flex-wrap{
+                gap: 0;
+                .col{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    &.active{
+        width: 80px;
+        .block{
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
+        .toggle{
+            position: inherit;
+            top: auto;
+            left: auto;
+            right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: rem-calc(60px);
+            .inner-btn{
+                width: rem-calc(28px);
+                height: rem-calc(28px);
+                border-radius: 100%;
+                border-left: 1px solid map-get($bg-grays, 18);
+                .ico{
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+        .list-sum{
+            background-color: $white;
+            ul{
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                gap: rem-calc(8px);
+                li{
+                    width: 100%;
+                    text-align: center;
+                    background-color: map-get($bg-grays, 49);
+                    border-radius: rem-calc(2px);
+                    padding: rem-calc(10px) rem-calc(5px);
+                    &::after{
+                        display: none;
+                    }
+                    h3{
+                        justify-content: center;
+                        span{
+                            &.num{
+                                color: map-get($bg-grays, 2);
+                            }
+                        }
+                    }
+                    .register{
+                        color: map-get($active-colors, 2);
+                    }
+                }
+            }
+            &.produce{
+                border: 0;
+                border-top: 1px solid map-get($bg-grays, 18);
+                border-radius: 0;
+                margin: 0 rem-calc(-10px);
+                padding: rem-calc(15px) rem-calc(10px);
+                ul{
+                    padding: remc-calc(10px);
+                    li{
+                        background-color: $white;
+                        border: 1px solid map-get($bg-grays, 18);
+                    }
+                }
+            }
+        }
+        .data{
+            h2{
+                font-size: 16px;
+                .years{
+                    display: block;
+                    @extend .font-regular-14px-7;
+                }
+            }
+        }
+        .flex-wrap{
+            .row{
+                &.space15{
+                    padding: 0 rem-calc(10px);
+                }
+            }
+        }
+        .btn-set{
+            &.full{
+                .btn{
+                    padding: 0 rem-calc(4px);
+                    &.block{
+                        display: flex;
+                    }
+                    &.hide{
+                        display: none;
+                    }
+                }
+            }
+            &.space10{
+                padding: rem-calc(10px) 0;
+            }
+        }
+    }
+}
+.patient-list{
+    padding: rem-calc(10px);
+    .summary{
+        border: 0;
+        gap: rem-calc(20px);
+        margin-top: rem-calc(10px);
+        margin-bottom: 0;
+        li{     
+            position: relative;   
+            &::after{
+                content: '';
+                display: block;
+                width: 1px;
+                height: 13px;
+                background-color: map-get($bg-grays, 18);
+                position: absolute;
+                top: 50%;
+                right: -10px;
+                transform: translateY(-50%);
+            }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//형태소 분석 테스트 팝업
+.test-result{
+    .result-box{
+        padding: rem-calc(10px) 0;
+        height: rem-calc(112px);
+        .box-wrap{
+            height: 100%;
+            .inner-wrap{
+                padding: rem-calc(10px);
+            }
+        }
+    }
+}
+
+//home > 진료기록 집계 카드
+.diagnosis-card{
+    display: flex;
+    align-items: flex-start;
+    gap: rem-calc(10px);
+    height: 100%;
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: rem-calc(6px);
+        width: 100%;
+        height: 100%;
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &:first-child{
+                h2{
+                    @extend .font-bold-18px-2;
+                }
+                span{
+                    @extend .font-bold-18px-2;
+                }
+            }
+            &:last-child{
+                margin-top: auto;
+            }
+            p,
+            strong{
+                font-size: rem-calc(16px);
+            }
+            i{
+                font-size: 13px;
+                font-weight: 400;
+                font-style: normal;
+                margin-left: rem-calc(4px);
+            }
+        }
+    }
+    &.typeof{
+        ul{
+            li{
+                &:first-child{
+                    h2,
+                    span{
+                        font-size: rem-calc(16px);
+                    }
+                }
+                &:not(:first-child){
+                    flex-direction: column;
+                    align-items: flex-start;
+                    >div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        
+                    }
+                }
+                p,
+                strong{
+                    font-size: rem-calc(13px);
+                }
+            }
+        }
+    }
+}
+
+.color-board{
+    display: flex;
+    align-items: center;
+    gap: rem-calc(10px);
+    span{
+        display: inline-block;
+        &::before{
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: rem-calc(5px);
+            margin-top: rem-calc(-3px);
+        }
+    }    
+    .bar{
+        &::before{
+            width: rem-calc(10px);
+            height: rem-calc(4px); 
+            border-radius: rem-calc(1px);
+        }
+       //조회기간 총 진료기록
+       &.check{
+            &::before{
+                background-color: map-get($graph-color , 1);
+            }
+       }
+       //조회기간 총 진료기록
+       &.before{
+        &::before{
+            background-color: map-get($graph-color , 2);
+        }
+       }
+    }
+    .ball{
+        &::before{
+            width: rem-calc(10px);
+            height: rem-calc(10px); 
+            border-radius: 100%;
+        }
+        //재진 진료기록
+        &.re{
+            &::before{
+                background-color: map-get($graph-color , 3);
+            }
+        }
+        //초진 진료기록
+        &.first{
+            &::before{
+                background-color: map-get($graph-color , 4);
+            }
+        }
+    }
+}
+
+.violation-list{
+    .row{
+        &:nth-child(1){
+        }
+        &:nth-child(2){
+
+        }
+        &:nth-child(3){
+            min-width: 450px;
+        }
+    }
+}
+.violation{
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+            @include ellipsis;
+            gap: rem-calc(4px);
+            font-size: rem-calc(13px);
+            line-height: 1.2;
+            max-width: calc(100% - 46px);
+            &::before{
+                content: '';
+                display: inline-block;
+                margin-right: 4px;
+                width: rem-calc(8px);
+                height: rem-calc(8px);
+                border-radius: 100%;
+            }
+            //금기항목
+            &.negative{
+                &::before{
+                    background-color: map-get($active-colors, 8);
+                }
+            }
+            //주의항목
+            &.caution{
+                &::before{
+                    background-color: map-get($active-colors, 26);
+                }
+            }
+        }
+        em{
+            font-style: normal;
+            line-height: 1.2;
+            color: map-get($bg-grays, 1);
+        }
+    }
+}
+
+.topic-keyword{
+    &.flex-wrap{
+        >.col{
+            flex: 1;
+            width: 50%;
+            padding: rem-calc(15px) rem-calc(20px);
+            position: relative;
+        }        
+    }
+    .swiper-box{
+        display: flex;
+        gap: 30px;
+        .box{
+            &:first-child{
+                min-width: 90px;
+            }
+        }
+    }
+    .swiper-slide{
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: rem-calc(7px);
+        }
+    }
+    //키워드
+    .swiper-dur-desc{
+        min-width: 93px;
+        .swiper-slide{
+            height: 22px !important;
+            &.swiper-slide-thumb-active{
+                .ner-keword{
+                    color: $white;
+                    background-color: map-get($active-colors, 2);
+                }
+            }
+        }
+    }
+    //랭킹
+    .swiper-dur-wrap{
+    }
+    .ner-keword{
+        display: block;
+        border: 1px solid map-get($bg-grays, 18);
+        border-radius: 20px;
+        text-align: center;
+        @extend .font-regular-13px-2;
+        width: rem-calc(93px);
+        height: rem-calc(22px);
+        line-height: rem-calc(22px);
+        background-color: $white;
+        cursor: pointer;
+        &:hover{
+            background-color: map-get($active-colors, 25);
+        }
+    }
+}
+.topic-list{
+    .ner-tag{
+        font-size: rem-calc(12px);
+    }
+}
+
+
+
+
+
+
+/// ************************ media quary *************************** ///
 @include desktop-Lg {
     .subtitle{
         h2{
@@ -1307,17 +2059,13 @@
             }
         }
     }
-}
-
-.target-play{
-    position: absolute;
-    bottom: 3%;
-    right: rem-calc(20px);
-    z-index: 10;
-    .btn{
-        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
-        .ico{
-            margin-top: -1px;
-        }
+    .tab-box{
+        .title{
+            .date{
+                font-size: 10px;
+            }
+        } 
     }
+}
+@include desktop-md {
 }

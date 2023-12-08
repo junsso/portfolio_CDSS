@@ -67,10 +67,12 @@
                                     </div>
                                     <div class="col">
                                         <ul class="summary sm">
-                                            <li><span><em class="num">158479620</em>&nbsp;&nbsp;&nbsp;&nbsp;여 60세</span></li>
+                                            <li><span class="num">158479620</span></li>
+                                            <li><span>여</span></li>
+                                            <li><span>60세</span></li>
                                             <li>
                                                 <div class="form-wrap">
-                                                    <input type="checkbox" id="check" class="disabled" >
+                                                    <input type="checkbox" id="check" class="disabled">
                                                     <label for="check">임신여부</label>
                                                 </div>
                                             </li>
@@ -93,21 +95,21 @@
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area">배</span>는 좀 가라앉으셨나요</div>
+                                                        <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area default">배</span>는 좀 가라앉으셨나요</div>
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
                                                             <strong>환자 홍*동</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">네 <span class="ner-tag symtom">복통</span>은 없었고요 좋습니다</div>
+                                                        <div class="text">네 <span class="ner-tag symtom default">복통</span>은 없었고요 좋습니다 <span class="ner-tag symtom default"><span class="ner-tag  aff-area default">배</span>가 가라앉지 않습니다</span></div>
                                                     </div>
                                                     <div class="line speaker-a">
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text"><span class="ner-tag symtom">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 백혈구 수치가 떨어져서 <span class="ner-tag medi">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
+                                                        <div class="text"><span class="ner-tag symtom default">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 백혈구 수치가 떨어져서 <span class="ner-tag medi default">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test default">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag default">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom default">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
@@ -121,37 +123,45 @@
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        <!-- 현재 재생중인 발화 시점 (text클래스에 play클래스가 붙음) -->
+                                                        <div class="text play">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        <!-- // -->
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
                                                             <strong>환자 홍*동</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date">두달</span>마다 오는게 좀 부담스러울거같아요</div>
+                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date default">두달</span>마다 오는게 좀 부담스러울거같아요</div>
                                                     </div>
                                                     <div class="line speaker-a">
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
-                                                    </div>
-                                                    <div class="line speaker-a">
+                                                        <div class="text">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
-                                                    </div>
-                                                    <div class="line speaker-a">
+                                                        <div class="text">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        <div class="text">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date default">두달</span>마다 오는게 좀 부담스러울거같아요</div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="target-play">
+                                                <a href="#" class="btn negative_md size30px radius4px"><span class="ico ico_target current"></span>재생위치로</a>
                                             </div>
                                         </div>
                                         <div class="record-box after end">
@@ -181,12 +191,12 @@
                                                 </div>
                                                 <div class="inner-wrapper">
                                                     <div class="keyword-box end">
-                                                        <h3 class="ner-tag aff-area">환부</h3>
+                                                        <h3 class="ner-tag aff-area default">환부</h3>
                                                         <span class="drag-tag">배(4)</span>
                                                         <span class="drag-tag">장</span>
                                                     </div>
                                                     <div class="keyword-box end">
-                                                        <h3 class="ner-tag symtom">증상</h3>
+                                                        <h3 class="ner-tag symtom default">증상</h3>
                                                         <span class="drag-tag">배가 안가라앉음</span>
                                                         <span class="drag-tag">장</span>
                                                         <span class="drag-tag">복통(2)</span>
@@ -194,25 +204,30 @@
                                                         <span class="drag-tag">글자수가 영역 너비를 초과하는 경우 글자수가 영역 너비를 초과하는 경우</span>
                                                     </div>
                                                     <div class="keyword-box end">
-                                                        <h3 class="ner-tag diag">진단</h3>
+                                                        <h3 class="ner-tag diag default">진단</h3>
                                                         <span class="drag-tag">염증반응</span>
                                                         <span class="drag-tag">크론병</span>
                                                         <span class="drag-tag">염증성장질환</span>
                                                     </div>
                                                     <div class="keyword-box end">
-                                                        <h3 class="ner-tag medi">약물</h3>
+                                                        <h3 class="ner-tag medi default">약물</h3>
                                                         <span class="drag-tag">면역억제제(4)</span>
                                                         <span class="drag-tag">아자치오프린 면역억제제</span>
                                                         <span class="drag-tag">이뮤란</span>
                                                     </div>
                                                     <div class="keyword-box end">
-                                                        <h3 class="ner-tag treat">검사</h3>
+                                                        <h3 class="ner-tag test default">검사</h3>
                                                         <span class="drag-tag">씨알피(4)</span>
                                                         <span class="drag-tag">피검사</span>
                                                         <span class="drag-tag">백혈구 검사</span>
                                                     </div>
                                                     <div class="keyword-box end">
-                                                        <h3 class="ner-tag date">날짜</h3>
+                                                        <h3 class="ner-tag treat default">처치</h3>
+                                                        <span class="drag-tag">휴미라 주사</span>
+                                                        <span class="drag-tag">배 사진</span>
+                                                    </div>
+                                                    <div class="keyword-box end">
+                                                        <h3 class="ner-tag date default">날짜</h3>
                                                         <span class="drag-tag">이틀 뒤</span>
                                                         <span class="drag-tag">목요일(3)</span>
                                                         <span class="drag-tag">오늘</span>
@@ -232,18 +247,17 @@
                                                     <h2>의무기록</h2>
                                                     <span class="desc">진료대화를 분석하여 의무기록을 생성합니다.</span>
                                                     <div class="search">
-                                                        <a href="#" class="btn negative2_xs size24px radius2px padding-xs">EMR 전송</a>
+                                                        <a href="#" class="btn primary2_xs size24px radius2px padding-xs">EMR 전송</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="rela_wrap">  
+                                            <div class="rela_wrap heightmax">  
                                                 <div class="inner-wrap">
                                                     <div class="dragndrop-box">
                                                         <div class="flex-wrap">
                                                             <div class="col">
                                                                 <div class="title">Subjective</div>
                                                                 <div class="drag-box">
-                                                                    <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                     <div class="col">
                                                                         <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
                                                                     </div>
@@ -253,18 +267,19 @@
                                                                     <div class="col">
                                                                         <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
                                                                     </div>
+                                                                    <input type="text" class="input full" placeholder="새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="title">Objective</div>
                                                                 <div class="drag-box">
-                                                                    <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                     <div class="col">
                                                                         <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
                                                                     </div>
                                                                     <div class="col">
                                                                         <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
                                                                     </div>
+                                                                    <input type="text" class="input full" placeholder="새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
@@ -278,19 +293,19 @@
                                                             <div class="col">
                                                                 <div class="title">Plan</div>
                                                                 <div class="drag-box">
-                                                                    <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                     <div class="col">
                                                                         <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
                                                                     </div>
                                                                     <div class="col">
                                                                         <p class="txt" contenteditable="false">환자는 크론병으로 진단받아 아자치오프린을 복용하고 있다. <i class="ico edit"></i></p>
                                                                     </div>
+                                                                    <input type="text" class="input full" placeholder="새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="title">Memo</div>
                                                                 <div class="drag-box">
-                                                                    <input type="text" class="input full" placeholder="이곳에 새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
+                                                                    <input type="text" class="input full" placeholder="새로운 기록을 입력한 뒤 엔터를 눌러주세요.">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -415,196 +430,198 @@
                                         </div>  
                                     </div>
                                     <div class="row">
-                                        <div class="box heightmd">
-                                            <div class="inner-wrapper">
-                                                <div class="subtitle line">
-                                                    <h2>진단</h2>
-                                                    <span class="desc">의무기록을 분석하여 상병을 추천합니다.</span>
-                                                    <div class="search">
-                                                        <a href="#" class="btn negative2_xs size24px radius2px padding-xs">EMR 전송</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rela_wrap xs inherit">
+                                        <div class="box heightmd gapxs">
+                                            <div class="col">
                                                 <div class="inner-wrapper">
-                                                    <div class="inner-wrap full">
-                                                        <div class="data-table receipt">
-                                                            <table class="receipt min-width xs">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th style="">상병</th>
-                                                                        <th>주상병</th>
-                                                                        <th>횟수</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="value">K20</span>
-                                                                                <span>크론병[국소성 장염]</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <input type="radio" id="check1" class="">
-                                                                                <label for="check1"></label>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="value">K51</span>
-                                                                                <span>궤양성 대장염</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <input type="radio" id="check2" class="">
-                                                                                <label for="check2"></label>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="value">C20</span>
-                                                                                <span>직장의 악성 신생물</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <input type="radio" id="check3" class="">
-                                                                                <label for="check3"></label>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="value">K20</span>
-                                                                                <span>크론병[국소성 장염]</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <input type="radio" id="check1" class="">
-                                                                                <label for="check1"></label>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="value">K51</span>
-                                                                                <span>궤양성 대장염</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <input type="radio" id="check2" class="">
-                                                                                <label for="check2"></label>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="value">C20</span>
-                                                                                <span>직장의 악성 신생물</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <input type="radio" id="check3" class="">
-                                                                                <label for="check3"></label>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>                                                                
-                                                            </table>                                                            
+                                                    <div class="subtitle line">
+                                                        <h2>진단</h2>
+                                                        <span class="desc">의무기록을 분석하여 상병을 추천합니다.</span>
+                                                        <div class="search">
+                                                            <a href="#" class="btn primary2_xs size24px radius2px padding-xs">EMR 전송</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="inner-wrapper">  
-                                                    <div class="form-wrap tooltip-box layer bottom xs">
-                                                        <input type="text" class="input full" placeholder="상병명/상병코드를 입력 후 엔터를 눌러 주세요.">
-                                                        <div class="tool-tip-conts">
-                                                            <div class="inn">
-                                                                <div class="subtitle layer">
-                                                                    <h2>상병</h2>
-                                                                </div>
-                                                                <div class="rela_wrap sm">
-                                                                    <div class="inner-wrap full">
-                                                                        <div class="data-table">
-                                                                            <table class="smaller min-width xs">
-                                                                                <colgroup>
-                                                                                    <col width="28%">
-                                                                                </colgroup>
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        <th>상병코드</th>
-                                                                                        <th>상병명</th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td class="center"><a href="#">K20</a></td>
-                                                                                        <td class=""><a href="#">위염 및 십이지<span class="primary">장염</span></a></td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="center"><a href="#">K50</a></td>
-                                                                                        <td class=""><a href="#">크론병 [국소성<span class="primary">장염</span>]</a></td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="center"><a href="#">K51</a></td>
-                                                                                        <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="center"><a href="#">K51</a></td>
-                                                                                        <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="center"><a href="#">K51</a></td>
-                                                                                        <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="center"><a href="#">K51</a></td>
-                                                                                        <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
+                                                <div class="col heightxs">
+                                                    <div class="rela_wrap">  
+                                                        <div class="inner-wrap heightxs">
+                                                            <div class="data-table receipt">
+                                                                <table class="receipt">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="">상병</th>
+                                                                            <th>주상병</th>
+                                                                            <th>횟수</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="flex-wrap">
+                                                                                    <span class="value">K20</span>
+                                                                                    <span>크론병[국소성 장염]</span>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="radio" id="check1" class="">
+                                                                                    <label for="check1"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="flex-wrap">
+                                                                                    <span class="value">K51</span>
+                                                                                    <span>궤양성 대장염</span>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="radio" id="check2" class="">
+                                                                                    <label for="check2"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="flex-wrap">
+                                                                                    <span class="value">C20</span>
+                                                                                    <span>직장의 악성 신생물</span>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="radio" id="check3" class="">
+                                                                                    <label for="check3"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="flex-wrap">
+                                                                                    <span class="value">K20</span>
+                                                                                    <span>크론병[국소성 장염]</span>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="radio" id="check1" class="">
+                                                                                    <label for="check1"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="flex-wrap">
+                                                                                    <span class="value">K51</span>
+                                                                                    <span>궤양성 대장염</span>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="radio" id="check2" class="">
+                                                                                    <label for="check2"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="flex-wrap">
+                                                                                    <span class="value">C20</span>
+                                                                                    <span>직장의 악성 신생물</span>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="radio" id="check3" class="">
+                                                                                    <label for="check3"></label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-wrap">
+                                                                                    <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>                                                                
+                                                                </table>                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inner-wrapper">  
+                                                        <div class="form-wrap tooltip-box layer bottom xs">
+                                                            <input type="text" class="input full" placeholder="상병명/상병코드를 입력 후 엔터를 눌러 주세요.">
+                                                            <div class="tool-tip-conts" style="display: none;">
+                                                                <div class="inn flex-wrap clm gapxs">
+                                                                    <div class="subtitle layer">
+                                                                        <h2>상병</h2>
+                                                                    </div>
+                                                                    <div class="rela_wrap heightsm">
+                                                                        <div class="inner-wrap full">
+                                                                            <div class="data-table">
+                                                                                <table class="smaller min-width xs">
+                                                                                    <colgroup>
+                                                                                        <col width="28%">
+                                                                                    </colgroup>
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>상병코드</th>
+                                                                                            <th>상병명</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="center"><a href="#">K20</a></td>
+                                                                                            <td class=""><a href="#">위염 및 십이지<span class="primary">장염</span></a></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="center"><a href="#">K50</a></td>
+                                                                                            <td class=""><a href="#">크론병 [국소성<span class="primary">장염</span>]</a></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="center"><a href="#">K51</a></td>
+                                                                                            <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="center"><a href="#">K51</a></td>
+                                                                                            <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="center"><a href="#">K51</a></td>
+                                                                                            <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="center"><a href="#">K51</a></td>
+                                                                                            <td class=""><a href="#">궤양성 대<span class="primary">장염</span></a></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -618,162 +635,208 @@
                                                     <h2>처방</h2>
                                                     <span class="desc">진단 및 환자정보에 따라 약물 처방을 추천합니다.</span>
                                                     <div class="search">
-                                                        <a href="#" class="btn negative2_xs size24px radius2px padding-xs padding-xs">EMR 전송</a>
+                                                        <a href="#" class="btn primary2_xs size24px radius2px padding-xs">EMR 전송</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="rela_wrap xs inherit">
-                                                <div class="inner-wrapper">
-                                                    <div class="inner-wrap full">
-                                                        <div class="data-table receipt">
-                                                            <table class="receipt min-width xs">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th >약품명</th>
-                                                                        <th>투여량</th>
-                                                                        <th>횟수</th>
-                                                                        <th>일수</th>
-                                                                        <th></th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="num">1</span>
-                                                                                <span>크론병[국소성 장염]</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td><input type="text" value="1.5"></td>
-                                                                        <td><input type="text" value="1"></td>
-                                                                        <td><input type="text" value="60"></td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="num">2</span>
-                                                                                <span>크론병[국소성 장염]</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td><input type="text" value="1.5"></td>
-                                                                        <td><input type="text" value="1"></td>
-                                                                        <td><input type="text" value="60"></td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="flex-wrap">
-                                                                                <span class="num">1</span>
-                                                                                <span>킨텔레스프리필드펜주(베돌리주맙)_(0.108g/0.68mL)</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td><input type="text" value="1.5"></td>
-                                                                        <td><input type="text" value="1"></td>
-                                                                        <td><input type="text" value="60"></td>
-                                                                        <td>
-                                                                            <div class="form-wrap">
-                                                                                <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>                                                                
-                                                            </table>
-                                                        </div>
+                                            <div class="rela_wrap">  
+                                                <div class="inner-wrap">
+                                                    <div class="data-table receipt">
+                                                        <table class="receipt min-width xs">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>약품명</th>
+                                                                    <th>투여량</th>
+                                                                    <th>횟수</th>
+                                                                    <th>일수</th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="flex-wrap">
+                                                                            <span class="num">1</span>
+                                                                            <span>크론병[국소성 장염]</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><input type="text" value="1.5"></td>
+                                                                    <td><input type="text" value="1"></td>
+                                                                    <td><input type="text" value="60"></td>
+                                                                    <td>
+                                                                        <div class="form-wrap">
+                                                                            <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="flex-wrap">
+                                                                            <span class="num">2</span>
+                                                                            <span>크론병[국소성 장염]</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><input type="text" value="1.5"></td>
+                                                                    <td><input type="text" value="1"></td>
+                                                                    <td><input type="text" value="60"></td>
+                                                                    <td>
+                                                                        <div class="form-wrap">
+                                                                            <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="flex-wrap">
+                                                                            <span class="num">1</span>
+                                                                            <span>킨텔레스프리필드펜주(베돌리주맙)_(0.108g/0.68mL)</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><input type="text" value="1.5"></td>
+                                                                    <td><input type="text" value="1"></td>
+                                                                    <td><input type="text" value="60"></td>
+                                                                    <td>
+                                                                        <div class="form-wrap">
+                                                                            <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="flex-wrap">
+                                                                            <span class="num">1</span>
+                                                                            <span>킨텔레스프리필드펜주(베돌리주맙)_(0.108g/0.68mL)</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><input type="text" value="1.5"></td>
+                                                                    <td><input type="text" value="1"></td>
+                                                                    <td><input type="text" value="60"></td>
+                                                                    <td>
+                                                                        <div class="form-wrap">
+                                                                            <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="flex-wrap">
+                                                                            <span class="num">1</span>
+                                                                            <span>킨텔레스프리필드펜주(베돌리주맙)_(0.108g/0.68mL)</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><input type="text" value="1.5"></td>
+                                                                    <td><input type="text" value="1"></td>
+                                                                    <td><input type="text" value="60"></td>
+                                                                    <td>
+                                                                        <div class="form-wrap">
+                                                                            <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="flex-wrap">
+                                                                            <span class="num">1</span>
+                                                                            <span>킨텔레스프리필드펜주(베돌리주맙)_(0.108g/0.68mL)</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><input type="text" value="1.5"></td>
+                                                                    <td><input type="text" value="1"></td>
+                                                                    <td><input type="text" value="60"></td>
+                                                                    <td>
+                                                                        <div class="form-wrap">
+                                                                            <a href="#;"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>                                                                
+                                                        </table>
                                                     </div>
                                                 </div>
-                                                <div class="inner-wrapper">  
-                                                    <div class="form-wrap tooltip-box layer bottom xs">
-                                                        <input type="text" class="input full" placeholder="상병명/상병코드를 입력 후 엔터를 눌러 주세요.">
-                                                        <div class="tool-tip-conts">
-                                                            <div class="inn">
-                                                                <div class="subtitle layer">
-                                                                    <h2>약품</h2>
-                                                                </div>
-                                                                <div class="rela_wrap sm">
-                                                                    <div class="inner-wrap full">
-                                                                        <div class="data-table">
-                                                                            <table class="smaller min-width xs">
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        <th colspan="">약품코드</th>
-                                                                                        <th colspan="">성분코드</th>
-                                                                                        <th colspan="">성분명</th>
-                                                                                        <th colspan="">업체명</th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td colspan="4">
-                                                                                            <div class="medicine-info">
-                                                                                                <a href="#">
-                                                                                                    <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
-                                                                                                    <div class="code">
-                                                                                                        <span>624900271</span>
-                                                                                                        <span>488431BIJ</span>
-                                                                                                        <span>adalimumab</span>
-                                                                                                        <span>한국애브비(주)</span>
-                                                                                                    </div>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td colspan="4">
-                                                                                            <div class="medicine-info">
-                                                                                                <a href="3">
-                                                                                                    <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
-                                                                                                    <div class="code">
-                                                                                                        <span>624900271</span>
-                                                                                                        <span>488431BIJ</span>
-                                                                                                        <span>adalimumab</span>
-                                                                                                        <span>한국애브비(주)</span>
-                                                                                                    </div>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td colspan="4">
-                                                                                            <div class="medicine-info">
-                                                                                                <a href="#">
-                                                                                                    <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
-                                                                                                    <div class="code">
-                                                                                                        <span>624900271</span>
-                                                                                                        <span>488431BIJ</span>
-                                                                                                        <span>adalimumab</span>
-                                                                                                        <span>한국애브비(주)</span>
-                                                                                                    </div>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td colspan="4">
-                                                                                            <div class="medicine-info">
-                                                                                                <a href="#">
-                                                                                                    <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
-                                                                                                    <div class="code">
-                                                                                                        <span>624900271</span>
-                                                                                                        <span>488431BIJ</span>
-                                                                                                        <span>adalimumab</span>
-                                                                                                        <span>한국애브비(주)</span>
-                                                                                                    </div>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
+                                            </div>
+                                            <div class="inner-wrapper">  
+                                                <div class="form-wrap tooltip-box layer bottom xs">
+                                                    <input type="text" class="input full" placeholder="상병명/상병코드를 입력 후 엔터를 눌러 주세요.">
+                                                    <div class="tool-tip-conts">
+                                                        <div class="inn flex-wrap clm gapxs">
+                                                            <div class="subtitle layer">
+                                                                <h2>약품</h2>
+                                                            </div>
+                                                            <div class="rela_wrap heightsm">
+                                                                <div class="inner-wrap full">
+                                                                    <div class="data-table">
+                                                                        <table class="smaller min-width xs">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th colspan="">약품코드</th>
+                                                                                    <th colspan="">성분코드</th>
+                                                                                    <th colspan="">성분명</th>
+                                                                                    <th colspan="">업체명</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td colspan="4">
+                                                                                        <div class="medicine-info">
+                                                                                            <a href="#">
+                                                                                                <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
+                                                                                                <div class="code">
+                                                                                                    <span>624900271</span>
+                                                                                                    <span>488431BIJ</span>
+                                                                                                    <span>adalimumab</span>
+                                                                                                    <span>한국애브비(주)</span>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan="4">
+                                                                                        <div class="medicine-info">
+                                                                                            <a href="3">
+                                                                                                <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
+                                                                                                <div class="code">
+                                                                                                    <span>624900271</span>
+                                                                                                    <span>488431BIJ</span>
+                                                                                                    <span>adalimumab</span>
+                                                                                                    <span>한국애브비(주)</span>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan="4">
+                                                                                        <div class="medicine-info">
+                                                                                            <a href="#">
+                                                                                                <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
+                                                                                                <div class="code">
+                                                                                                    <span>624900271</span>
+                                                                                                    <span>488431BIJ</span>
+                                                                                                    <span>adalimumab</span>
+                                                                                                    <span>한국애브비(주)</span>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan="4">
+                                                                                        <div class="medicine-info">
+                                                                                            <a href="#">
+                                                                                                <p class="name"><span class="primary">휴미라</span>펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL) 휴미라펜주40mg/0.4mL(아달리무맙,유전자재조합)_(40mg/0.4mL)</p>
+                                                                                                <div class="code">
+                                                                                                    <span>624900271</span>
+                                                                                                    <span>488431BIJ</span>
+                                                                                                    <span>adalimumab</span>
+                                                                                                    <span>한국애브비(주)</span>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -781,7 +844,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> 
+                                            
                                         <div class="box bottom heightsm">
                                             <div class="swipe-wrap">
                                                 <div class="swiper-container">
@@ -818,100 +882,105 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="indicator">
+                                                    <button class="swiper-button-prev"></button>
+                                                    <button class="swiper-button-next"></button>
+                                                </div>
                                             </div>                    
-                                            <div class="rela_wrap sm">   
-                                                <div class="inner-wrapper">
-                                                    <div class="inner-wrap full">
-                                                        <div class="box">
-                                                            <div class="data-table">
-                                                                <table class="">
-                                                                    <colgroup>
-                                                                        <col width="30%">
-                                                                    </colgroup>
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>약품명</th>
-                                                                            <th>상세정보</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td class="center"><a href="#">약품명</a></td>
-                                                                            <td class="center">
-                                                                                <div class="tooltip-box layer popup left xs max-height sm">
-                                                                                    <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
-                                                                                    <div class="tool-tip-conts">
-                                                                                        <div class="inn">
-                                                                                            <div class="btn-box">
-                                                                                                <button type="button" class="close ico_modal_close">닫기</button>
-                                                                                            </div>
-                                                                                            상세정보 상세정보 상세정보 상세정보상세정보상세정보
+                                            <div class="rela_wrap heightxs"> 
+                                                <div class="inner-wrap">
+                                                    <div class="box">
+                                                        <div class="data-table">
+                                                            <table class="smaller">
+                                                                <colgroup>
+                                                                    <col width="30%">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>약품명</th>
+                                                                        <th>상세정보</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="center"><a href="#">약품명</a></td>
+                                                                        <td class="center">
+                                                                            <div class="tooltip-box layer popup left xs max-height sm">
+                                                                                <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
+                                                                                <div class="tool-tip-conts">
+                                                                                    <div class="inn">
+                                                                                        <div class="btn-box">
+                                                                                            <button type="button" class="close ico_modal_close">닫기</button>
+                                                                                        </div>
+                                                                                        상세정보 상세정보 상세정보 상세정보상세정보상세정보 상세정보 상세정보 상세정보 상세정보상세정보상세정보
+                                                                                        상세정보 상세정보 상세정보 상세정보상세정보상세정보상세정보 상세정보 상세정보 상세정보상세정보상세정보
+                                                                                        상세정보 상세정보 상세정보 상세정보상세정보상세정보상세정보 상세정보 상세정보 상세정보상세정보상세정보
+                                                                                        상세정보 상세정보 상세정보 상세정보상세정보상세정보상세정보 상세정보 상세정보 상세정보상세정보상세정보
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="center"><a href="#">약품명</a></td>
+                                                                        <td class="center">
+                                                                            <div class="tooltip-box layer popup left xs max-height sm">
+                                                                                <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
+                                                                                <div class="tool-tip-conts">
+                                                                                    <div class="inn">
+                                                                                        <div class="btn-box">
+                                                                                            <button type="button" class="close ico_modal_close">닫기</button>
+                                                                                        </div>
+                                                                                        상세정보 상세정보 상세정보 
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="center"><a href="#">약품명</a></td>
+                                                                        <td class="center">
+                                                                            <div class="tooltip-box layer popup left xs max-height sm">
+                                                                                <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
+                                                                                <div class="tool-tip-conts">
+                                                                                    <div class="inn">
+                                                                                        <div class="btn-box">
+                                                                                            <button type="button" class="close ico_modal_close">닫기</button>
+                                                                                        </div>
+                                                                                        <div class="desc">
+                                                                                            상세정보 상세정보 상세정보 상세정보상세정보상세정보상세정보상세정보
+                                                                                            상세정보상세정보상세정보상세정보상세정보상세정보상세정보
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="center"><a href="#">약품명</a></td>
-                                                                            <td class="center">
-                                                                                <div class="tooltip-box layer popup left xs max-height sm">
-                                                                                    <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
-                                                                                    <div class="tool-tip-conts">
-                                                                                        <div class="inn">
-                                                                                            <div class="btn-box">
-                                                                                                <button type="button" class="close ico_modal_close">닫기</button>
-                                                                                            </div>
-                                                                                            상세정보 상세정보 상세정보 
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="center"><a href="#">약품명</a></td>
+                                                                        <td class="center">
+                                                                            <div class="tooltip-box layer popup left xs max-height sm">
+                                                                                <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
+                                                                                <div class="tool-tip-conts">
+                                                                                    <div class="inn">
+                                                                                        <div class="btn-box">
+                                                                                            <button type="button" class="close ico_modal_close">닫기</button>
                                                                                         </div>
+                                                                                        상세정보 상세정보
                                                                                     </div>
                                                                                 </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="center"><a href="#">약품명</a></td>
-                                                                            <td class="center">
-                                                                                <div class="tooltip-box layer popup left xs max-height sm">
-                                                                                    <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
-                                                                                    <div class="tool-tip-conts">
-                                                                                        <div class="inn">
-                                                                                            <div class="btn-box">
-                                                                                                <button type="button" class="close ico_modal_close">닫기</button>
-                                                                                            </div>
-                                                                                            <div class="desc">
-                                                                                                상세정보 상세정보 상세정보 상세정보상세정보상세정보상세정보상세정보
-                                                                                                상세정보상세정보상세정보상세정보상세정보상세정보상세정보
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="center"><a href="#">약품명</a></td>
-                                                                            <td class="center">
-                                                                                <div class="tooltip-box layer popup left xs max-height sm">
-                                                                                    <a href="#" class="btn-more">상세정보 상세정보상세정보상세정보상세정보</a>
-                                                                                    <div class="tool-tip-conts">
-                                                                                        <div class="inn">
-                                                                                            <div class="btn-box">
-                                                                                                <button type="button" class="close ico_modal_close">닫기</button>
-                                                                                            </div>
-                                                                                            상세정보 상세정보
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
-                                                </div>                           
+                                                </div>                        
                                             </div>
                                             <div class="btn-set flex bottom full">
                                                 <button class="btn primary_md size36px radius4px">EMR 일괄 전송</button>
-                                                <button class="btn neutral_md size36px radius4px close">다음 환자 기록하기</button>
+                                                <button class="btn neutral_md size36px radius4px close">다음 환자 기록</button>
                                             </div>
                                         </div>
                                     </div>

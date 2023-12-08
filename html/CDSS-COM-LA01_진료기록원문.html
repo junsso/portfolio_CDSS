@@ -27,8 +27,8 @@
                 <div class="gnb">
                     <ul>
                         <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
-                        <li class="active"><a href="#"><span class="ico ico_chart active"></span>진료기록생성</a></li>
-                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li><a href="#"><span class="ico ico_chart "></span>진료기록생성</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_magnifying active"></span>진료기록조회</a></li>
                         <li><a href="#"><span class="ico ico_setting "></span>설정</a></li>
                     </ul>
                 </div>
@@ -59,7 +59,13 @@
                                             <li><span>진료의 김퍼즐</span></li>
                                             <li><span>환자 한*희</span></li>
                                         </ul>
-                                        <div class="search">
+                                        <div class="search clm">
+                                            <div class="flex-wrap">
+                                                <div class="form-wrap">
+                                                    <div class="swich-content typeof"></div>
+                                                </div>
+                                                <button type="button" class="close"><span class="ico ico_modal_close"></span></button>
+                                            </div>
                                             <select name="" id="" class="form-select">
                                                 <option value="selected" >진료기록 요약</option>
                                                 <option value="">진료기록 원문</option>
@@ -72,7 +78,9 @@
                                     </div>
                                     <div class="col">
                                         <ul class="summary sm">
-                                            <li><span><em class="num">158479620</em>&nbsp;&nbsp;&nbsp;&nbsp;여 60세</span></li>
+                                            <li><span class="num">158479620</span></li>
+                                            <li><span>여</span></li>
+                                            <li><span>60세</span></li>
                                             <li>
                                                 <div class="form-wrap">
                                                     <input type="checkbox" id="check" class="disabled">
@@ -88,7 +96,7 @@
                                             <div class="inner-wrap">
                                                 <div class="subtitle full scroll">
                                                     <div class="search mini">
-                                                        <input type="text" placeholder="검색어를 입력해주세요">
+                                                        <input type="text" placeholder="검색어를 입력해주세요" value="백혈구">
                                                         <button type="submit" class="mini">검색</button>
                                                     </div>
                                                 </div>
@@ -98,21 +106,21 @@
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area">배</span>는 좀 가라앉으셨나요</div>
+                                                        <div class="text">컨디션은 어떤 것같아요<span class="ner-tag aff-area default">배</span>는 좀 가라앉으셨나요</div>
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
                                                             <strong>환자 홍*동</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">네 <span class="ner-tag symtom">복통</span>은 없었고요 좋습니다</div>
+                                                        <div class="text">네 <span class="ner-tag symtom default">복통</span>은 없었고요 좋습니다 <span class="ner-tag symtom default"><span class="ner-tag  aff-area default">배</span>가 가라앉지 않습니다</span></div>
                                                     </div>
                                                     <div class="line speaker-a">
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text"><span class="ner-tag symtom">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 백혈구 수치가 떨어져서 <span class="ner-tag medi">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
+                                                        <div class="text"><span class="ner-tag symtom default">피고름</span> 생기거나 몸에 이상이 있으면 빨리 오세요 가급적 오늘 문제 하나는 <mark>백혈구</mark> 수치가 떨어져서 <span class="ner-tag medi default">면역억제제</span>를 잘 소화 못한다는 거에요 지금  면역억제제 두알 먹고 있는데 삼천 밑으로 떨어지면 부작용이 나타날 거예요 두번째는 <span class="ner-tag test default">씨알피</span>가 지난번에는 영점사로 정상이었는데 이번에 @일점으로 진단 <span class="ner-tag diag default">크론병</span>, 올랐어요  염증성장 그러면 몸에 <span class="ner-tag symtom default">염증 반응</span>이 또 생길 수도 있고 아니면 요새 컨디션이 안 좋아서 일시적으로 그럴 수도 있고 그건 해석을 그때그때 따라 달리해야 돼요</div>
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
@@ -126,35 +134,40 @@
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        <!-- 현재 재생중인 발화 시점 (text클래스에 play클래스가 붙음) -->
+                                                        <div class="text play">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        <!-- // -->
                                                     </div>
                                                     <div class="line speaker-b">
                                                         <div class="s-user">
                                                             <strong>환자 홍*동</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date">두달</span>마다 오는게 좀 부담스러울거같아요</div>
+                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date default">두달</span>마다 오는게 좀 부담스러울거같아요</div>
                                                     </div>
                                                     <div class="line speaker-a">
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
-                                                    </div>
-                                                    <div class="line speaker-a">
+                                                        <div class="text">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
-                                                    </div>
-                                                    <div class="line speaker-a">
+                                                        <div class="text">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
                                                         <div class="s-user">
                                                             <strong>진료의 김퍼즐</strong>
                                                             <span>00:00:01</span>
                                                         </div>
-                                                        <div class="text">저는 <span class="ner-tag medi">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat">휴미라 주사</span> 형태를 권하거든요</div>
+                                                        <div class="text">저는 <span class="ner-tag medi default">아자치오프린 면역억제제</span> 그래서 제가 권할 생물할적 제재는 <span class="ner-tag treat default">휴미라 주사</span> 형태를 권하거든요</div>
+                                                    </div>
+                                                    <div class="line speaker-b">
+                                                        <div class="s-user">
+                                                            <strong>환자 홍*동</strong>
+                                                            <span>00:00:01</span>
+                                                        </div>
+                                                        <div class="text">그런데 회사 위치 때문에 진료를 <span class="ner-tag date default">두달</span>마다 오는게 좀 부담스러울거같아요</div>
                                                     </div>
                                                 </div>
                                                 <!-- 스크롤 싱크 아이콘 이미지 
@@ -202,12 +215,12 @@
                                                 </div>
                                                 <div class="inner-wrapper">
                                                     <div class="keyword-box end edit">
-                                                        <h3 class="ner-tag aff-area">환부</h3>
+                                                        <h3 class="ner-tag aff-area default">환부</h3>
                                                         <span class="drag-tag">배(4)</span>
                                                         <span class="drag-tag active">장</span>
                                                     </div>
                                                     <div class="keyword-box end edit">
-                                                        <h3 class="ner-tag symtom">증상</h3>
+                                                        <h3 class="ner-tag symtom default">증상</h3>
                                                         <span class="drag-tag">배가 안가라앉음</span>
                                                         <span class="drag-tag">장</span>
                                                         <span class="drag-tag">복통(2)</span>
@@ -215,25 +228,30 @@
                                                         <span class="drag-tag">글자수가 영역 너비를 초과하는 경우 글자수가 영역 너비를 초과하는 경우</span>
                                                     </div>
                                                     <div class="keyword-box end edit">
-                                                        <h3 class="ner-tag diag">진단</h3>
+                                                        <h3 class="ner-tag diag default">진단</h3>
                                                         <span class="drag-tag">염증반응</span>
                                                         <span class="drag-tag">크론병</span>
                                                         <span class="drag-tag">염증성장질환</span>
                                                     </div>
                                                     <div class="keyword-box end edit">
-                                                        <h3 class="ner-tag medi">약물</h3>
+                                                        <h3 class="ner-tag medi default">약물</h3>
                                                         <span class="drag-tag">면역억제제(4)</span>
                                                         <span class="drag-tag">아자치오프린 면역억제제</span>
                                                         <span class="drag-tag">이뮤란</span>
                                                     </div>
                                                     <div class="keyword-box end edit">
-                                                        <h3 class="ner-tag treat">검사</h3>
+                                                        <h3 class="ner-tag treat default">검사</h3>
                                                         <span class="drag-tag">씨알피(4)</span>
                                                         <span class="drag-tag">피검사</span>
                                                         <span class="drag-tag">백혈구 검사</span>
                                                     </div>
                                                     <div class="keyword-box end edit">
-                                                        <h3 class="ner-tag date">날짜</h3>
+                                                        <h3 class="ner-tag treat default">처치</h3>
+                                                        <span class="drag-tag">휴미라 주사</span>
+                                                        <span class="drag-tag">배 사진</span>
+                                                    </div>
+                                                    <div class="keyword-box end edit">
+                                                        <h3 class="ner-tag date default">날짜</h3>
                                                         <span class="drag-tag">이틀 뒤</span>
                                                         <span class="drag-tag">목요일(3)</span>
                                                         <span class="drag-tag">오늘</span>

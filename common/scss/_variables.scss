@@ -65,6 +65,7 @@ $active-colors: (
     23:#EBF6FF,
     24:#FF0000,
     25: rgba(37,180,173,0.08),
+    26: #F7BA1E,
 );
 $nertag-colors: (
     1:#FFDE88, // 증상
@@ -75,10 +76,32 @@ $nertag-colors: (
     6:#E4B94A, // 환부
     7:#D6D6D6, // 날짜
 );
+$nertag-bg-colors: (
+    1:#FFFCF4, // 증상
+    2:#F9FFF4, // 진단
+    3:#FCF5FF, // 약물
+    4:#F2FDFF, // 검사
+    5:#F3F7FF, // 처치
+    6:#E4B94A, // 환부
+    7:#FFFFFF, // 날짜
+);
 $patterntag-colors: (
     1:#597EFF, // 1
     2:#60D22A, // 2
     3:#FF7A00, // 3
+);
+$morph-tag-colors: (
+    1:#597EFF, // 명사
+    2:#60D22A, // 동사/형용사
+    3:#FF7A00, // 부사
+    4:#666666, // 기타
+    5:#DE7373, // 분석실패
+);
+$graph-color:(
+    1: #FFB44F, // 조회기간 총 진료기록
+    2: #929292, // 이전기간 총 진료기록
+    3: #25B4AD, // 재진 진료기록
+    4: #236FD2, // 초진 진료기록
 );
 $white: map-get($bg-grays,26);
 $primary: map-get($active-colors,2);
@@ -95,6 +118,7 @@ $diag: map-get($nertag-colors,2);
 $symtom: map-get($nertag-colors,1);
 $medi: map-get($nertag-colors,3);
 $nertag-opacity: 0.1;
+//$nertag-bg-colors
 
 
 // transition

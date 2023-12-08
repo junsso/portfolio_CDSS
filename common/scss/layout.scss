@@ -3,6 +3,9 @@
 
 .wrapper{
     height: 100%;
+    &.home{
+        min-width: 1920px;
+    }
 }
 header{
     background: #{$white};
@@ -466,76 +469,6 @@ body{
         &.xs{
             min-width: #{$modal-xs};
             max-width: #{$modal-xs};
-        }
-        .inner{
-            >.title {
-                position: relative;
-                font-size: 0;;
-                padding: 14px 25px 10px 25px;
-                border-bottom: 2px solid map-get($map: $active-colors, $key: 11);
-                display: flex;
-                align-items: center;
-                h2 {
-                    flex: none;
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 75%;
-                    font-size: 20px;
-                    line-height: 28px;
-                    font-weight: 400;
-                    color: map-get($map: $active-colors, $key: 15);
-                }
-                .rt-bx{
-                    margin-left: auto;
-                }
-                .btn-box {
-                    margin-left: auto;
-                    //width: 25%;
-                    text-align: right;
-                    display: flex;
-                    align-items: center;
-                    button{
-                        width: 24px;
-                        height: 24px;
-                        text-indent: -9999px;
-                        margin-left: 5px;
-                        &.close {
-                            background: url(#{$img-url}ico_close.svg) no-repeat center center;
-                        }
-                    }
-                    .inline-box{
-                        margin-right: 10px;
-                    }
-                    .toggle-class{
-                        display: flex;
-                        gap: 2px;
-                        li{
-                            line-height: 1;
-                            &.cl-tag{
-                                .tag{
-                                    border-color: map-get($map: $bg-grays, $key: 30);
-                                    background: $white;
-                                    color: map-get($map: $bg-grays, $key: 12);
-                                    line-height: 20px;
-                                    height: 20px;
-                                    letter-spacing: -0.5px;
-                                    font-size: 14px;
-                                    padding: 4px 5px 2px 5px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .cont-inner{
-                padding: 20px 25px 30px;
-                &.has-scroll{
-                    @include scrollbar;
-                    max-height: 600px;
-                    margin-top: 0;
-                    padding-left: 25px;
-                }
-            }
         }
     }
     .alert-txt{

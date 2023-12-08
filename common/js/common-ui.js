@@ -157,7 +157,11 @@ $(function(){
     var clGradeLIst = new Swiper('.swipe-wrap .swiper-container', {
         slidesPerView: 'auto',
         spaceBetween: 10,
-        breakpointsBase: 'window',
+        breakpointsBase: 'window',        
+        navigation: {
+            nextEl: '.swipe-wrap .swiper-button-next',
+            prevEl: '.swipe-wrap .swiper-button-prev',
+        }
     });
     $('.swipe-wrap .swiper-slide').on('click',function(){
         $(this).addClass('active');
@@ -201,5 +205,43 @@ $(function(){
         }
     });
 
+    //home 진료 목록
+    $(document).on('click', '.diagnosis-list .toggle', function(){
+        $(this).closest('.diagnosis-list').toggleClass('active');
+        $(this).closest('.dash-board').toggleClass('active');
+    });
+
+    //home 토픽키워드
+    /*
+    var swiper = new Swiper(".swiper-dur-desc", {
+        direction: "vertical",
+        spaceBetween: 6,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        autoplay: {
+            delay: 5000,
+          },
+      });
+      */
+    
+
+      var swiper2 = new Swiper(".swiper-dur-wrap", {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 2000,
+          },
+      });
+
+      $(document).on('click', '.swiper-dur-desc .swiper-slide', function(){
+
+        let idx = $('.swiper-dur-desc .swiper-slide').index(this);
+        swiper2.slideTo(idx);
+
+    });
 
 });

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper home">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- start dash-board -->
+                <section class="dash-board">
+                    <div class="flex-wrap">
+                        <div class="col">
+                            <div class="diagnosis-list">
+                                <div class="toggle">
+                                    <div class="inner-btn"><span class="ico ico_lnb_toggle"></span></div>
+                                </div>
+                                <div class="info">
+                                    <div class="flex-wrap clm gap0">
+                                        <div class="row space15">
+                                            <div class="data">
+                                                <h2 class="hide"><span class="years">2023년</span> 7월 11일 (화) <span class="hide">진료 목록</span></h2>
+                                                <h2 class="block"><span class="years">2023년</span> 7/11(화)</h2>
+                                            </div>
+                                            <div class="list-sum">
+                                                <ul>
+                                                    <li>
+                                                        <p class="hide">의료진 계정</p>
+                                                        <p class="block">의료진</p>
+                                                        <h3><span class="name">김퍼즐</span> <em class="hide">님</em></h3>
+                                                    </li>
+                                                    <li>
+                                                        <p>기록대기</p>
+                                                        <h3><span class="num">12</span> <em class="">명</em></h3>
+                                                    </li>
+                                                    <li>
+                                                        <p>기록완료</p>
+                                                        <h3><span class="num">6</span> <em class="">님</em></h3>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="list-sum produce">
+                                                <ul>
+                                                    <li>
+                                                        <div class="flex-wrap clm">
+                                                            <p class="register hide">기록중 환자</span></p>
+                                                            <p class="register block">기록중</p>
+                                                            <h3><span class="name">김*즐</span></h3>
+                                                        </div>
+                                                    </li>
+                                                    <li class="hide">
+                                                        <div class="flex-wrap clm">
+                                                            <div class="col">
+                                                                <p>환자번호</p>
+                                                                <h3><span class="desc">158479620</span></h3>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p>성별</p>
+                                                                <h3><span class="desc">남</span></h3>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p>나이</p>
+                                                                <h3><span class="desc">57세</span></h3>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="btn-set flex bottom full space10">
+                                                    <button class="btn neutral_md size36px radius4px close hide">기록 생략</button>
+                                                    <button class="btn primary_md size36px radius4px flex2 hide"><span class="ico record"></span>진료기록 생성하기</button>
+                                                    <button class="btn primary_md size36px radius4px flex2 block"><span class="ico record"></span>기록</button>
+                                                </div>
+                                            </div>
+                                        </div>     
+                                        <div class="row space0 heightfull hide">
+                                            <div class="tab-box typeof">
+                                                <div class="tab">
+                                                    <ul>
+                                                        <li class="current" data-tab="tab1"><a href="#">기록대기12</a></li>
+                                                        <li data-tab="tab2"><a href="#">기록생략3</a></li>
+                                                        <li data-tab="tab3"><a href="#">기록완료6</a></li>
+                                                    </ul>
+                                                    <div class="rela_wrap">
+                                                        <div class="inner-wrap">
+                                                            <div class="cont-box">
+                                                                <div class="conts current" id="tab1">
+                                                                    <div class="flex-wrap clm">
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="primary">기록중</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 1</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 2</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 3</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 4</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 5</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="conts" id="tab2">
+                                                                    <div class="flex-wrap clm">
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="primary">기록중</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 1</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="conts" id="tab3">
+                                                                    <div class="flex-wrap clm">
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="primary">기록중</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 1</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 2</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 3</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 4</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="box-wrap">
+                                                                            <div class="patient-list">
+                                                                                <h3>홍길동</h3>
+                                                                                <ul class="summary">
+                                                                                    <li><span class="">순번 5</span></li>
+                                                                                    <li><span>15847620</span></li>
+                                                                                    <li><span>남</span></li>
+                                                                                    <li><span>57세</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="flex-wrap clm">
+                                <div class="pagetitle typeof">
+                                    <div class="search">
+                                        <input type="text" placeholder="" class="datepicker">
+                                        ~
+                                        <input type="text" placeholder="" class="datepicker">
+                                    </div>  
+                                    <div class="flex-wrap">
+                                        <select name="" id="" class="form-select">
+                                            <option value="">진료과 선택</option>
+                                        </select>
+                                        <select name="" id="" class="form-select">
+                                            <option value="">의사 선택</option>
+                                        </select>
+                                    </div>                      
+                                    <div class="flex-wrap">
+                                        <input type="text" placeholder="환자번호를 입력해 주세요."> 
+                                        <a href="#" class="btn primary_md size36px radius6px" ><span class="ico ico_search"></span> 조회</a>
+                                    </div>
+                                </div>
+                                <div class="flex-wrap full heightfull">
+                                    <div class="col md">
+                                        <div class="flex-wrap clm gap10">
+                                            <div class="col">
+                                                <div class="flex-wrap">
+                                                    <div class="col">
+                                                        <div class="box-wrap space20">
+                                                            <div class="diagnosis-card">
+                                                                <img src="../img/icon/ico_diagnosis01.svg" alt="">
+                                                                <ul>
+                                                                    <li><h2>총 진료기록</h2><span>26 건</span></li>
+                                                                    <li><p>평균 진료 시간</p><strong>5분 12초</strong></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="box-wrap space20">
+                                                            <div class="diagnosis-card">
+                                                                <img src="../img/icon/ico_diagnosis02.svg" alt="">
+                                                                <ul>
+                                                                    <li><h2>진료과 재진 진료기록</h2><span>26 건</span></li>
+                                                                    <li><p>평균 진료 시간</p><strong>5분 12초</strong></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="box-wrap space20">
+                                                            <div class="diagnosis-card">
+                                                                <img src="../img/icon/ico_diagnosis03.svg" alt="">
+                                                                <ul>
+                                                                    <li><h2>진료과 초진 진료기록</h2><span>26 건</span></li>
+                                                                    <li><p>평균 진료 시간</p><strong>5분 12초</strong></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="flex-wrap clm gap10">
+                                                    <div class="col">
+                                                        <div class="box-wrap space20">
+                                                            <div class="subtitle sm">
+                                                                <h2>진료기록 발생 추이</h2>
+                                                                <div class="description">
+                                                                    <div class="color-board">
+                                                                        <span class="bar check">조회기간 총 진료기록</span>
+                                                                        <span class="bar before">이전기간 총 진료기록</span>
+                                                                        <span class="ball re">재진 진료기록</span>
+                                                                        <span class="ball first">초진 진료기록</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <img src="../img/temp/img_temp_graph_stick.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="flex-wrap gap10 violation-list">
+                                                            <div class="row space0 line0">
+                                                                <div class="flex-wrap clm heightfull gap10">
+                                                                    <div class="col">
+                                                                        <div class="box-wrap space20">
+                                                                            <div class="diagnosis-card typeof">
+                                                                                <ul>
+                                                                                    <li><h2>금기 위배 비율</h2><span>23.1 %</span></li>
+                                                                                    <li>
+                                                                                        <div>
+                                                                                            <p>금기 위배 진료기록 수</p><strong>6<i>건</i></strong>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>총 금기 위배 건수</p><strong>12<i>건</i></strong>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="box-wrap space20">
+                                                                            <div class="diagnosis-card typeof">
+                                                                                <ul>
+                                                                                    <li><h2>주의 위배 비율</h2><span>53.8 %</span></li>
+                                                                                    <li>
+                                                                                        <div>
+                                                                                            <p>주위 위배 진료기록 수</p><strong>6<i>건</i></strong>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>총 주의 위배 건수</p><strong>12<i>건</i></strong>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row space0 no-border">
+                                                                <div class="box-wrap space20">
+                                                                    <div class="flex-wrap center">
+                                                                        <img src="../img/temp/img_temp_graph_circle.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row space0 no-border">
+                                                                <div class="box-wrap space20">
+                                                                    <div class="flex-wrap gap10">
+                                                                        <div class="row space0 gap0 no-border">
+                                                                            <div class="subtitle sm">
+                                                                                <h2>DUR 위배 항목</h2>
+                                                                            </div>
+                                                                            <ul class="violation">
+                                                                                <li><span class="negative">병용금기</span><em>1000 건</em></li>
+                                                                                <li><span class="negative">연령금기</span><em>100 건</em></li>
+                                                                                <li><span class="negative">임부금기</span><em>100 건</em></li>
+                                                                                <li><span class="caution">효능군중복주의</span><em>100 건</em></li>
+                                                                                <li><span class="caution">성분중복주의</span><em>100 건</em></li>
+                                                                                <li><span class="caution">용량주의</span><em>100 건</em></li>
+                                                                                <li><span class="caution">투여기간주의</span><em>10 건</em></li>
+                                                                                <li><span class="caution">노인주의</span><em>1 건</em></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="row space0 no-border">
+                                                                            <img src="../img/temp/img_temp_graph_radar.png" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col topic">
+                                                        <div class="box-wrap">
+                                                            <div class="topic-keyword flex-wrap">
+                                                                <div class="col">
+                                                                    <div class="swiper-box">
+                                                                        <div class="swiper-dur-desc">
+                                                                            <div class="swiper-wrapper">
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">전체</span>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">환부</span>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">증상</span>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">진단</span>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">약물</span>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">검사</span>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    <span class="ner-keword">처치</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="swiper swiper-dur-wrap">
+                                                                            <div class="swiper-wrapper">
+                                                                                <div class="swiper-slide">
+                                                                                    <div class="data-table receipt topic-list">
+                                                                                        <table class="receipt">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <div class="flex-wrap">
+                                                                                                            <i class="rank">1</i><h3 class="ner-tag aff-area  default">환부</h3>배
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td>100건</td>
+                                                                                                    <td>17.3%</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <div class="flex-wrap">
+                                                                                                            <i class="rank">2</i><h3 class="ner-tag medi default">약물</h3>면역억제제
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    </td>
+                                                                                                    <td>100건</td>
+                                                                                                    <td>17.3%</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <div class="flex-wrap">
+                                                                                                            <i class="rank">3</i><h3 class="ner-tag test default">검사</h3>씨알피
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td>100건</td>
+                                                                                                    <td>17.3%</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <div class="flex-wrap">
+                                                                                                            <i class="rank">4</i><h3 class="ner-tag diag default">진단</h3>크론병
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td>100건</td>
+                                                                                                    <td>17.3%</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <div class="flex-wrap">
+                                                                                                            <i class="rank">5</i><h3 class="ner-tag treat default">처치</h3>주사
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td>100건</td>
+                                                                                                    <td>17.3%</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    2
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    3
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    4
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    5
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    6
+                                                                                </div>
+                                                                                <div class="swiper-slide">
+                                                                                    7
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="cloud">
+                                                                        dddd
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col sm">
+                                        <div class="box-wrap space20">
+                                            dddd
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

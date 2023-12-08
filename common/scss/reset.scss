@@ -73,6 +73,10 @@ table{
     border-spacing: 0;
     table-layout: fixed;
 }
+img{
+    display: block;
+    max-width: 100%;
+}
 
 // @include desktop-md {
 //     html, body{

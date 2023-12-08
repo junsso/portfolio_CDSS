@@ -61,54 +61,54 @@
 
 
 /*토스트 알럿*/
-.toast-wrap{
-    position: fixed;
-    width: 100%;
-    bottom: 0px;
-    z-index: 700;
-    .toast-alert-box{
-        position: relative;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 25px 0;
-        width: 100%;
-        display: none;
-        .toast-item-quiz{
-            border-radius: 50px;
-            overflow: hidden;
-            z-index: 20;
-            min-width: 390px;
-            text-align: center;
-            .wrap{
-                @include flex-row;
-                gap: 45px;
-                justify-content: center;
-                align-items: center;
-            }
-            .desc{
-                @include flex-row;
-                gap: 20px;
-                align-items: center;
-                font-size: rem-calc(16px);
-                color: $white;
-                line-height: 44px;
-                &::before{
-                    content: '';
-                    width: 30px;
-                    height: 30px;
-                    background: url(#{$img-url}ico_danger-sign-y.svg) no-repeat center center;
+// .toast-wrap{
+//     position: fixed;
+//     width: 100%;
+//     bottom: 0px;
+//     z-index: 700;
+//     .toast-alert-box{
+//         position: relative;
+//         background: rgba(0, 0, 0, 0.8);
+//         padding: 25px 0;
+//         width: 100%;
+//         display: none;
+//         .toast-item-quiz{
+//             border-radius: 50px;
+//             overflow: hidden;
+//             z-index: 20;
+//             min-width: 390px;
+//             text-align: center;
+//             .wrap{
+//                 @include flex-row;
+//                 gap: 45px;
+//                 justify-content: center;
+//                 align-items: center;
+//             }
+//             .desc{
+//                 @include flex-row;
+//                 gap: 20px;
+//                 align-items: center;
+//                 font-size: rem-calc(16px);
+//                 color: $white;
+//                 line-height: 44px;
+//                 &::before{
+//                     content: '';
+//                     width: 30px;
+//                     height: 30px;
+//                     background: url(#{$img-url}ico_danger-sign-y.svg) no-repeat center center;
 
-                }
-            }
-            .rt-box{
-                @include flex-row;
-                gap: 10px;
-            }
-        }
-        &.active{
-            display: block;
-        }
-    }
-}
+//                 }
+//             }
+//             .rt-box{
+//                 @include flex-row;
+//                 gap: 10px;
+//             }
+//         }
+//         &.active{
+//             display: block;
+//         }
+//     }
+// }
 
 
 
@@ -305,13 +305,30 @@
             }
         }
     }
+    &:hover{
+        .tool-tip-conts{
+            visibility: visible;
+            overflow: initial;
+            opacity: 1;
+            height: auto;
+            .inn{
+                height: auto;
+                overflow: initial;
+                //min-width: rem-calc(200px);
+                ///color:$base-text-color;
+                font-size: rem-calc(13px);
+                line-height: 140%;
+            }
+        }
+    }
+    //진단(상병명/상병코드 input 툴팁)
     &.layer{
         .tool-tip-conts{
             visibility: visible;
             overflow: initial;
             opacity: 1;
             height: auto;
-            width: 90%;
+            width: 100%;
             .inn{
                 width: 100%;
                 height: auto;
@@ -336,7 +353,7 @@
             .tool-tip-conts{
                 top: 50%;
                 right: 16%;
-                transform: translateY(-50%);
+                transform: translateY(-16%);
             }
             .inn{
                 &::before{
@@ -347,7 +364,19 @@
                 }
             }
         }
+        //DUR위배현황 툴팁
         &.popup{
+            &.left{
+                .tool-tip-conts{
+                    transform: translateY(-40px);
+                    .inn{
+                        &::before{
+                            top: 34px;
+                            transform: translate(0,0) rotate(90deg);     
+                        }
+                    }
+                }
+            }
             .btn-box{
                 background-color: map-get($map: $bg-grays, $key: 46);
                 display: flex;
@@ -361,28 +390,26 @@
             .tool-tip-conts{
                 visibility: hidden;
                 opacity: 0;
+                height: 0;
+                overflow: hidden;
+                padding-top: 5px;
+                padding-bottom: 2px;
+            }
+            &:hover{
+                .tool-tip-conts{
+                    visibility: hidden;
+                    opacity: 0;
+                    height: 0;
+                    
+                }
             }
             &.active{
                 .tool-tip-conts{
                     visibility: visible;
                     opacity: 1;
+                    height: auto;
+                    overflow: inherit;
                 }
-            }
-        }
-    }
-    &:hover{
-        .tool-tip-conts{
-            visibility: visible;
-            overflow: initial;
-            opacity: 1;
-            height: auto;
-            .inn{
-                height: auto;
-                overflow: initial;
-                //min-width: rem-calc(200px);
-                ///color:$base-text-color;
-                font-size: rem-calc(13px);
-                line-height: 140%;
             }
         }
     }
@@ -424,6 +451,10 @@ input{
             border-width: 0 0 1px;
             border-radius: 0;
             height: rem-calc(20px);
+            @extend .font-regular-13px-2; 
+            &::placeholder{
+                font-size: 13px;
+            }
             &:focus{
                 box-shadow: inherit;
             }
@@ -560,12 +591,13 @@ input{
     -moz-appearance:none;
     appearance:none; 
     box-sizing: border-box;
-    background:#{$basic-trans-color};
     background-color: $white;
     padding: 0 10px;
     color: map-get($map: $def-colors, $key: 'font');
     border: 1px solid map-get($map: $bg-grays, $key: 18);
-    background: url(svg-factory(ico_arrow_toggle,#111)) no-repeat center right 10px;
+    background-image: url(svg-factory(ico_arrow_toggle,#111));
+    background-position: center right 10px;
+    background-repeat: no-repeat;
     border-radius: 3px;
     height: 36px;
     padding-right: 30px;
@@ -618,9 +650,14 @@ input{
         ('neutral_sm', 'regular-12px-2', map-get($map: $bg-grays, $key: 10), $white),
         ('neutral_md', 'regular-14px-2', map-get($map: $bg-grays, $key: 10), $white),
         ('neutral_lg', 'regular-18px-2', map-get($map: $bg-grays, $key: 10), $white),
+        ('primary_xs', 'regular-12px-48', map-get($map: $active-colors, $key: 2), $primary),
         ('primary_sm', 'regular-12px-26', map-get($map: $active-colors, $key: 2), $primary),
         ('primary_md', 'regular-14px-26', map-get($map: $active-colors, $key: 2), $primary),
         ('primary_lg', 'regular-18px-26', map-get($map: $active-colors, $key: 2), $primary),
+        ('primary2_xs', 'regular-12px-48', map-get($map: $active-colors, $key: 2), $white, $primary),
+        ('primary2_sm', 'regular-12px-26', map-get($map: $active-colors, $key: 2), $white, $primary),
+        ('primary2_md', 'regular-14px-26', map-get($map: $active-colors, $key: 2), $white, $primary),
+        ('primary2_lg', 'regular-18px-26', map-get($map: $active-colors, $key: 2), $white, $primary),
         ('negative_sm', 'regular-12px-26', map-get($map: $active-colors, $key: 8), $negative),
         ('negative_md', 'regular-14px-26', map-get($map: $active-colors, $key: 8), $negative),
         ('negative_lg', 'regular-18px-26', map-get($map: $active-colors, $key: 8), $negative),
@@ -629,11 +666,12 @@ input{
         ('negative2_md', 'regular-14px-48', map-get($map: $active-colors, $key: 8), $white),
         ('negative2_lg', 'regular-18px-48', map-get($map: $active-colors, $key: 8), $white),
     );
-    @each $type, $font, $border-color, $bg-color in $listBtnColor{
+    @each $type, $font, $border-color, $bg-color, $color in $listBtnColor{
         &.#{$type}{
             @extend .font-#{$font} !optional;
             border-color: $border-color;
             background-color: $bg-color;
+            color: $color;
             &:hover{
                 @if(#{$type} == type-a or $type == def or $type == type-f){
                     background-color: map-get($map: $bg-grays, $key: 22);
@@ -658,6 +696,31 @@ input{
             width: rem-calc(20px);
             height: rem-calc(20px);
             background-size: rem-calc(13px);
+        }
+        &.record{
+            width: rem-calc(15px);
+            height: rem-calc(15px);
+            background-color: $white;
+            border: 2px solid map-get($bg-grays, 45);
+            border-radius: 100%;
+            position: relative;
+            &::before{
+                content: '';
+                display: block;
+                width: rem-calc(5px);
+                height: rem-calc(5px);
+                background-color: map-get($active-colors, 22);
+                border-radius: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &.disabled{
+                &::before{
+                    opacity: 0.6;
+                }
+            }
         }
     }
     &.padding-xs{
@@ -874,6 +937,10 @@ button{
                     background: transparent;
                     padding: 0;
                     height: auto;
+                    &:read-only{
+                        outline: 0;
+                        box-shadow: none;
+                    }
                 }
                 .n-msg{
                     display: none;
@@ -999,10 +1066,10 @@ button{
                     background-color: $white;
                     text-align: left;
                     @extend .font-bold-14px-2;
-                    padding: 0 rem-calc(4px);
+                    padding: rem-calc(4.5px) 0;
                     &:not(:nth-of-type(1)){
                         @extend .font-regular-12px-7;
-                        width: 44px;
+                        width: 33px;
                         text-align: center;
                         box-sizing: border-box;
                     }
@@ -1038,7 +1105,7 @@ button{
                 }
             }
             th,td{
-                padding: rem-calc(6.5px) rem-calc(4px);
+                padding: rem-calc(6.5px) 0;
             }
             td{
                 border: 0;
@@ -1050,6 +1117,9 @@ button{
             .value{
                 @extend .font-regular-12px-18;
                 margin-right: rem-calc(4px);
+                & + span{
+                    max-width: calc(100% - 40px);
+                }
             }
             .num{
                 @extend .font-bold-11px-2;
@@ -1059,6 +1129,7 @@ button{
                 text-align: center;
                 z-index: 1;
                 margin-right: rem-calc(4px);
+                padding-right: 1px;
                 &::before{
                     content: '';
                     display: block;
@@ -1089,13 +1160,13 @@ button{
             thead{
                 th{
                     @extend .font-regular-13px-2;  
-                    padding: rem-calc(5px);
+                    padding: rem-calc(4.5px);
                 }
             }
             tbody{
                 td{                              
                     @extend .font-regular-12px-7;     
-                    padding: rem-calc(5px);      
+                    padding: rem-calc(4.5px);      
                     a{        
                         @extend .font-regular-12px-7;
                     }
@@ -1110,6 +1181,40 @@ button{
         )...);
         margin-top: rem-calc(20px);
         text-align: center;
+    }
+    //home 토픽키워드
+    &.topic-list{
+        table{
+            &.receipt{
+                tbody{
+                    td{
+                        font-size: rem-calc(14px);
+                        padding: rem-calc(2px);
+                        .flex-wrap{
+                            gap: rem-calc(6px);
+                        }
+                        &:nth-of-type(2){
+                            width: 50px;
+                        }
+                        &:nth-of-type(3){
+                            width: 33px;
+                        }
+                    }
+                }
+            }
+        }
+        .rank{
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: rem-calc(11px);
+            width: rem-calc(15px);
+            height: rem-calc(15px);
+            border-radius: 100%;
+            background-color: map-get($bg-grays, 17);
+            color: $white;
+        }
     }
 }
 mark{
@@ -1149,6 +1254,16 @@ mark{
 }
 .swich-content{
     @include swich-content;
+    &.typeof{
+        &::before{
+            content: '분석';
+        }
+        &.on{
+            &::before{
+                content: '원문';
+            }
+        }
+    }
 }
 // 패턴
 .pattern-help{
@@ -1222,6 +1337,46 @@ mark{
         margin-right: 5px;
     }
 }
+// 형태소 분석 태그
+.morp-tags{
+    .morp{ 
+        display: inline-block;
+        margin-right: rem-calc(4px);
+        position: relative;
+        padding: rem-calc(5px);
+        color: map-get($bg-grays, 2);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 100%;
+        border: 1px solid; 
+        border-radius: rem-calc(2px);      
+        //명사
+        &.noun{
+            color: map-get($morph-tag-colors,1);
+            border-color: map-get($morph-tag-colors,1);
+        }
+        //동사/형용사
+        &.vna{
+            color: map-get($morph-tag-colors,2);
+            border-color: map-get($morph-tag-colors,2);
+        }
+        //부사
+        &.adverb{
+            color: map-get($morph-tag-colors,3);
+            border-color: map-get($morph-tag-colors,3);
+        }
+        //기타
+        &.etc{
+            color: map-get($morph-tag-colors,4);
+            border-color: map-get($morph-tag-colors,4);
+        }
+        //분석실패
+        &.error{
+            color: map-get($morph-tag-colors,5);  
+            border-color: map-get($morph-tag-colors,5);
+        }
+    }
+}
 // 의료NER 태그
 .ner-tag{
     display: inline-block;
@@ -1265,7 +1420,7 @@ mark{
     }
     //처치
     &.treat{
-        background: rgba($treat, $nertag-opacity);
+        background:  map-get($nertag-bg-colors,5);
         border: 1px solid $treat;  
         &:hover{
             &:after{
@@ -1275,7 +1430,7 @@ mark{
     }
     //검사
     &.test{
-        background: rgba($test, $nertag-opacity);
+        background: map-get($nertag-bg-colors,4);
         border: 1px solid $test; 
         &:hover{
             &:after{
@@ -1285,7 +1440,7 @@ mark{
     }
     //진단
     &.diag{
-        background: rgba($diag, $nertag-opacity);
+        background: map-get($nertag-bg-colors,2);
         border: 1px solid $diag; 
         &:hover{
             &:after{
@@ -1295,7 +1450,7 @@ mark{
     }
     //증상
     &.symtom{
-        background: rgba($symtom, $nertag-opacity);
+        background: map-get($nertag-bg-colors,1);
         border: 1px solid $symtom;
         &:hover{
             &:after{
@@ -1305,11 +1460,19 @@ mark{
     }
     //약물
     &.medi{
-        background: rgba($medi, $nertag-opacity);
+        background: map-get($nertag-bg-colors,3);
         border: 1px solid $medi;  
         &:hover{
             &:after{
                 background-color: $medi;
+            }
+        }
+    }
+    //마우스오버 해제
+    &.default{
+        &:hover{
+            &::after{
+                display: none;
             }
         }
     }
@@ -1344,23 +1507,29 @@ mark{
     &.full{
         .btn{
             flex: 1;
+            &.flex2{
+                flex: 2;
+            }
         }
     }
     &.bottom{
         margin-top: auto;
     }
+    &.space10{
+        padding: rem-calc(10px);
+        border-radius: 0;
+    }
 }
 
 .swipe-wrap{
     background-color: map-get($bg-grays, 49);
-    padding: 0 rem-calc(5px);
+    padding: 0 rem-calc(27px);
     border: 1px solid map-get($bg-grays, 21);
     border-right: 0;
     border-left: 0;
+    position: relative;
     .swiper-container{
         height: 100%;
-    }
-    .swiper-wrapper{
     }
     .swiper-slide{
         width: auto;
@@ -1386,6 +1555,22 @@ mark{
                 color: map-get($bg-grays, 2);
             }
         }
+        &:last-child{
+            margin-right: 10px;
+        }
+    }
+    .swiper-button-next, 
+    .swiper-container-rtl .swiper-button-prev{
+        background: url(svg-factory(ico_keyboard_arrow_right, #111)) no-repeat center center;
+        background-size: 8px;
+        right: 0;
+    }
+    .swiper-button-prev, 
+    .swiper-container-rtl .swiper-button-next{
+        background: url(svg-factory(ico_keyboard_arrow_right, #111)) no-repeat center center;
+        background-size: 8px;
+        transform: rotate(-180deg);
+        left: 0;
     }
 }
 
@@ -1405,15 +1590,19 @@ mark{
 
 
 .summary-list-box{
-    padding: rem-calc(10px);
+    padding: rem-calc(20px) rem-calc(10px);
     ol{
         list-style-type: decimal;
-        padding: rem-calc(10px) rem-calc(23px);
+        padding: 0 rem-calc(23px);
         li{
            display: list-item;
            list-style-type: decimal;
         }
     }
+    & + .diag-full-content.sum{
+        padding-top: 0;
+    }
+
 }
 
 //switch button
@@ -1471,6 +1660,72 @@ mark{
             -webkit-transition: .5s;
             transition: .4s;
             border-radius:20px;
+        }
+    }
+}
+
+//의료NER 항목 지정 레이어
+.ner-tooltip-layer{
+    position: absolute;
+    top: -50%;
+    left: 110%;
+    transition: 0.3s all;
+    z-index: 20;        
+    text-align: left;
+    width: rem-calc(180px);
+    padding: rem-calc(5px);
+    .tool-tip-conts{
+        background-color: $white;
+        border: 1px solid map-get($bg-grays, 10);
+        border-radius: 3px;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.15);
+        &::before{
+            content: "";
+            position: absolute;
+            background: url(#{$img-icon-url}tooltip_arrow.svg) no-repeat center center;
+            width: 13px;
+            height: 7px;
+            top: 20px;
+            right: auto;
+            left: -4px;
+            transform: rotate(-90deg);  
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            padding-bottom: rem-calc(10px);
+            li{
+                position: relative;
+                font-size: rem-calc(12px);
+                display: flex;
+                align-items: center;
+                padding: rem-calc(3px) rem-calc(10px);
+                padding-left: rem-calc(18px);
+                cursor: pointer;
+                &::before{
+                    content: '';
+                    display: block;
+                    width: rem-calc(3px);
+                    height: rem-calc(3px);
+                    background-color: map-get($bg-grays, 7);
+                    position: absolute;
+                    top: 50%;
+                    left: rem-calc(10px);
+                    transform: translateY(-50%);
+                }
+                &:hover{
+                    background-color: rgba(37, 180, 173, 0.08);
+                }
+            }
+        }
+        h2{
+            @extend .font-medium-14px-1;
+            padding: rem-calc(10px) rem-calc(15px);
+        }
+        span{
+            @include ellipsis;
+            width: calc(100% - 40px);
+            color: map-get($bg-grays, 7);
         }
     }
 }

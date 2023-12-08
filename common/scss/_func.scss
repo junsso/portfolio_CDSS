@@ -331,3 +331,8 @@
         @content;
     }
 }
+@mixin desktop {
+    @media (max-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
