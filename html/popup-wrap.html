@@ -468,34 +468,146 @@
             </div>
             <div class="popup-body">
                 <div class="help-txt">형태소는 뜻을 가진 가장 작은 말의 단위로, 문장이 어떻게 구성되어 있는지 테스트할 수 있습니다.</div>
-                <div class="search-form">
-                    <div class="subtitle">
-                        <h3>키워드 & 형태소 결과</h3>
-                        <div class="search mini">
-                            <input type="text" placeholder="키워드를 입력해주세요" size="60">
-                            <button type="submit" class="btn primary_md size36px radius4px">분석 실행</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="test-result">
-                    <div class="subtitle">
-                        <h3>형태소 결과</h3>
-                        <div class="morp-tags">
-                            <span class="morp noun">명사</span>
-                            <span class="morp vna">동사/형용사</span>
-                            <span class="morp adverb">부사</span>
-                            <span class="morp etc">기타</span>
-                            <span class="morp error">분석 실패</span>
-                        </div>
-                    </div>    
-                    <div class="result-box">
-                        <div class="box-wrap">
-                            <div class="rela_wrap">
-                                <div class="inner-wrap">
+                <div class="flex-wrap gap0">
+                    <div class="row space0 no-border half">
+                        <div class="search-form typeof">
+                            <div class="subtitle">
+                                <h3>키워드 입력</h3>
+                                <div class="search mini">
+                                    <textarea name="" id="" cols="30" rows="10">코로나19</textarea>
+                                    <button type="submit" class="btn primary_md size36px radius4px">분석 실행</button>
                                 </div>
                             </div>
                         </div>
-                    </div>                
+                    </div>
+                    <div class="row space0 no-border half">
+                        <div class="test-result">
+                            <div class="subtitle">
+                                <h3>형태소 결과</h3>
+                                <div class="morp-tags">
+                                    <span class="morp noun">명사</span>
+                                    <span class="morp vna">동사/형용사</span>
+                                    <span class="morp adverb">부사</span>
+                                    <span class="morp etc">기타</span>
+                                    <span class="morp error">분석 실패</span>
+                                </div>
+                            </div>    
+                            <div class="result-box">
+                                <div class="box-wrap">
+                                    <div class="rela_wrap">
+                                        <div class="inner-wrap">
+                                            <div class="morp-tags">
+                                                <div class="row auto gap5 no-border">
+                                                    <span class="text">코로나</span>
+                                                    <span class="morp noun">코로나</span>
+                                                </div>
+                                                <div class="row auto gap5 no-border">
+                                                    <span class="text">19</span>
+                                                    <span class="morp etc">19</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 로그인 > 아이디/비밀번호 오류 -->
+    <div class="layerpop" id="loginCaseError">
+        <div class="popup-content xs">
+            <div class="popup-header">
+                <h2 class="title">아이디/비밀번호 오류</h2>
+                <div class="btn-box">
+                    <button type="button" class="close ico_modal_close">닫기</button>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="alert-txt">
+                    <h2>
+                        <strong>아이디 또는 비밀번호를 잘못 입력</strong>했습니다.</h2>
+                    <div>입력하신 내용을 다시 확인해 주세요.</div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="btn-set">
+                    <button class="btn primary_md size36px radius4px">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 로그인 > 최초 로그인 -->
+    <div class="layerpop" id="loginCaseFirst">
+        <div class="popup-content xs">
+            <div class="popup-header">
+                <h2 class="title">아이디/비밀번호 오류</h2>
+                <div class="btn-box">
+                    <button type="button" class="close ico_modal_close">닫기</button>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="flex-wrap clm center gap10 ">
+                    <div class="row">
+                        <div class="alert-txt">
+                            <h2> 최초 로그인 계정입니다.</h2>
+                            <div>비밀번호 변경 후 이용하실 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div class="row full no-border">
+                        <input type="password" placeholder="현재 비밀번호를 입력해 주세요.">
+                    </div>
+                    <div class="row full no-border">
+                        <input type="password" placeholder="영문/숫자/특수문자를 포함해 8자 이상 입력해주세요.">
+                    </div>
+                    <div class="row full no-border">
+                        <input type="password" placeholder="새 비밀번호와 동일하게 한 번 더 입력해주세요.">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="btn-set full">
+                    <button class="btn primary_md size36px radius4px">비밀번호 변경</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- 로그인 > 임시 비밀번호 로그인 -->
+     <div class="layerpop" id="loginCaseTemporary">
+        <div class="popup-content xs">
+            <div class="popup-header">
+                <h2 class="title">임시 비밀번호 로그인</h2>
+                <div class="btn-box">
+                    <button type="button" class="close ico_modal_close">닫기</button>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="flex-wrap clm center gap10 ">
+                    <div class="row">
+                        <div class="alert-txt">
+                            <h2>임시 비밀번호로 로그인 되었습니다.</h2>
+                            <div>비밀번호 변경 후 이용하실 수 있습니다.</div>
+                        </div>
+                    </div>
+                    <div class="row full no-border">
+                        <input type="text" placeholder="현재 비밀번호를 입력해 주세요.">
+                    </div>
+                    <div class="row full no-border">
+                        <input type="password" placeholder="영문/숫자/특수문자를 포함해 8자 이상 입력해주세요.">
+                    </div>
+                    <div class="row full no-border">
+                        <input type="password" placeholder="새 비밀번호와 동일하게 한 번 더 입력해주세요.">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="btn-set full">
+                    <button class="btn primary_md size36px radius4px">비밀번호 변경</button>
                 </div>
             </div>
         </div>

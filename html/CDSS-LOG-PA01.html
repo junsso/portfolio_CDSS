@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper login">
+            <section class="container">
+                <section class="contents">
+                    <div class="flex-wrap center">
+                        <div class="login-form">
+                            <div class="flex-wrap clm">
+                                <div class="top">
+                                    <img src="../img/common/bi.svg" alt="">
+                                </div>
+                                <div class="flex-wrap clm center">
+                                    <div class="row full no-border">
+                                        <input type="text" placeholder="아이디를 입력해 주세요.">
+                                    </div>
+                                    <div class="row full no-border">
+                                        <input type="password" placeholder="비밀번호를 입력해 주세요.">
+                                    </div>
+                                </div>
+                                <div class="flex-wrap between check-form">
+                                    <div class="col">
+                                        <div class="form-wrap left">
+                                            <input type="checkbox" id="autoLogin" name="autoLogin" class="">
+                                            <label for="autoLogin">자동 로그인</label>
+                                        </div>
+                                    </div>
+                                    <div class="col right">
+                                        <div class="form-wrap left">
+                                            <input type="checkbox" id="saveId" name="saveId" class="">
+                                            <label for="saveId">아이디 저장</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-set flex center full">
+                                    <button class="btn primary_lg size50px radius50px" data-popup="loginCaseError">로그인</button>
+                                    <!--
+                                        *팝업 case data-popup ID*
+                                        아이디/비밀번호 오류 : loginCaseError
+                                        최초 로그인 : loginCaseFirst
+                                        임시 비밀번호 로그인 : loginCaseTemporary
+                                    -->
+                                </div>
+                                <div class="log-description">
+                                    <ul>
+                                        <li>최초 로그인 시 초기 비밀번호로 로그인 하실 수 있습니다.</li>
+                                        <li>비밀번호 분실 시 운영자에게 임시 비밀번호를 발급받으 신 후 이용하실 수 있습니다.</li>
+                                        <li>최초 로그인 또는 비밀번호 분실로 임시 비밀번호를 발급 받은 경우 반드시 비밀번호를 변경하시기 바랍니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

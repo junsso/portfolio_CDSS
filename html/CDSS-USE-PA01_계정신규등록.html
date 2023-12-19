@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover" />
+                
+        <title>CDSS시스템</title>
+        <link rel="stylesheet" href="../common/css/import.css">
+        <!-- // -->
+    </head>
+    <body>
+        <section class="wrapper">
+            <header>
+                <div class="sitename">
+                    <h1><img src="../img/common/bi.svg" alt="bi"></h1>
+                </div>
+                <!-- start gnb -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#"><span class="ico ico_home"></span>홈</a></li>
+                        <li><a href="#"><span class="ico ico_chart"></span>진료기록생성</a></li>
+                        <li><a href="#"><span class="ico ico_magnifying"></span>진료기록조회</a></li>
+                        <li class="active"><a href="#"><span class="ico ico_setting active"></span>설정</a></li>
+                    </ul>
+                </div>
+                <!-- //end gnb -->
+                <div class="util">
+                    <ul>
+                        <li><a href="#" class="btn size30px radius25px" download><span class="ico book-color"></span>매뉴얼</a></li>
+                        <li class="user-menu">
+                            <a href="#" class="btn size30px radius25px"><span class="ico user-color"></span>홍길동 님</a>
+                            <ul class="dropdown">
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="container">
+                <!-- lnb가 없는 화면의 경우 .lnb-wrap 요소를 삭제해주세요 -->             
+                <!-- start lnb -->
+                <section class="lnb-wrap">
+                    <div class="lnb-toggle">
+                        <div class="inner-btn"><img src="../img/icon/lnb_toggle.svg" alt="" ></div>
+                    </div>
+                    <ul class="menus">
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_stethoscope"></i></span><span class="txt">진단 분류 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 키워드</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 매칭 관리</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">진단 분류 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_tag"></i></span><span class="txt">의료NER 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 태깅</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 패턴</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">의료NER 모델</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_keyword"></i></span><span class="txt">키워드 관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="txt">신조어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">토픽제외어</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">분석불용어</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="ico"><i class="ico_pill"></i></span><span class="txt">의약품 조회</span></a>
+                        </li>
+                        <li class="current">
+                            <a href="#"><span class="ico"><i class="ico_person"></i></span><span class="txt">계정 관리</span></a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //end lnb -->
+                <!-- start contents -->
+                <section class="contents">
+                    <div class="pagetitle">
+                        <h1>계정 관리</h1>
+                        <div class="btn-set">
+                            <a href="#" class="btn primary_md size36px radius6px" data-popup="createModel2">+ 계정 신규 등록</a>
+                        </div>
+                    </div>
+                    <div class="box-wrap">
+                        <div class="flex-wrap">
+                            <div class="row smaller">
+                                <div class="subtitle">
+                                    <h2>계정 목록</h2>
+                                    <div class="search mini">
+                                        <input type="text" placeholder="검색어를 입력해주세요.">
+                                        <button type="submit" class="mini">검색</button>
+                                    </div>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap">
+                                        <div class="data-table">
+                                            <table class="tagging min-width sm">
+                                                <col width="50">
+                                                <col width="130">
+                                                <col width="">
+                                                <col width="">
+                                                <col width="">
+                                                <col width="60">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>이름</th>
+                                                        <th>아이디</th>
+                                                        <th>계정 유형</th>
+                                                        <th>진료과</th>
+                                                        <th>삭제</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="selected">
+                                                        <td class="center">1</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">0000254</td>
+                                                        <td class="center">의료진</td>
+                                                        <td class="center">정형외과</td>
+                                                        <td class="center"><a href="#;" class="center"><img src="../img/icon/delete.svg" alt="삭제" title="삭제"></a></td>
+                                                    </tr>
+                                                    <tr class="disabled">
+                                                        <td class="center">1</td>
+                                                        <td class="center">김퍼즐</td>
+                                                        <td class="center">0000254</td>
+                                                        <td class="center">의료진</td>
+                                                        <td class="center">정형외과</td>
+                                                        <td class="center"><a href="#;" class="center"><img src="../img/icon/ico_restore_from_trash.svg" alt="복원" title="복원"></a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <div class="pagination">
+                                    <div class="page">
+                                        <a href="#;" class="first disabled"></a>
+                                        <a href="#;" class="prev disabled"></a>
+                                        <a href="#;" class="current">1</a>
+                                        <a href="#;" class="">2</a>
+                                        <a href="#;" class="">3</a>
+                                        <a href="#;" class="">4</a>
+                                        <a href="#;" class="">5</a>
+                                        <a href="#;" class="">6</a>
+                                        <a href="#;" class="">7</a>
+                                        <a href="#;" class="">8</a>
+                                        <a href="#;" class="">9</a>
+                                        <a href="#;" class="">10</a>
+                                        <a href="#;" class="next"></a>
+                                        <a href="#;" class="last"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="subtitle">
+                                    <h2>김퍼즐(0000254) 계정 정보</h2>
+                                </div>
+                                <div class="rela_wrap">
+                                    <div class="inner-wrap">
+                                        <div class="flex-wrap clm">
+                                            <div class="row no-border">
+                                                <div class="subtitle sm">
+                                                    <h2>기본 정보</h2>
+                                                    <span class="desc">초기 비밀번호는 아이디와 동일하게 자동 설정됩니다.</span>
+                                                </div>
+                                                <div class="data-table">
+                                                    <table class="min-width lg horizon">
+                                                        <colgroup>
+                                                            <col width="100">
+                                                            <col width="">
+                                                            <col width="100">
+                                                            <col width="">
+                                                            <col width="100">
+                                                            <col width="">
+                                                        </colgroup>
+                                                        <tbody>
+                                                            <tr class="">
+                                                                <th class="impt">이름</th>
+                                                                <td>
+                                                                    <input type="text" class="type-of" placeholder="이름을 입력해 주세요.">
+                                                                </td>
+                                                                <th class="impt">아이디</th>
+                                                                <td>
+                                                                    <input type="text" placeholder="아이디를 입력해 주세요.">
+                                                                </td>
+                                                                <th class="impt">계정 유형</th>
+                                                                <td>
+                                                                    <select name="" id="" class="form-select full">
+                                                                        <option value="">계정 유형을 선택해 주세요.</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="row no-border">
+                                                <div class="subtitle sm">
+                                                    <h2 class="impt">진료기록 조회 권한</h2>
+                                                </div>
+                                                <div class="data-table">
+                                                    <table class="horizon min-width lg">
+                                                        <colgroup>
+                                                            <col width="50%">
+                                                            <col width="">
+                                                        </colgroup>
+                                                        <tbody>
+                                                            <!-- 계정유형 선택전 -->
+                                                            <tr>
+                                                                <td colspan="2" class="none-left">
+                                                                    <div class="empty-description">
+                                                                        <i class="ico ico-empty"></i>
+                                                                        <span>계정 유형을 선택해 주세요.</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- // -->
+                                                            <!-- 계정유형 선택후 -->
+                                                            <tr class="">
+                                                                <th >소속 진료과</th>
+                                                                <td>
+                                                                    <select name="" id="" class="form-select full">
+                                                                        <option value="">내과</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- // -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="row no-border">
+                                                <div class="subtitle sm">
+                                                    <h2 class="impt">메뉴 접근 권한</h2>
+                                                </div>
+                                                <div class="data-table-ui-form">
+                                                    <div class="inner">
+                                                        <ul class="level1">
+                                                            <li>
+                                                                <div class="form-wrap left">
+                                                                    <input type="checkbox" id="menuCheckAll" name="menuCheckAll" class="">
+                                                                    <label for="menuCheckAll"><span>메뉴 전체</span></label>
+                                                                </div>
+                                                                <ul class="level2">
+                                                                    <li>
+                                                                        <div class="form-wrap">
+                                                                            <input type="checkbox" id="menuCheck1" name="menuCheck" class="">
+                                                                            <label for="menuCheck1"><span>홈</span></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-wrap">
+                                                                            <input type="checkbox" id="menuCheck2" name="menuCheck" class="">
+                                                                            <label for="menuCheck2"><span>진료기록생성</span></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-wrap">
+                                                                            <input type="checkbox" id="menuCheck3" name="menuCheck" class="">
+                                                                            <label for="menuCheck3"><span>진료기록분석</span></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="depth">
+                                                                        <div class="form-wrap">
+                                                                            <input type="checkbox" id="setCheckAll" name="menuCheck" class="">
+                                                                            <label for="setCheckAll"><span>설정</span></label>
+                                                                        </div>
+                                                                        <ul class="level3">
+                                                                            <li>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="checkbox" id="menuCheck5" name="menuCheck" class="">
+                                                                                    <label for="menuCheck5"><span>진단 분류 관리</span></label>
+                                                                                </div>
+                                                                                <ul class="level4">
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck6" name="menuCheck" class="">
+                                                                                            <label for="menuCheck6"><span>진단 분류 코드</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck7" name="menuCheck" class="">
+                                                                                            <label for="menuCheck7"><span>진단 매칭 관리</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck8" name="menuCheck" class="">
+                                                                                            <label for="menuCheck8"><span>진단 분류 모델</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="checkbox" id="menuCheck9" name="menuCheck" class="">
+                                                                                    <label for="menuCheck9"><span>의료NER 관리</span></label>
+                                                                                </div>
+                                                                                <ul class="level4">
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck10" name="menuCheck" class="">
+                                                                                            <label for="menuCheck10"><span>의료NER 태깅</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck11" name="menuCheck" class="">
+                                                                                            <label for="menuCheck11"><span>의료NER 패턴</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck12" name="menuCheck" class="">
+                                                                                            <label for="menuCheck12"><span>의료NER 모델</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="checkbox" id="menuCheck13" name="menuCheck" class="">
+                                                                                    <label for="menuCheck13"><span>키워드 관리</span></label>
+                                                                                </div>
+                                                                                <ul class="level4">
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck14" name="menuCheck" class="">
+                                                                                            <label for="menuCheck14"><span>신조어</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck15" name="menuCheck" class="">
+                                                                                            <label for="menuCheck15"><span>토픽제외어</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="form-wrap">
+                                                                                            <input type="checkbox" id="menuCheck16" name="menuCheck" class="">
+                                                                                            <label for="menuCheck16"><span>분석물용어</span></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="checkbox" id="menuCheck17" name="menuCheck" class="">
+                                                                                    <label for="menuCheck17"><span>의약품 조회</span></label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="form-wrap">
+                                                                                    <input type="checkbox" id="menuCheck18" name="menuCheck" class="">
+                                                                                    <label for="menuCheck18"><span>계정 관리</span></label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-set flex center">
+                                    <button class="btn primary_md size36px radius4px">생성</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //end contents -->
+            </section>
+        </section>
+    </body>
+
+    <script src="../common/js/jquery-3.6.0.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <!-- swipe plugin -->
+    <link rel="stylesheet" href="../common/js/swiper.min.css">
+    <script src="../common/js/swiper.js"></script>
+
+    <!-- scrollbar plugin -->
+    <link rel="stylesheet" href="../common/js/jquery.scrollbar.css">
+    <script src="../common/js/jquery.scrollbar.js"></script>
+
+    <script src="../common/js/common-ui.js"></script>
+    <script src="../common/js/modal.js"></script>
+</html>

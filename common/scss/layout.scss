@@ -6,6 +6,9 @@
     &.home{
         min-width: 1920px;
     }
+    &.login{
+        background-color: map-get($bg-grays, 46);
+    }
 }
 header{
     background: #{$white};

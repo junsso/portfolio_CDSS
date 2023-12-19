@@ -191,6 +191,7 @@
     }
     .ico_help{
         vertical-align: -2px;
+        background-size: rem-calc(16px);
     }
     .tool-tip-conts{
         position: absolute;
@@ -497,9 +498,11 @@ input{
             @extend .font-bold-14px-26;
             color: map-get($active-colors, 2);
             &::before{
-                background: url(svg-factory('ico_checked', map-get($bg-grays, 26))) no-repeat center / contain;
+                background-image: url(svg-factory('ico_checked', map-get($bg-grays, 26)));
+                background-repeat: no-repeat;
+                background-position: center;
                 background-size: rem-calc(11px);
-                background-color: map-get($bg-grays, 47);
+                background-color: map-get($active-colors, 2);
                 border: 0;
             }
         }
@@ -574,7 +577,7 @@ input{
             color: map-get($bg-grays, 17);
             &::before{                 
                 background: $white;
-                border: 5px solid map-get($bg-grays, 44);
+                border: 5px solid map-get($bg-grays, 21);
                 box-sizing: border-box;
                 cursor: default;
             }
@@ -615,6 +618,9 @@ input{
         border-color: map-get($bg-grays, 7);
         box-shadow: 0 0 6px rgba(0,0,0,0.25);
     }
+    &.full{
+        width: 100%;
+    }
 }
 
 // 버튼
@@ -628,7 +634,7 @@ input{
     i{
         margin-top: -2px;
     }
-    $listBtnRadius:(2px, 3px, 4px, 6px, 10px, 25px, 500px);
+    $listBtnRadius:(2px, 3px, 4px, 6px, 10px, 25px, 50px, 500px);
     @each $btn-radius in $listBtnRadius{
         &.radius#{$btn-radius}{
             @include border-radius($btn-radius);
@@ -696,6 +702,9 @@ input{
             width: rem-calc(20px);
             height: rem-calc(20px);
             background-size: rem-calc(13px);
+            &.active{
+                filter: brightness(0) invert(1);
+            }
         }
         &.record{
             width: rem-calc(15px);
@@ -851,6 +860,9 @@ button{
             &.md{
                 min-width: rem-calc(640px);
             }
+            &.mmd{
+                min-width: rem-calc(770px);
+            }
             &.lg{
                 min-width: rem-calc(860px);
             }
@@ -865,7 +877,72 @@ button{
                             color: map-get($bg-grays, 2);
                         }
                     }
+                    &.disabled{
+                        td{
+                            background: map-get($bg-grays, 45);
+                            color: map-get($bg-grays, 17);
+                        }
+                    }
                 }
+            }
+        }
+        &.filter{
+            thead{
+                th{
+                   padding: rem-calc(8px);
+                }
+            }
+            tbody{
+                td{
+                    padding: rem-calc(8px);
+                }
+            }
+        }
+        &.horizon{
+            border-collapse: collapse;
+            tbody{
+                tr{
+                    border: 1px solid map-get($bg-grays, 18);
+                    cursor: default;
+                    &:hover{
+                        td{
+                            background-color: $white;
+                        }
+                    }
+                }
+                th{
+                    background-color: map-get($map: $bg-grays, $key: 46);
+                    border: 1px solid map-get($bg-grays, 18);
+                    color: map-get($bg-grays, 2);
+                    border-left: 1px solid $basic-trans-color;
+                    border-right: 1px solid $basic-trans-color;
+                    font-weight: 400;
+                    text-align: left;
+                    padding: rem-calc(7px) rem-calc(10px);
+                }
+                td{
+                    border: 1px solid map-get($bg-grays, 18);
+                    padding: rem-calc(7px) rem-calc(10px);
+                    text-align: left; 
+                    border-right: 1px solid $basic-trans-color;
+                    &.right-border{
+                        border-right: 1px solid map-get($bg-grays, 18);
+                    }
+                    &.none-left{
+                        border-left: 1px solid $basic-trans-color;
+                    }
+                    input[type=text]{
+                        background:#{$basic-trans-color};
+                        background: #{$white};
+                        padding: 0 10px;
+                        color: map-get($map: $def-colors, $key: 'font');
+                        border: 1px solid map-get($map: $bg-grays, $key: 18);
+                        border-radius: 3px;
+                        width: 100% ;
+                        height: 36px;
+                    }
+                }
+                
             }
         }
         thead{
@@ -928,6 +1005,14 @@ button{
                 }
                 &.center{
                     text-align: center;
+                    a{
+                        &.center{
+                            display: inline-block;
+                        }
+                    }
+                }
+                .ellipsis{
+                    @include ellipsis;
                 }
                 input[type="text"]{
                     border: 0px none;
@@ -1025,6 +1110,9 @@ button{
                     .abs-btn{
                         display: inline-block;
                     }
+                }
+                &.link{
+                    cursor: pointer;
                 }
             }
         }
@@ -1187,17 +1275,79 @@ button{
         table{
             &.receipt{
                 tbody{
+                    tr{
+                        &:hover{
+                            td{
+                                background-color: $white;
+                                color: map-get($active-colors, 2);
+                                span{
+                                    color: map-get($active-colors, 2);
+                                }
+                                .rank{
+                                    background-color: map-get($active-colors, 2);
+                                }
+                            }
+                        }
+                    }
                     td{
                         font-size: rem-calc(14px);
-                        padding: rem-calc(2px);
+                        padding: rem-calc(5px) rem-calc(2px);
+                        cursor: pointer;
                         .flex-wrap{
                             gap: rem-calc(6px);
+                            span{
+                                width: calc(100% - 21px);
+                                @include ellipsis;
+                            }
+                            .rank + h3 +  span{
+                                text-align: left;
+                                width: calc(100% - 15px - 36px - 12px);
+                            }
                         }
                         &:nth-of-type(2){
                             width: 50px;
+                            padding: rem-calc(5px);
                         }
                         &:nth-of-type(3){
                             width: 33px;
+                            padding: rem-calc(5px);
+                        }
+                    }
+                }
+            }
+            &.ranking{
+                thead{
+                    th{
+                        &:not(:nth-of-type(1)){
+                            @extend .font-regular-14px-7;
+                            width: 55px;
+                            text-align: center;
+                            box-sizing: border-box;
+                        } 
+                    }
+                }
+                tbody{
+                    td{
+                        padding: rem-calc(2.5px);
+                        &:nth-of-type(2){
+                            padding: rem-calc(2.5px);
+                        }
+                        &:nth-of-type(3){
+                            padding: rem-calc(2.5px);
+                        }
+                    }
+                    tr{
+                        &.active{
+                            td{
+                                background-color: $white;
+                                color: map-get($active-colors, 2);
+                                span{
+                                    color: map-get($active-colors, 2);
+                                }
+                                .rank{
+                                    background-color: map-get($active-colors, 2);
+                                }
+                            }
                         }
                     }
                 }
@@ -1216,12 +1366,112 @@ button{
             color: $white;
         }
     }
+    .btn{
+        &.table{
+            border-radius: 100%;
+            width: rem-calc(16px);
+            height: rem-calc(16px);
+            padding: 0;
+            &.col-add{
+                background: url(#{$img-icon-url}ico_add.svg) no-repeat center / contain;
+            }
+            &.col-remove{
+                background: url(#{$img-icon-url}ico_remove.svg) no-repeat center / contain;
+            }
+        }
+    }
+}
+.data-table-ui-form{
+    min-width: rem-calc(860px);
+    margin-bottom: 1px;
+    >.inner{
+        border-top: 1px solid map-get($bg-grays, 18);
+        border-bottom: 1px solid map-get($bg-grays, 18);
+    }
+    ul{ 
+        width: 100%;
+        li{
+            border-bottom: 1px solid map-get($bg-grays, 45);
+            padding: 0;
+            text-align: left;
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            box-sizing: border-box;
+            .form-wrap{
+                padding: 0 rem-calc(12px);
+                justify-content: flex-start;
+            }
+            &:last-of-type{
+                border-bottom: 0;
+            }            
+            &.depth{
+                >.form-wrap{
+                    width: rem-calc(200px);
+                }
+            }
+        }
+        .form-wrap{
+            label{
+                span{
+                    width: calc(100% - 22px);
+                }
+            }
+        }
+    }
+    .level1{      
+        li{
+            min-width: 100%;
+            min-height: rem-calc(36px);
+        }
+        >li{
+            background-color: map-get($bg-grays, 49);
+            >.form-wrap{
+                width: 100px;
+            }
+        }
+    }
+    .level2{
+        width: calc(100% - 100px);
+        background-color: $white;
+    }
+    .level3{
+        width: calc(100% - 200px);
+        border-left: 1px solid map-get($bg-grays, 45);
+        li{
+            >.form-wrap{
+               width: rem-calc(300px);
+            }
+        }
+    }
+    .level4{
+        width: calc(100% - 300px);
+        border-left: 1px solid map-get($bg-grays, 45);
+        li{
+            >.form-wrap{
+                width: 100%;
+            }
+        }
+    }
+}
+.impt{
+    &::after{
+        content: '*';
+        display: inline-block;
+        color: map-get($active-colors, 8);
+        margin-left: 3px;
+    }
 }
 mark{
     background: #{$bg-active};
     color: map-get($bg-grays, 1);
     padding: rem-calc(2px) rem-calc(4px);
     font-weight: 500;
+    //검색후 단어 일치할때
+    &.marksearch{
+        background-color: $basic-trans-color;
+        color: map-get($active-colors, 28);
+    }
 }
 .speaker{
     display: inline-block;
@@ -1290,12 +1540,17 @@ mark{
 }
 // TABS
 .tabs{
+    max-width: calc(100% - 206px);
+    &.xmini{
+        max-width: rem-calc(400px);
+    }
     ul{
         @include flex-row;
         @include flex-option((
             align-items: center,
             //gap: rem-calc(12px)
         )...);
+        flex-wrap: wrap;
         li{
             cursor: pointer;
             position: relative;
@@ -1339,42 +1594,46 @@ mark{
 }
 // 형태소 분석 태그
 .morp-tags{
-    .morp{ 
-        display: inline-block;
-        margin-right: rem-calc(4px);
-        position: relative;
-        padding: rem-calc(5px);
-        color: map-get($bg-grays, 2);
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 100%;
-        border: 1px solid; 
-        border-radius: rem-calc(2px);      
-        //명사
-        &.noun{
-            color: map-get($morph-tag-colors,1);
-            border-color: map-get($morph-tag-colors,1);
-        }
-        //동사/형용사
-        &.vna{
-            color: map-get($morph-tag-colors,2);
-            border-color: map-get($morph-tag-colors,2);
-        }
-        //부사
-        &.adverb{
-            color: map-get($morph-tag-colors,3);
-            border-color: map-get($morph-tag-colors,3);
-        }
-        //기타
-        &.etc{
-            color: map-get($morph-tag-colors,4);
-            border-color: map-get($morph-tag-colors,4);
-        }
-        //분석실패
-        &.error{
-            color: map-get($morph-tag-colors,5);  
-            border-color: map-get($morph-tag-colors,5);
-        }
+    display: flex;
+    gap: rem-calc(8px);
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+.morp{ 
+    display: inline-block;
+    position: relative;
+    padding: rem-calc(5px);
+    color: map-get($bg-grays, 2);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    border: 1px solid; 
+    border-radius: rem-calc(2px);      
+    //명사
+    &.noun{
+        color: map-get($morph-tag-colors,1);
+        border-color: map-get($morph-tag-colors,1);
+    }
+    //동사/형용사
+    &.vna{
+        color: map-get($morph-tag-colors,2);
+        border-color: map-get($morph-tag-colors,2);
+    }
+    //부사
+    &.adverb{
+        color: map-get($morph-tag-colors,3);
+        border-color: map-get($morph-tag-colors,3);
+    }
+    //기타
+    &.etc{
+        color: map-get($morph-tag-colors,4);
+        border-color: map-get($morph-tag-colors,4);
+    }
+    //분석실패
+    &.error{
+        color: map-get($morph-tag-colors,5);  
+        border-color: map-get($morph-tag-colors,5);
     }
 }
 // 의료NER 태그
@@ -1493,6 +1752,9 @@ mark{
     display: flex;
     align-items: center;
     justify-content: center;
+    &.left{
+        justify-content: left;
+    }
 }
 .btn-set{
     &.flex{
@@ -1530,6 +1792,7 @@ mark{
     position: relative;
     .swiper-container{
         height: 100%;
+        overflow: hidden;
     }
     .swiper-slide{
         width: auto;
@@ -1564,6 +1827,9 @@ mark{
         background: url(svg-factory(ico_keyboard_arrow_right, #111)) no-repeat center center;
         background-size: 8px;
         right: 0;
+        &::after{
+            display: none;
+        }
     }
     .swiper-button-prev, 
     .swiper-container-rtl .swiper-button-next{
@@ -1571,6 +1837,9 @@ mark{
         background-size: 8px;
         transform: rotate(-180deg);
         left: 0;
+        &::after{
+            display: none;
+        }
     }
 }
 
@@ -1585,6 +1854,12 @@ mark{
         position: absolute;
         top: 0;
         right: 0;
+    }
+    &.type-of{
+        padding-right: 0;
+        &::after{
+            display: none;
+        }
     }
 }
 
@@ -1729,3 +2004,94 @@ mark{
         }
     }
 }
+
+//진료기록조회 레이어
+.float-layer{
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    .inner{
+        background-color: $white;
+        box-shadow: -4px 0 8px 0 rgba(0,0,0,0.12);
+        height: 100%;
+        width: 900px;
+        >.contents{
+            padding: 0;
+            >.box-wrap{
+                border: 0;
+                border-radius: 0;
+            }
+        }
+    }
+    &.active{
+        display: block;
+    }
+}
+
+.empty-description{
+    display: flex;
+    gap: rem-calc(4px);
+    justify-content: center;
+    align-items: center;
+    .ico{
+        &.ico-empty{
+            display: inline-block;
+            background: url(#{$img-icon-url}ico_sd_card_alert.svg) no-repeat center /contain;
+            width: rem-calc(24px);
+            height: rem-calc(24px);
+            background-size: rem-calc(15px);
+        }
+    }
+}
+
+.login-form{
+    min-width: rem-calc(400px);
+    max-width: rem-calc(400px);
+    .top{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: rem-calc(10px) 0;
+    }
+    input{
+        min-height: rem-calc(45px);
+        border-radius: 50px;
+        border: 0;
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
+        padding: rem-calc(10px) rem-calc(15px);
+    }
+    .check-form{
+        padding: rem-calc(10px) 0;
+    }
+    .btn-set{
+        padding: rem-calc(5px) 0;
+    }
+    .log-description{
+        padding: rem-calc(20px);
+        border-top: 1px solid map-get($bg-grays, 18);
+        margin-top: rem-calc(5px);
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: rem-calc(4px);   
+            li{
+                position: relative;
+                padding-left: rem-calc(10px);
+                &::before{
+                    content: '';
+                    display: block;
+                    width: rem-calc(3px);
+                    height: rem-calc(3px);
+                    background-color: map-get($bg-grays, 7);
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+                }
+            }         
+        }
+    }
+}
+

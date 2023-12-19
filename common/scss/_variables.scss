@@ -31,9 +31,9 @@ $bg-grays: (
     44: #f3f3f3,  // disabled bg
     45:#eaeaea, // border-basic
     46:#F6F7FA, // table th bg
-    47:#25B4AD,
     48:#DE7373,
     49:#F7F8FB,
+    50: #FAFAFA,
 );
 $def-colors: (
     'bg': map-get($bg-grays, 44),
@@ -66,6 +66,8 @@ $active-colors: (
     24:#FF0000,
     25: rgba(37,180,173,0.08),
     26: #F7BA1E,
+    27: #62B2FD,
+    28: #0000FF,
 );
 $nertag-colors: (
     1:#FFDE88, // 증상
@@ -102,6 +104,8 @@ $graph-color:(
     2: #929292, // 이전기간 총 진료기록
     3: #25B4AD, // 재진 진료기록
     4: #236FD2, // 초진 진료기록
+    5: #62B2FD, //남성
+    6: #F99BAB, //여성
 );
 $white: map-get($bg-grays,26);
 $primary: map-get($active-colors,2);

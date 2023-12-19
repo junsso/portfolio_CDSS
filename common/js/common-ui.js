@@ -178,12 +178,12 @@ $(function(){
     });
 
     //검색창 float
-    let offsetSubTitle = $('.subtitle.scroll');
-    let offsetSearch = $('.subtitle .search input');
+    let offsetSubTitle = $('.rela_wrap.scroll .subtitle.scroll');
+    let offsetSearch = $('.rela_wrap.scroll .subtitle .search input');
 
-    $('.rela_wrap .inner-wrap').scroll(function(){
+    $('.rela_wrap.scroll .inner-wrap').scroll(function(){
 
-        let top = $('.rela_wrap .inner-wrap').scrollTop();
+        let top = $('.rela_wrap.scroll .inner-wrap').scrollTop();
 
         if(top > 0){
             offsetSubTitle.addClass('sticky');
@@ -197,10 +197,8 @@ $(function(){
 
     $(document).on('click', '.subtitle input', function(){
         if($(offsetSubTitle).hasClass('scroll') === true){
-            console.log('ddd');
             $(this).closest('.subtitle').addClass('input');
         }else{
-            console.log('ccc');
             $(this).closest('.subtitle').removeClass('input');
         }
     });
@@ -212,36 +210,114 @@ $(function(){
     });
 
     //home 토픽키워드
-    /*
-    var swiper = new Swiper(".swiper-dur-desc", {
-        direction: "vertical",
-        spaceBetween: 6,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-        autoplay: {
-            delay: 5000,
-          },
-      });
-      */
-    
-
-      var swiper2 = new Swiper(".swiper-dur-wrap", {
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-            delay: 2000,
-          },
-      });
-
-      $(document).on('click', '.swiper-dur-desc .swiper-slide', function(){
-
-        let idx = $('.swiper-dur-desc .swiper-slide').index(this);
-        swiper2.slideTo(idx);
-
+    var swiper2 = new Swiper(".swiper-dur-wrap", {
+    direction: 'vertical',
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 5000,
+    },
+    on: {
+        slideChangeTransitionEnd: function(){
+            let idx = this.realIndex;
+            $('.swiper-label-wrap .label').removeClass('active');
+            $('.swiper-label-wrap .label').eq(idx).addClass('active');
+        }
+    },
+    });
+    $(document).on('click', '.swiper-label-wrap .label', function(){
+        let index = $('.swiper-label-wrap .label').index(this);
+        swiper2.slideTo(index);
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
     });
 
+    //진단랭킹
+    let rankObj = $('.data-table .ranking tbody tr');
+    var rankIdx = 1;
+
+    function addActiveClass() {     
+        $(rankObj).removeClass('active'); 
+        $(rankObj).eq(rankIdx).addClass('active'); 
+        rankIdx = (rankIdx + 1) % $(rankObj).length;
+    }
+
+    setInterval(addActiveClass, 3000);
+
+    //진료기록 조회 레이어
+    $('[data-Layer]').on('click', function () {
+        let layerName = $(this).data('layer');
+        $('#' + layerName + 'Layer').addClass('active');
+        return false;
+    });
+    $('.float-layer .close').on('click', function () {
+        $('.float-layer').removeClass('active');
+    });
+
+    //진료기록 조회 > 진료기록 필터링 toggle
+    //카테고리 목록 클릭시
+    $(document).on('click', '.toggle-filter .view', function(c){
+        let parentOBJ =  $(this).closest('li');
+        parentOBJ.toggleClass('active');
+        parentOBJ.siblings().removeClass('active');
+        $(this).siblings('.list-box').stop().slideToggle();
+        parentOBJ.siblings().find('.list-box').slideUp();
+    });
+    //랭킹레이어 클릭시
+    let defSelectText = null;
+    $(document).on('click', '.toggle-filter .list-box li', function(){
+        
+        let parentOBJ = $(this).parents('.toggle-filter li');
+        let spanText = $(this).find('.data').text();
+        //default text 임시저장
+        if(defSelectText == null) defSelectText = parentOBJ.find('.view .value').text();
+        if(parentOBJ.hasClass('active') === true){
+            parentOBJ.removeClass('active').addClass('complete').find('.list-box').slideUp();
+            parentOBJ.find('.view .value').text(spanText);
+        }
+        //search input 초기화
+        $('.toggle-filter .search input').val('');
+        $('.toggle-filter .search').removeClass('active');
+    });
+    //카테고리 목록 닫기버튼 클릭시
+    $(document).on('click', '.toggle-filter .view .ico-delete', function(e){
+        e.stopPropagation();
+        let parentOBJ = $(this).closest('li');
+        parentOBJ.removeClass('complete active').find('.list-box').slideUp();
+        $(this).prev('.value').text(defSelectText);
+    });
+    //랭킹레이어 > 검색창 클릭시
+    $(document).on('change keyup paste', '.toggle-filter .search input', function(){
+        let inputVal = $(this).val();
+        if(inputVal == 0){
+            $(this).closest('.search').removeClass('active');
+        }else{
+            $(this).closest('.search').addClass('active');
+        }
+    });
+
+    //계정 관리 > 메뉴전체 체크
+    $(document).on('click', '[type=checkbox]', function() {
+
+        // 전체선택
+        $(this).parent().next('ul').find('[type=checkbox]').prop('checked',$(this).prop('checked'));
+
+        // 아이템 선택 - depth 만큼 전체선택 자동 checked
+        let groupDepth = 4;
+        let parentGroup = $(this).closest('ul');       
+        let countGroup = countCheckedGroup = null;
+        for(var i = 0; i < groupDepth; i++){
+            
+            countGroup = parentGroup.find('[type=checkbox]').length;
+            countCheckedGroup = parentGroup.find('[type=checkbox]:checked').length;
+            parentGroup.prev('.form-wrap').children('[type=checkbox]').prop('checked',(countGroup==countCheckedGroup)? true : false);
+
+            parentGroup = parentGroup.parent().closest('ul');
+
+        }
+    });
+
+    
 });
